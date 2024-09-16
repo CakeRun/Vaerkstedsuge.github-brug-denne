@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://i2rn6j0wr6ft"]
 
-[ext_resource type="Texture2D" uid="uid://47a3j1eb6pa7" path="res://Graphics/absolutely not.png" id="1_qals6"]
+[ext_resource type="Texture2D" uid="uid://47a3j1eb6pa7" path="res://Graphics/absolutely not.png" id="1_ti3yn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e1l0"]
 
@@ -9,7 +9,7 @@
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.5, -1.07288e-06)
 scale = Vector2(0.0723404, 0.0851064)
-texture = ExtResource("1_qals6")
+texture = ExtResource("1_ti3yn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5e1l0")

@@ -10,5 +10,5 @@ config_version=5
 
 [application]
 
-config/name="værksteduge_spik"
+config/name="værkstedsuge_spil"
 config/features=PackedStringArray("4.2", "Forward Plus")

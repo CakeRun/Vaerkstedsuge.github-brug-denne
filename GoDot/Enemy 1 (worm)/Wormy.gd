@@ -12,6 +12,9 @@ var direction = 1
 @onready var edge_right = $edgeRight
 @onready var edge_left = $edgeLeft
 
+@onready var game_manager = %GameManager
+
+
 var health = 1
 var player_inattack_zone = false
 var enemy_attack_cooldown = true
@@ -57,4 +60,5 @@ func deal_with_damage():
 		await get_tree().create_timer(1).timeout #her dør den ikke med det samme
 		print("enemy health - 1")
 		if health <= 0: 
+			game_manager.add_extra_point()
 			self.queue_free()

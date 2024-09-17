@@ -211,7 +211,7 @@ scale = Vector2(1.28963, 0.85004)
 shape = SubResource("CapsuleShape2D_cqsmd")
 
 [node name="attack_area" type="Area2D" parent="."]
-scale = Vector2(2.16, 1.60453)
+scale = Vector2(3.08, 1.60453)
 collision_mask = 2
 
 [node name="attack_area_collisionshape" type="CollisionShape2D" parent="attack_area"]

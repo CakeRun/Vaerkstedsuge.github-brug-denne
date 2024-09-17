@@ -40,17 +40,18 @@ func _on_worm_hitbox_body_exited(body):
 		player_inattack_zone = false
 
 func enemy_attack():
-	if player_inattack_zone == true: 
+	if player_inattack_zone and enemy_attack_cooldown == true: 
 		GameManager.enemy_attack = true 
 		enemy_attack_cooldown = false 
-		await get_tree().create_timer(0.5).timeout 
-		enemy_attack_cooldown = true
+		await get_tree().create_timer(0.02).timeout #til at sikre, at vi dør ikke konstant
 		GameManager.enemy_attack = false
+		await get_tree().create_timer(1).timeout
+		enemy_attack_cooldown = true
 
 func deal_with_damage():
 	if player_inattack_zone and GameManager.player_current_attack == true:
 		health = health - 1
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(1).timeout #her dør den ikke med det samme
 		print("enemy health - 1")
 		if health <= 0: 
 			self.queue_free()

@@ -36,7 +36,7 @@ animations = [{
 size = Vector2(20, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rarh8"]
-size = Vector2(36, 17)
+size = Vector2(24, 12)
 
 [node name="Worm" type="CharacterBody2D"]
 script = ExtResource("1_1u01h")
@@ -65,7 +65,7 @@ target_position = Vector2(-15, 10)
 [node name="worm_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worm_hitbox"]
-position = Vector2(0, -1.5)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rarh8")
 
 [connection signal="body_entered" from="worm_hitbox" to="." method="_on_worm_hitbox_body_entered"]

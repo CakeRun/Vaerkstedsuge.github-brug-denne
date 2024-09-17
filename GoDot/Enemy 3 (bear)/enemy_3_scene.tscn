@@ -29,10 +29,6 @@ region = Rect2(144, 0, 48, 32)
 atlas = ExtResource("3_rcx20")
 region = Rect2(192, 0, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k17qj"]
-atlas = ExtResource("2_8vvpa")
-region = Rect2(96, 0, 48, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_egl6g"]
 atlas = ExtResource("2_8vvpa")
 region = Rect2(48, 0, 48, 32)
@@ -110,9 +106,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_ookh4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k17qj")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_egl6g")
 }, {
 "duration": 1.0,
@@ -120,7 +113,15 @@ animations = [{
 }],
 "loop": false,
 "name": &"falling_asleep",
-"speed": 4.0
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ookh4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -135,9 +136,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_abs7v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_abs7v")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_y81ed")
 }, {
 "duration": 1.0,
@@ -145,12 +143,9 @@ animations = [{
 }],
 "loop": false,
 "name": &"waking_up",
-"speed": 4.0
+"speed": 3.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ookh4")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ia3fx")
 }, {
@@ -169,13 +164,17 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vrkdi")
 }],
-"loop": true,
+"loop": false,
 "name": &"walking",
-"speed": 5.0
+"speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yaop2"]
-radius = 98.3537
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uulg"]
+height = 62.7871
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cqsmd"]
+radius = 43.31
+height = 298.809
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kr71d"]
 radius = 26.5
@@ -188,20 +187,32 @@ script = ExtResource("1_73lgq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5cpjj")
-animation = &"sleeping"
+animation = &"walking"
 offset = Vector2(0, -16)
 
+[node name="wakeup_area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="wakeup_area_collisionshape" type="CollisionShape2D" parent="wakeup_area"]
+position = Vector2(1, -29)
+rotation = 1.5708
+scale = Vector2(7.24701, -13.4104)
+shape = SubResource("CapsuleShape2D_6uulg")
+
 [node name="detection_area" type="Area2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -10)
 scale = Vector2(2, 1.02052)
+collision_mask = 2
 
 [node name="detection_area_collisionshape" type="CollisionShape2D" parent="detection_area"]
-position = Vector2(0, -11)
+position = Vector2(2.11758e-22, -13.7185)
+rotation = 1.5708
 scale = Vector2(1.28963, 0.85004)
-shape = SubResource("CircleShape2D_yaop2")
+shape = SubResource("CapsuleShape2D_cqsmd")
 
 [node name="attack_area" type="Area2D" parent="."]
-scale = Vector2(1.28, 0.950836)
+scale = Vector2(2.16, 1.60453)
+collision_mask = 2
 
 [node name="attack_area_collisionshape" type="CollisionShape2D" parent="attack_area"]
 position = Vector2(-0.5, -10)
@@ -211,10 +222,9 @@ shape = SubResource("CircleShape2D_kr71d")
 position = Vector2(-0.5, -10)
 shape = SubResource("RectangleShape2D_k07jr")
 
-[node name="wait_timer" type="Timer" parent="."]
-
+[connection signal="body_entered" from="wakeup_area" to="." method="_on_wakeup_area_body_entered"]
+[connection signal="body_exited" from="wakeup_area" to="." method="_on_wakeup_area_body_exited"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="attack_area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="attack_area" to="." method="_on_attack_area_body_exited"]
-[connection signal="timeout" from="wait_timer" to="." method="_on_wait_timer_timeout"]

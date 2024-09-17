@@ -46,7 +46,7 @@ sprite_frames = SubResource("SpriteFrames_uvlm8")
 autoplay = "default"
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="fjern?" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_hqvyd")
 
@@ -63,6 +63,8 @@ target_position = Vector2(16, 10)
 target_position = Vector2(-15, 10)
 
 [node name="worm_hitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worm_hitbox"]
 position = Vector2(1, 1)

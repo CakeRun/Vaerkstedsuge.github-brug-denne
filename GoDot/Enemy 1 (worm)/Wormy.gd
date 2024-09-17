@@ -1,5 +1,7 @@
 extends Node2D
 
+#til hitbox - skal den ligge på et tag-skade-layer?
+
 const SPEED = 30
 
 var direction = 1

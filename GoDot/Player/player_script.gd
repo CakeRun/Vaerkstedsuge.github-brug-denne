@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+#player hitbox - hvor skal den lede?
+
 const SPEED = 150.0
 const JUMP_VELOCITY = -320.0
 

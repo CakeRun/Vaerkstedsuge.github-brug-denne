@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 150.0
+const JUMP_VELOCITY = -320.0
 
 var enemy_inattack_range = false 
 var enemy_attack_cooldown = true
@@ -18,8 +18,8 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	#enemy_attack()
-	#attack()
+#	enemy_attack()
+	attack()
 	
 	if health <= 0:
 		player_alive = false
@@ -83,14 +83,14 @@ func player():
 #func _on_attack_cooldown_timeout():
 #	enemy_attack_cooldown = true 
 
-#func attack():
-#	if Input.is_action_just_pressed("attack"): 
-#		attack_ip = true 
-#		$AnimatedSprite2D.play("hit")
-#		$deal_damage_cooldown.start
+func attack():
+	if Input.is_action_just_pressed("attack"): 
+		attack_ip = true 
+		$AnimatedSprite2D.play("hit")
+		$deal_damage_cooldown.start
 
-#func _on_deal_damage_cooldown_timeout():
-#	$deal_damage_cooldown.stop()
+func _on_deal_damage_cooldown_timeout():
+	$deal_damage_cooldown.stop()
 #	global.player_current_attack = false
-#	attack_ip = false
+	attack_ip = false
 

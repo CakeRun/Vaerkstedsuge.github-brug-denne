@@ -4,7 +4,6 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -320.0
 
 var enemy_inattack_range = false 
-var enemy_attack_cooldown = true
 var health = 6
 var player_alive = true 
 var attack_ip = false 
@@ -18,13 +17,9 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-#	enemy_attack()
+	enemy_attack()
 	attack()
 	
-	if health <= 0:
-		player_alive = false
-		health = 0 
-		self.queue_free()
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -35,10 +30,8 @@ func _physics_process(delta):
 	
 	#flips sprite based on diretion
 	if direction > 0:
-		if attack_ip == false:
 			animated_sprite_2d.flip_h = false
 	elif direction < 0:
-		if attack_ip == false:
 			animated_sprite_2d.flip_h = true 
 	
 	#plays animation 
@@ -50,7 +43,8 @@ func _physics_process(delta):
 			if attack_ip == false:
 				animated_sprite_2d.play("run")
 	else: 
-		animated_sprite_2d.play("jump")
+		if attack_ip == false:
+			animated_sprite_2d.play("jump")
 	
 	if direction:
 		velocity.x = direction * SPEED
@@ -61,36 +55,32 @@ func _physics_process(delta):
 
 func player():
 	pass
-#if body.has_method("player") also to be added to enemies
 
 #determines if enemy is within attack range
-#needs method func enemy added to all enemies first before this can be launched
-#func _on_player_hitbox_body_entered(body):
-#	if body.has_method("enemy"):
-#		enemy_inattack_range = true
+func _on_player_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = true
 
-#func _on_player_hitbox_body_exited(body):
-#	if body.has_method("enemy"):
-#		enemy_inattack_range = false
+func _on_player_hitbox_body_exited(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = false
 
-#func enemy_attack():
-#	if enemy_inattack_range and enemy_attack_cooldown == true:
-#		health = health - enemy.damage_ratio
-		#use parent and child inheritance nodes to define different enemies and their damage ratios?
-#		enemy_attack_cooldown = false 
-#		$attack_cooldown.start()
-
-#func _on_attack_cooldown_timeout():
-#	enemy_attack_cooldown = true 
+func enemy_attack():
+	if GameManager.enemy_attack == true:
+		if GameManager.enemy_type == "Wormy":
+			health = health - 1
+			print("health - 1")
+		if health <= 0:
+			player_alive = false
+			health = 0 
+			self.queue_free()
 
 func attack():
-	if Input.is_action_just_pressed("attack"): 
+	if Input.is_action_just_pressed("attack"):
+		GameManager.player_current_attack = true  
 		attack_ip = true 
 		$AnimatedSprite2D.play("hit")
-		$deal_damage_cooldown.start
-
-func _on_deal_damage_cooldown_timeout():
-	$deal_damage_cooldown.stop()
-#	global.player_current_attack = false
-	attack_ip = false
+		await get_tree().create_timer(1.2).timeout
+		GameManager.player_current_attack = false
+		attack_ip = false 
 

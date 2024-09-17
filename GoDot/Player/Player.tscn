@@ -129,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pwggg")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 7.0
 }, {
@@ -222,9 +222,3 @@ shape = SubResource("RectangleShape2D_48hdi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
 position = Vector2(-2, -14)
 shape = SubResource("CircleShape2D_qbvet")
-
-[node name="attack_cooldown" type="Timer" parent="."]
-wait_time = 0.5
-
-[node name="deal_damage_cooldown" type="Timer" parent="."]
-wait_time = 1.2

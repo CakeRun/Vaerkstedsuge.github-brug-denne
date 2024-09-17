@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cfley0amd6evb"]
+[gd_scene load_steps=40 format=3 uid="uid://cfley0amd6evb"]
 
 [ext_resource type="PackedScene" path="res://killzone.tscn" id="1_dokey"]
 [ext_resource type="Texture2D" uid="uid://dl4qakdsnlav4" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="2_dnv6m"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bf7nr4tolkik3" path="res://Ingrediens/level 1 - cakebase/flour_scene.tscn" id="16_nideg"]
 [ext_resource type="PackedScene" uid="uid://cx53tcwn6ftym" path="res://Ingrediens/level 1 - cakebase/butter_scene.tscn" id="17_34q8t"]
 [ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="18_1hycd"]
+[ext_resource type="PackedScene" uid="uid://c1ko10aern5er" path="res://Enemy 1 (worm)/Enemy 1.tscn" id="19_qeksp"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ygm2k"]
 distance = -206.0
@@ -2903,6 +2904,8 @@ scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
+limit_left = -200
+limit_right = 1000
 limit_bottom = 190
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
@@ -2953,3 +2956,9 @@ collision_mask = 1
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("18_1hycd")
+
+[node name="Worm" parent="." instance=ExtResource("19_qeksp")]
+position = Vector2(175, -71)
+
+[node name="Worm2" parent="." instance=ExtResource("19_qeksp")]
+position = Vector2(637, 169)

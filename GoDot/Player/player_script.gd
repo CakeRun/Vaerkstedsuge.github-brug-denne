@@ -67,8 +67,9 @@ func _on_player_hitbox_body_exited(body):
 
 func enemy_attack():
 	if GameManager.enemy_attack == true:
-		health = health - 1
-		print("health - 1")
+		if GameManager.enemy_type == "Wormy":
+			health = health - 1
+			print("health - 1")
 		if health <= 0:
 			player_alive = false
 			health = 0 

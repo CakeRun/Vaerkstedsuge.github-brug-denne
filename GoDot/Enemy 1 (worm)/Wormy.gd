@@ -40,7 +40,8 @@ func _on_worm_hitbox_body_exited(body):
 		player_inattack_zone = false
 
 func enemy_attack():
-	if player_inattack_zone and enemy_attack_cooldown == true: 
+	if player_inattack_zone and enemy_attack_cooldown == true:
+		GameManager.enemy_type = "Wormy" 
 		GameManager.enemy_attack = true 
 		enemy_attack_cooldown = false 
 		await get_tree().create_timer(0.02).timeout #til at sikre, at vi dør ikke konstant

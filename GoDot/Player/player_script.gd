@@ -72,10 +72,10 @@ func enemy_attack():
 		if GameManager.enemy_type == "Wormy":
 			health = health - 1
 			print("health - 1")
-		if health <= 0:
-			player_alive = false
-			health = 0 
-			self.queue_free()
+	if health <= 0:
+		player_alive = false
+		health = 0 
+		self.queue_free()
 
 func attack():
 	if Input.is_action_just_pressed("attack"):

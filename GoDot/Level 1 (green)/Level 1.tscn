@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cfley0amd6evb"]
+[gd_scene load_steps=43 format=3 uid="uid://cfley0amd6evb"]
 
 [ext_resource type="PackedScene" path="res://killzone.tscn" id="1_dokey"]
 [ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="1_j0q3r"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dxjh0uf4cvtpl" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="8_d238c"]
 [ext_resource type="Texture2D" uid="uid://d0x6wqm8rkrni" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="9_3c7pl"]
 [ext_resource type="Texture2D" uid="uid://cterbiusxq6g4" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="10_8it87"]
-[ext_resource type="PackedScene" uid="uid://26fc0xv6uh8w" path="res://Level 1 (green)/small_platform_green.tscn" id="11_3um4d"]
+[ext_resource type="PackedScene" path="res://Level 1 (green)/small_platform_green.tscn" id="11_3um4d"]
 [ext_resource type="PackedScene" uid="uid://34jhboicktq2" path="res://platform_green.tscn" id="12_8r1xm"]
 [ext_resource type="PackedScene" uid="uid://dpayos8v2k0p4" path="res://doors/door_green.tscn" id="13_ltpma"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="14_4d2uq"]
@@ -2815,10 +2815,17 @@ _data = {
 "platfromGreen2": SubResource("Animation_tfxi7")
 }
 
+<<<<<<< HEAD
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jg6hg"]
 size = Vector2(1269, 80)
 
 [node name="main" type="Node2D"]
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o2d4"]
+size = Vector2(10.478, 15.1466)
+
+[node name="Level1" type="Node2D"]
+>>>>>>> 1da32365c90f3be11e206f0004a575dc2b9800f7
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -2907,6 +2914,14 @@ autoplay = "platfromGreen2"
 position = Vector2(17, 50)
 scale = Vector2(1.2, 1.2)
 
+[node name="Area2D_green_level1" type="Area2D" parent="DoorGreen"]
+collision_mask = 8
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DoorGreen/Area2D_green_level1"]
+position = Vector2(-1.52588e-05, 0)
+scale = Vector2(1.39976, 1.40846)
+shape = SubResource("RectangleShape2D_4o2d4")
+
 [node name="Player" parent="." instance=ExtResource("14_4d2uq")]
 unique_name_in_owner = true
 position = Vector2(26, 59)
@@ -2971,3 +2986,6 @@ position = Vector2(176, -70)
 
 [node name="Worm2" parent="." instance=ExtResource("19_qeksp")]
 position = Vector2(638, 170)
+
+[connection signal="body_entered" from="DoorGreen/Area2D_green_level1" to="DoorGreen" method="_on_area_2d_green_level_1_body_entered"]
+[connection signal="body_exited" from="DoorGreen/Area2D_green_level1" to="DoorGreen" method="_on_area_2d_green_level_1_body_exited"]

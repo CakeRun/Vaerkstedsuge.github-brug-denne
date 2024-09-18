@@ -57,8 +57,9 @@ func enemy_attack():
 func deal_with_damage():
 	if player_inattack_zone and GameManager.player_current_attack == true:
 		health = health - 1
-		await get_tree().create_timer(1).timeout #her dør den ikke med det samme
+		await get_tree().create_timer(0.5).timeout #her dør den ikke med det samme
 		print("enemy health - 1")
 		if health <= 0: 
+			GameManager.enemy_type = "Wormy"
 			game_manager.add_extra_point()
 			self.queue_free()

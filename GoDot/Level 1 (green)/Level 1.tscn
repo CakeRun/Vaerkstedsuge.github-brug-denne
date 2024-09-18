@@ -2965,6 +2965,12 @@ position = Vector2(656, 60)
 [node name="ButterScene2" parent="Collectables" instance=ExtResource("17_34q8t")]
 position = Vector2(386, -51)
 
+[node name="ButterScene3" parent="Collectables" instance=ExtResource("17_34q8t")]
+position = Vector2(696, -84)
+
+[node name="EggScene" parent="." instance=ExtResource("15_yso5j")]
+position = Vector2(705, 171)
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("18_1hycd")

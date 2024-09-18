@@ -184,11 +184,12 @@ size = Vector2(33, 20)
 
 [node name="Enemy3Scene" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_73lgq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5cpjj")
-animation = &"walking"
+animation = &"attack"
 offset = Vector2(0, -16)
 
 [node name="wakeup_area" type="Area2D" parent="."]

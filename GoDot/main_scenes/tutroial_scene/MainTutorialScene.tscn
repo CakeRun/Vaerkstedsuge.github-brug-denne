@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://b7dinulb11amm"]
 
-[ext_resource type="Script" path="res://main scene (start)/MainTutorialScene.gd" id="1_0yw30"]
+[ext_resource type="Script" path="res://main_scenes/tutroial_scene/MainTutorialScene.gd" id="1_0yw30"]
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="1_djclk"]
 [ext_resource type="Texture2D" uid="uid://deg377hwwlxgl" path="res://Graphics/background_main_color.png" id="2_7htvy"]
 [ext_resource type="PackedScene" uid="uid://b7jhvuktgw15c" path="res://doors/door_blue.tscn" id="3_8cbd5"]
@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="7_mcjrf"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="8_ogavk"]
 [ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="9_i7pcl"]
-[ext_resource type="PackedScene" uid="uid://dh8bp7kym6e2q" path="res://platformMainTutorial.tscn" id="10_djpel"]
+[ext_resource type="PackedScene" path="res://platformMainTutorial.tscn" id="10_djpel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
 texture = ExtResource("1_djclk")
@@ -5985,11 +5985,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label_mission" type="Label" parent="txt"]
 offset_left = -40.0
-offset_top = -153.0
+offset_top = -139.0
 offset_right = 152.0
-offset_bottom = -99.0
+offset_bottom = -85.0
 scale = Vector2(0.376787, 0.406986)
-theme_override_colors/font_color = Color(0.880632, 0.611011, 0.522475, 1)
+theme_override_colors/font_color = Color(0.901961, 0.666667, 0.588235, 1)
 theme_override_fonts/font = ExtResource("7_mcjrf")
 theme_override_font_sizes/font_size = 0
 text = "Now go collect ingredients!"

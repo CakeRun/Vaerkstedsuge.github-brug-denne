@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="værkstedsuge_spil"
-run/main_scene="res://main_scenes/main_scene_1.tscn"
+run/main_scene="res://main_scenes/tutroial_scene/MainTutorialScene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]

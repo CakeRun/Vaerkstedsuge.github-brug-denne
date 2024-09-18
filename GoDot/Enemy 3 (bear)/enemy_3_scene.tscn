@@ -5,10 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c7w5k2j7qutpm" path="res://Graphics/Bear/Attack_(48 x 32).png" id="3_rcx20"]
 [ext_resource type="Texture2D" uid="uid://baoqhcwxhh176" path="res://Graphics/Bear/Walking_(48 x 32).png" id="4_rvmdo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ookh4"]
-atlas = ExtResource("2_8vvpa")
-region = Rect2(96, 0, 48, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cgwt"]
 atlas = ExtResource("3_rcx20")
 region = Rect2(0, 0, 48, 32)
@@ -28,6 +24,10 @@ region = Rect2(144, 0, 48, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_uhudl"]
 atlas = ExtResource("3_rcx20")
 region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ookh4"]
+atlas = ExtResource("2_8vvpa")
+region = Rect2(96, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egl6g"]
 atlas = ExtResource("2_8vvpa")
@@ -77,9 +77,6 @@ region = Rect2(240, 0, 48, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ookh4")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_6cgwt")
 }, {
 "duration": 1.0,
@@ -99,7 +96,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -170,7 +167,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uulg"]
-height = 39.6707
+radius = 10.901
+height = 30.6596
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cqsmd"]
 radius = 28.1135
@@ -179,8 +177,8 @@ height = 121.171
 [sub_resource type="CircleShape2D" id="CircleShape2D_kr71d"]
 radius = 9.43619
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k07jr"]
-size = Vector2(33, 20)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ffyq7"]
+radius = 15.773
 
 [node name="Enemy3Scene" type="CharacterBody2D"]
 collision_layer = 2
@@ -193,6 +191,7 @@ animation = &"attack"
 offset = Vector2(0, -16)
 
 [node name="wakeup_area" type="Area2D" parent="."]
+scale = Vector2(0.76, 0.68)
 collision_layer = 2
 collision_mask = 8
 
@@ -204,28 +203,31 @@ shape = SubResource("CapsuleShape2D_6uulg")
 
 [node name="detection_area" type="Area2D" parent="."]
 position = Vector2(0, -10)
-scale = Vector2(2, 1.02052)
+scale = Vector2(2, 0.58052)
 collision_layer = 2
 collision_mask = 8
 
 [node name="detection_area_collisionshape" type="CollisionShape2D" parent="detection_area"]
 position = Vector2(2.11758e-22, -13.7185)
 rotation = 1.5708
-scale = Vector2(1.28963, 0.85004)
+scale = Vector2(1.52963, 0.85004)
 shape = SubResource("CapsuleShape2D_cqsmd")
 
 [node name="attack_area" type="Area2D" parent="."]
-scale = Vector2(3.08, 1.60453)
+position = Vector2(0, 4)
+scale = Vector2(3.77189, 3.25622)
 collision_layer = 2
 collision_mask = 8
 
 [node name="attack_area_collisionshape" type="CollisionShape2D" parent="attack_area"]
-position = Vector2(-0.324675, -6.85559)
+position = Vector2(-0.530238, -5.52788)
+scale = Vector2(0.922078, 1)
 shape = SubResource("CircleShape2D_kr71d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -10)
-shape = SubResource("RectangleShape2D_k07jr")
+position = Vector2(-1.19209e-07, -7)
+scale = Vector2(1.1483, -0.570441)
+shape = SubResource("CircleShape2D_ffyq7")
 
 [connection signal="body_entered" from="wakeup_area" to="." method="_on_wakeup_area_body_entered"]
 [connection signal="body_exited" from="wakeup_area" to="." method="_on_wakeup_area_body_exited"]

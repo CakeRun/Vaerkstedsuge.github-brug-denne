@@ -2831,16 +2831,11 @@ script = ExtResource("1_j0q3r")
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
 [node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
-offset_left = 18.0
-offset_top = 16.0
-offset_right = 221.0
-offset_bottom = 39.0
-theme_override_colors/font_shadow_color = Color(0.105882, 0.0784314, 0.117647, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 0
+offset_right = 40.0
+offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("20_t7sqs")
-theme_override_font_sizes/font_size = 32
-text = "ITEMS: 0 / 10"
+theme_override_font_sizes/font_size = 21
+text = "Score: 0 / 10"
 metadata/_edit_use_anchors_ = true
 
 [node name="TileMap1Green" type="TileMap" parent="."]
@@ -2923,7 +2918,7 @@ shape = SubResource("RectangleShape2D_masb2")
 
 [node name="Player" parent="." instance=ExtResource("14_4d2uq")]
 unique_name_in_owner = true
-position = Vector2(19, 55)
+position = Vector2(43, 64)
 scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

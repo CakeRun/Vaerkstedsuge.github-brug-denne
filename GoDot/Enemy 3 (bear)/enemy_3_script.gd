@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var bear = $AnimatedSprite2D
 @onready var player = %Player
 
-var speed = 280
+var speed = 200
 var bear_status = "sleeping"
 
 func _physics_process(delta):

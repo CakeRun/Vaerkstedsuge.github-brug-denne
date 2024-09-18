@@ -4236,7 +4236,7 @@ _data = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-44, 11)
+position = Vector2(-39, 12)
 stream = ExtResource("18_r1s0l")
 
 [node name="GameManager" type="Node" parent="."]
@@ -4246,10 +4246,8 @@ script = ExtResource("1_d4dxq")
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
 [node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
-offset_left = -5.0
-offset_top = -1.0
-offset_right = 198.0
-offset_bottom = 22.0
+offset_right = 40.0
+offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("2_noxbo")
 theme_override_font_sizes/font_size = 21
 text = "Score: 0 / 10"
@@ -4323,7 +4321,7 @@ autoplay = "platformFall4"
 
 [node name="Player" parent="." instance=ExtResource("11_hwchh")]
 unique_name_in_owner = true
-position = Vector2(318, 150)
+position = Vector2(325, 157)
 scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -4363,10 +4361,7 @@ position = Vector2(201, 92)
 position = Vector2(348, 9)
 
 [node name="WhippedcreamScene4" parent="Node" instance=ExtResource("13_er7vs")]
-position = Vector2(906, 175)
+position = Vector2(895, 174)
 
 [node name="Enemy3Scene" parent="." instance=ExtResource("16_jd36p")]
 position = Vector2(-81, 33)
-
-[node name="Enemy3Scene2" parent="." instance=ExtResource("16_jd36p")]
-position = Vector2(878, 176)

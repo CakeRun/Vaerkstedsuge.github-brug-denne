@@ -129,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pwggg")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 7.0
 }, {
@@ -198,7 +198,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48hdi"]
-size = Vector2(18, 27)
+size = Vector2(14, 27)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qbvet"]
 radius = 24.0

@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 @onready var bear = $AnimatedSprite2D
-@onready var player = $"../CharacterBody2D" #muligvis ikke vores player
+@onready var player = %Player
+
 
 var health = 3
 var player_inattack_zone = false
@@ -11,6 +12,7 @@ var enemy_attack_cooldown = true
 
 var speed = 200
 var bear_status = "sleeping"
+
 
 func _physics_process(delta):
 	#collision boy yderst 
@@ -62,27 +64,29 @@ func _physics_process(delta):
 			bear.play("attacking")
 			await get_tree().create_timer(1).timeout
 
-func _on_detection_area_body_entered(player):
-	if bear_status=="":
+func _on_detection_area_body_entered(body):
+	if bear_status=="" and body.has_method("player"):
 		bear_status = "chase"
 
-func _on_detection_area_body_exited(player):
+func _on_detection_area_body_exited(body):
+	if body.has_method("player"):
 		bear_status = ""
 		bear.play("idle")
 	
-func _on_wakeup_area_body_entered(player):
-	if bear_status == "sleeping":
+func _on_wakeup_area_body_entered(body):
+	if bear_status == "sleeping" and body.has_method("player"):
 		bear_status = "wakeup"
 
-func _on_wakeup_area_body_exited(player):
-	bear_status = "fall_asleep"
+func _on_wakeup_area_body_exited(body):
+	if body.has_method("player"):
+		bear_status = "fall_asleep"
 
-func _on_attack_area_body_entered(player):
-	if player.has_method("player"):
+func _on_attack_area_body_entered(body):
+	if body.has_method("player"):
 		player_inattack_zone = true
 
-func _on_attack_area_body_exited(player):
-	if player.has_method("player"):
+func _on_attack_area_body_exited(body):
+	if body.has_method("player"):
 		player_inattack_zone = false
 
 func enemy_attack():

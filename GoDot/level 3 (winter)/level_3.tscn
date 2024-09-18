@@ -1,20 +1,17 @@
-[gd_scene load_steps=26 format=3 uid="uid://cdphajqhv2bnu"]
+[gd_scene load_steps=23 format=3 uid="uid://cdphajqhv2bnu"]
 
 [ext_resource type="PackedScene" path="res://killzone.tscn" id="1_24mja"]
-[ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="1_hv1cd"]
-[ext_resource type="FontFile" uid="uid://lobebsc6nhjr" path="res://Graphics/Font/PixelOperator8.ttf" id="2_a84l8"]
 [ext_resource type="Texture2D" uid="uid://c6jnhop5rhgwn" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="2_anwp5"]
 [ext_resource type="Texture2D" uid="uid://cl8vavbkm0r" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="3_iepeq"]
 [ext_resource type="Texture2D" uid="uid://300m4q7pyn5u" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="4_fck1e"]
 [ext_resource type="Texture2D" uid="uid://6eeb6n4ox77t" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="5_5jsj7"]
 [ext_resource type="Texture2D" uid="uid://bk71h2nv20ar0" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="6_sqroi"]
-[ext_resource type="PackedScene" path="res://platformSummer.tscn" id="7_2rn3p"]
+[ext_resource type="PackedScene" uid="uid://lgx0iaf2ps3x" path="res://platformSummer.tscn" id="7_2rn3p"]
 [ext_resource type="PackedScene" uid="uid://b86dbujstp32g" path="res://doors/door_blue.tscn" id="8_vfpda"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="9_gyxn4"]
 [ext_resource type="PackedScene" uid="uid://b4d3da6e5hvgj" path="res://Ingrediens/level 3 - berries/blueberry_scene.tscn" id="10_1o2ps"]
 [ext_resource type="PackedScene" uid="uid://8gxaihi88b7y" path="res://Ingrediens/level 3 - berries/cherry_scene.tscn" id="11_06rff"]
 [ext_resource type="PackedScene" uid="uid://bgd0q5mhfph1g" path="res://Ingrediens/level 3 - berries/strawberry_scene.tscn" id="12_44hfb"]
-[ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="15_3tmn7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n8uff"]
 normal = Vector2(0.00881023, -0.999961)
@@ -1785,22 +1782,8 @@ _data = {
 
 [node name="level 3" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_hv1cd")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
-
-[node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("2_a84l8")
-theme_override_font_sizes/font_size = 21
-text = "Score: 0 / 10"
-metadata/_edit_use_anchors_ = true
-
 [node name="killzone" parent="." instance=ExtResource("1_24mja")]
-collision_mask = 1
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(174, -20)
@@ -1862,7 +1845,7 @@ libraries = {
 autoplay = "PlatformSummer1"
 
 [node name="Player" parent="." instance=ExtResource("9_gyxn4")]
-position = Vector2(560, 160)
+position = Vector2(541, 157)
 scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -1874,39 +1857,35 @@ limit_bottom = 200
 
 [node name="frugt" type="Node" parent="."]
 
-[node name="BlueberryScene" parent="." instance=ExtResource("10_1o2ps")]
+[node name="BlueberryScene" parent="frugt" instance=ExtResource("10_1o2ps")]
 position = Vector2(600, -164)
 
-[node name="BlueberryScene2" parent="." instance=ExtResource("10_1o2ps")]
+[node name="BlueberryScene2" parent="frugt" instance=ExtResource("10_1o2ps")]
 position = Vector2(242, -87)
 
-[node name="BlueberryScene3" parent="." instance=ExtResource("10_1o2ps")]
+[node name="BlueberryScene3" parent="frugt" instance=ExtResource("10_1o2ps")]
 position = Vector2(191, 107)
 
-[node name="CherrySScene" parent="." instance=ExtResource("11_06rff")]
+[node name="CherrySScene" parent="frugt" instance=ExtResource("11_06rff")]
 position = Vector2(332, 149)
 
-[node name="CherrySScene2" parent="." instance=ExtResource("11_06rff")]
+[node name="CherrySScene2" parent="frugt" instance=ExtResource("11_06rff")]
 position = Vector2(739, 87)
 
-[node name="CherrySScene3" parent="." instance=ExtResource("11_06rff")]
+[node name="CherrySScene3" parent="frugt" instance=ExtResource("11_06rff")]
 position = Vector2(865, -260)
 
-[node name="StrawberryScene" parent="." instance=ExtResource("12_44hfb")]
+[node name="StrawberryScene" parent="frugt" instance=ExtResource("12_44hfb")]
 position = Vector2(775, -84)
 
-[node name="StrawberryScene2" parent="." instance=ExtResource("12_44hfb")]
+[node name="StrawberryScene2" parent="frugt" instance=ExtResource("12_44hfb")]
 position = Vector2(368, 10)
 
-[node name="StrawberryScene3" parent="." instance=ExtResource("12_44hfb")]
+[node name="StrawberryScene3" parent="frugt" instance=ExtResource("12_44hfb")]
 position = Vector2(407, -164)
 
-[node name="CherrySScene4" parent="." instance=ExtResource("11_06rff")]
+[node name="CherrySScene4" parent="frugt" instance=ExtResource("11_06rff")]
 position = Vector2(538, 12)
 
-[node name="StrawberryScene4" parent="." instance=ExtResource("12_44hfb")]
+[node name="StrawberryScene4" parent="frugt" instance=ExtResource("12_44hfb")]
 position = Vector2(-56, 153)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("15_3tmn7")

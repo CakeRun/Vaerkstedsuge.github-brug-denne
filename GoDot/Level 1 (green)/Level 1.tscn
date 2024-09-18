@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://cfley0amd6evb"]
 
-[ext_resource type="PackedScene" path="res://killzone.tscn" id="1_dokey"]
+[ext_resource type="PackedScene" uid="uid://64nw0m5jl78e" path="res://killzone.tscn" id="1_dokey"]
 [ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="1_j0q3r"]
 [ext_resource type="Texture2D" uid="uid://dl4qakdsnlav4" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="2_dnv6m"]
 [ext_resource type="Texture2D" uid="uid://drqkef6qo34c6" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="3_ce04d"]
@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dxjh0uf4cvtpl" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="8_d238c"]
 [ext_resource type="Texture2D" uid="uid://d0x6wqm8rkrni" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="9_3c7pl"]
 [ext_resource type="Texture2D" uid="uid://cterbiusxq6g4" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="10_8it87"]
-[ext_resource type="PackedScene" path="res://Level 1 (green)/small_platform_green.tscn" id="11_3um4d"]
-[ext_resource type="PackedScene" path="res://platform_green.tscn" id="12_8r1xm"]
+[ext_resource type="PackedScene" uid="uid://26fc0xv6uh8w" path="res://Level 1 (green)/small_platform_green.tscn" id="11_3um4d"]
+[ext_resource type="PackedScene" uid="uid://34jhboicktq2" path="res://platform_green.tscn" id="12_8r1xm"]
 [ext_resource type="PackedScene" uid="uid://dpayos8v2k0p4" path="res://doors/door_green.tscn" id="13_ltpma"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="14_4d2uq"]
 [ext_resource type="PackedScene" uid="uid://d2rpt1x3e2pii" path="res://Ingrediens/level 1 - cakebase/egg_scene.tscn" id="15_yso5j"]
@@ -2953,6 +2953,12 @@ position = Vector2(656, 60)
 
 [node name="ButterScene2" parent="Collectables" instance=ExtResource("17_34q8t")]
 position = Vector2(386, -51)
+
+[node name="ButterScene3" parent="Collectables" instance=ExtResource("17_34q8t")]
+position = Vector2(696, -84)
+
+[node name="EggScene" parent="." instance=ExtResource("15_yso5j")]
+position = Vector2(705, 171)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true

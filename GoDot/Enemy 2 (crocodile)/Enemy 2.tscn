@@ -198,7 +198,7 @@ size = Vector2(26, 14)
 radius = 59.0085
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0ej8"]
-size = Vector2(36, 19)
+size = Vector2(34, 17.5)
 
 [node name="Crocodile" type="CharacterBody2D"]
 collision_mask = 8
@@ -239,7 +239,7 @@ collision_layer = 4
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Croco-Hitbox"]
-position = Vector2(-1, 0)
+position = Vector2(0, 0.75)
 shape = SubResource("RectangleShape2D_h0ej8")
 debug_color = Color(0.746082, 0.413969, 0.551118, 0.42)
 

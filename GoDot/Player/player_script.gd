@@ -79,9 +79,8 @@ func enemy_attack():
 			health = health - 3
 			print("health - 3")
 	if health <= 0:
-		player_alive = false
-		health = 0 
-		self.queue_free()
+		GameManager.enemy_attack = false
+		get_tree().reload_current_scene()
 
 func attack():
 	if Input.is_action_just_pressed("attack"):

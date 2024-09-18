@@ -9,7 +9,7 @@ extends Area2D
 @onready var player = %Player
 
 func _on_body_entered(player):
-	game_manager.add_point()
+	#game_manager.add_point()
 	pickup_sound.play()
 	queue_free()
 

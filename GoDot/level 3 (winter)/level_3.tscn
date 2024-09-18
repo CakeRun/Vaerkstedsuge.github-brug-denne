@@ -1794,10 +1794,10 @@ script = ExtResource("15_smlhd")
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
 [node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 231.0
-offset_bottom = 61.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 239.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0.832186, 0.928297, 1, 1)
 theme_override_colors/font_shadow_color = Color(3.08037e-06, 0.465051, 0.68834, 1)
 theme_override_constants/shadow_offset_x = 6

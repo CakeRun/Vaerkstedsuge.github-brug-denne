@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cfley0amd6evb"]
+[gd_scene load_steps=42 format=3 uid="uid://cfley0amd6evb"]
 
 [ext_resource type="PackedScene" uid="uid://64nw0m5jl78e" path="res://killzone.tscn" id="1_dokey"]
 [ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="1_j0q3r"]
@@ -2703,44 +2703,6 @@ sources/6 = SubResource("TileSetAtlasSource_c4c3i")
 sources/7 = SubResource("TileSetAtlasSource_vbmte")
 sources/8 = SubResource("TileSetAtlasSource_i6x2k")
 
-[sub_resource type="Animation" id="Animation_e2ees"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(514, 166)]
-}
-
-[sub_resource type="Animation" id="Animation_24abv"]
-resource_name = "platformGreen1"
-length = 1.8
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(514, 166), Vector2(602, 171)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rig6g"]
-_data = {
-"RESET": SubResource("Animation_e2ees"),
-"platformGreen1": SubResource("Animation_24abv")
-}
-
 [sub_resource type="Animation" id="Animation_dki5h"]
 resource_name = "PlatformGreen2"
 length = 1.8
@@ -2832,10 +2794,10 @@ script = ExtResource("1_j0q3r")
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
 [node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 211.0
-offset_bottom = 51.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 239.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0.84928, 0.935517, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.321144, 0.482644, 1)
 theme_override_constants/shadow_offset_x = 6
@@ -2899,12 +2861,6 @@ position = Vector2(284, 83)
 [node name="platformGreen" parent="." instance=ExtResource("12_8r1xm")]
 position = Vector2(514, 166)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="platformGreen"]
-libraries = {
-"": SubResource("AnimationLibrary_rig6g")
-}
-autoplay = "platformGreen1"
-
 [node name="platformGreen2" parent="." instance=ExtResource("12_8r1xm")]
 position = Vector2(141, -56)
 
@@ -2927,10 +2883,10 @@ autoplay = "platfromGreen2"
 position = Vector2(17, 50)
 scale = Vector2(1.2, 1.2)
 
-[node name="area2D_green_level_one" type="Area2D" parent="DoorGreen"]
+[node name="area2D_green_level1" type="Area2D" parent="DoorGreen"]
 collision_mask = 8
 
-[node name="CollisionShape" type="CollisionShape2D" parent="DoorGreen/area2D_green_level_one"]
+[node name="CollisionShape" type="CollisionShape2D" parent="DoorGreen/area2D_green_level1"]
 position = Vector2(-1.52588e-05, 0)
 scale = Vector2(1.39976, 1.40846)
 shape = SubResource("RectangleShape2D_masb2")
@@ -3013,5 +2969,5 @@ position = Vector2(304, 169)
 [node name="teleport_audio_green" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_1hycd")
 
-[connection signal="body_entered" from="DoorGreen/area2D_green_level_one" to="DoorGreen" method="_on_area_2d_green_level_one_body_entered"]
-[connection signal="body_exited" from="DoorGreen/area2D_green_level_one" to="DoorGreen" method="_on_area_2d_green_level_one_body_exited"]
+[connection signal="body_entered" from="DoorGreen/area2D_green_level1" to="DoorGreen" method="_on_area_2d_green_level_1_body_entered"]
+[connection signal="body_exited" from="DoorGreen/area2D_green_level1" to="DoorGreen" method="_on_area_2d_green_level_1_body_exited"]

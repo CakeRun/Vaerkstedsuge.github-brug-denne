@@ -4247,10 +4247,10 @@ script = ExtResource("1_d4dxq")
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
 [node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 231.0
-offset_bottom = 61.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 239.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(1, 0.819588, 0.472653, 1)
 theme_override_colors/font_shadow_color = Color(0.551681, 0.132109, 0.169618, 1)
 theme_override_constants/shadow_offset_x = 6

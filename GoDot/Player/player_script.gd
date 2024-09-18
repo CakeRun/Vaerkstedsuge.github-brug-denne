@@ -14,6 +14,8 @@ var attack_ip = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var health_bar = $HealthBar
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -58,6 +60,9 @@ func _physics_process(delta):
 func player():
 	pass
 
+func _ready():
+	health_bar.value = health 
+
 #determines if enemy is within attack range
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
@@ -72,22 +77,28 @@ func enemy_attack():
 		if GameManager.enemy_type == "Wormy":
 			health = health - 1
 			print("health - 1")
+			health_bar.value = health
 		elif GameManager.enemy_type == "Bear":
 			health = health - 2
 			print("health - 2")
+			health_bar.value = health
 		elif GameManager.enemy_type == "Crocodile":
 			health = health - 3
 			print("health - 3")
+			health_bar.value = health
 	if health <= 0:
 		GameManager.enemy_attack = false
 		get_tree().reload_current_scene()
 
 func attack():
 	if Input.is_action_just_pressed("attack"):
-		GameManager.player_current_attack = true  
+		GameManager.player_current_attack = true 
 		attack_ip = true 
-		$AnimatedSprite2D.play("hit")
-		await get_tree().create_timer(1.2).timeout
+		await get_tree().create_timer(0.02).timeout
 		GameManager.player_current_attack = false
+		$AnimatedSprite2D.play("hit") 
+		await get_tree().create_timer(1.2).timeout
 		attack_ip = false 
+		
+		
 

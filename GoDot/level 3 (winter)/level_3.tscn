@@ -1806,7 +1806,7 @@ theme_override_colors/font_color = Color(0.832186, 0.928297, 1, 1)
 theme_override_colors/font_shadow_color = Color(3.08037e-06, 0.465051, 0.68834, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("16_j382v")
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 45
 text = "0 / 10"
 metadata/_edit_use_anchors_ = true
 
@@ -1904,6 +1904,9 @@ limit_left = -150
 limit_top = -300
 limit_right = 1000
 limit_bottom = 200
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
 
 [node name="frugt" type="Node" parent="."]
 

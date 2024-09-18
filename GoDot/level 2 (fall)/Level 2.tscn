@@ -4259,7 +4259,7 @@ theme_override_colors/font_color = Color(1, 0.819588, 0.472653, 1)
 theme_override_colors/font_shadow_color = Color(0.551681, 0.132109, 0.169618, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("2_noxbo")
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 45
 text = "0 / 10"
 metadata/_edit_use_anchors_ = true
 
@@ -4362,6 +4362,9 @@ limit_left = -200
 limit_top = -125
 limit_right = 1000
 limit_bottom = 208
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
 
 [node name="Node" type="Node" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxl2i3jmcxsjo"]
+[gd_scene load_steps=10 format=3 uid="uid://bxl2i3jmcxsjo"]
 
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="1_8tar1"]
 [ext_resource type="PackedScene" uid="uid://b7jhvuktgw15c" path="res://doors/door_blue.tscn" id="2_cbrhr"]
@@ -61,6 +61,9 @@ texture = ExtResource("1_8tar1")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_80res")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b5gm"]
+size = Vector2(10.478, 15.1466)
+
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -88,6 +91,14 @@ scale = Vector2(1.5, 1.5)
 [node name="DoorGreen" parent="." instance=ExtResource("4_n2bf1")]
 position = Vector2(-111, -19)
 scale = Vector2(1.5, 1.5)
+
+[node name="Area2D_green_main" type="Area2D" parent="DoorGreen"]
+collision_mask = 8
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DoorGreen/Area2D_green_main"]
+position = Vector2(-1.52588e-05, 0)
+scale = Vector2(1.39976, 1.40846)
+shape = SubResource("RectangleShape2D_8b5gm")
 
 [node name="DoorOrange" parent="." instance=ExtResource("5_avbri")]
 position = Vector2(9.53674e-07, -19)
@@ -122,3 +133,6 @@ text = "Level 3"
 
 [node name="Player" parent="." instance=ExtResource("3_nkcri")]
 position = Vector2(-84, -2)
+
+[connection signal="body_entered" from="DoorGreen/Area2D_green_main" to="DoorGreen" method="_on_area_2d_green_main_body_entered"]
+[connection signal="body_exited" from="DoorGreen/Area2D_green_main" to="DoorGreen" method="_on_area_2d_green_main_body_exited"]

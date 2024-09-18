@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dpayos8v2k0p4"]
 
+[ext_resource type="Script" path="res://doors/doors_script.gd" id="1_cijxy"]
 [ext_resource type="Texture2D" uid="uid://b0felay6umhb6" path="res://Graphics/door_portal.png" id="1_s1ojq"]
-[ext_resource type="Script" path="res://doors/doors_script.gd" id="1_y3j6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkk32"]
 atlas = ExtResource("1_s1ojq")
@@ -33,7 +33,7 @@ animations = [{
 }]
 
 [node name="DoorGreen" type="Node2D"]
-script = ExtResource("1_y3j6n")
+script = ExtResource("1_cijxy")
 
 [node name="green_door_animated_sprite_2d" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u6h0t")

@@ -1,26 +1,27 @@
 extends Node
 
 #signal scene_change(scene_name)
-var entered = false
-@export var scene_name = "world"
+var entered_main_door = false
+var entered_green_door = false
 
 func _process(delta):
-	if entered == true:
-		#var scene_name = "level_1"
-		if Input.is_action_just_pressed("ui_accept"):
-			print("scene skift!")
-			emit_signal("scene_change", scene_name)
+	if entered_main_door == true and Input.is_action_just_pressed("enter"):
+		print("entered - now going to level 1 (green)")
+		get_tree().change_scene_to_file("res://Level 1 (green)/Level 1.tscn")
+	
+	if entered_green_door == true and Input.is_action_just_pressed("enter"):
+		print("entered - now going to main")
+		get_tree().change_scene_to_file("res://main scene (start)/main.tscn")
 
 ##tjekke om player er på potalen
-
 #green door - main
-func _on_area_2d_green_main_body_entered(body:PhysicsBody2D):
-	entered = true
-func _on_area_2d_green_main_body_exited(body:PhysicsBody2D):
-	entered = false
+func _on_area_2d_green_main_body_entered(body):
+	entered_main_door = true
+func _on_area_2d_green_main_body_exited(body):
+	entered_main_door = false
 
 #green door - level 1
-func _on_area_2d_green_level_1_body_entered(body:PhysicsBody2D):
-	entered = true
-func _on_area_2d_green_level_1_body_exited(body:PhysicsBody2D):
-	entered = false
+func _on_area_2d_green_level_1_body_entered(body):
+	entered_green_door = true
+func _on_area_2d_green_level_1_body_exited(body):
+	entered_green_door = false

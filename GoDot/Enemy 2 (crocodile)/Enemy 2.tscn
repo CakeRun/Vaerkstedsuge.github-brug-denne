@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b868hhucom5e8"]
+[gd_scene load_steps=33 format=3 uid="uid://b868hhucom5e8"]
 
 [ext_resource type="Texture2D" uid="uid://bobg5bx2u0j7k" path="res://Graphics/Crocodile/Crawl_&_Blink_(32 x 32).png" id="1_aemro"]
 [ext_resource type="Script" path="res://Enemy 2 (crocodile)/Crocoscript.gd" id="1_cfj7q"]
@@ -142,7 +142,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -197,12 +197,15 @@ size = Vector2(26, 14)
 [sub_resource type="CircleShape2D" id="CircleShape2D_m2k72"]
 radius = 59.0085
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0ej8"]
+size = Vector2(27, 19)
+
 [node name="Crocodile" type="CharacterBody2D"]
 script = ExtResource("1_cfj7q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c38ph")
-animation = &"walkChase"
+animation = &"Walk"
 autoplay = "Walk"
 offset = Vector2(-2, 0)
 flip_h = true
@@ -230,5 +233,14 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_m2k72")
 
+[node name="Croco-Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Croco-Hitbox"]
+position = Vector2(4.5, 0.5)
+shape = SubResource("RectangleShape2D_h0ej8")
+debug_color = Color(0.746082, 0.413969, 0.551118, 0.42)
+
 [connection signal="body_entered" from="detection" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Croco-Hitbox" to="." method="_on_croco_hitbox_body_entered"]
+[connection signal="body_exited" from="Croco-Hitbox" to="." method="_on_croco_hitbox_body_exited"]

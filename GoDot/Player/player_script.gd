@@ -72,6 +72,9 @@ func enemy_attack():
 		if GameManager.enemy_type == "Wormy":
 			health = health - 1
 			print("health - 1")
+		elif GameManager.enemy_type == "Crocodile":
+			health = health - 2
+			print("health - 1")
 	if health <= 0:
 		player_alive = false
 		health = 0 

@@ -6,12 +6,17 @@ var direction = 1
 var chase = false
 var player = null
 
+var health = 2
+var player_inattack_zone = false
+var enemy_attack_cooldown = true
 
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_left = $RayCastLeft
 @onready var edge_right = $edgeRight
 @onready var edge_left = $edgeLeft
 @onready var animated_sprite = $AnimatedSprite2D
+
+@onready var game_manager = %GameManager
 
 
 func _process(delta):
@@ -31,9 +36,6 @@ func _process(delta):
 		position.x += direction * speed_norm * delta 
 
 
-
-
-
 func _on_area_2d_body_entered(body):
 	chase = true
 	player = body
@@ -43,3 +45,32 @@ func _on_area_2d_body_exited(body):
 	chase = false
 	player = null
 
+func _on_croco_hitbox_body_entered(body):
+	if body.has_method("player"):
+		player_inattack_zone = true
+
+func _on_croco_hitbox_body_exited(body):
+	if body.has_method("player"):
+		player_inattack_zone = false
+
+func enemy_attack():
+	if player_inattack_zone and enemy_attack_cooldown == true:
+		GameManager.enemy_type = "Crocodile" 
+		GameManager.enemy_attack = true 
+		animated_sprite.play("chomp")
+		enemy_attack_cooldown = false 
+		await get_tree().create_timer(0.02).timeout #til at sikre, at vi dør ikke konstant
+		GameManager.enemy_attack = false
+		await get_tree().create_timer(1).timeout
+		enemy_attack_cooldown = true
+	elif player_inattack_zone == false:
+		animated_sprite.play("Walk")
+
+func deal_with_damage():
+	if player_inattack_zone and GameManager.player_current_attack == true:
+		health = health - 1
+		await get_tree().create_timer(0.5).timeout #her dør den ikke med det samme
+		print("enemy health - 1")
+		if health <= 0: 
+			game_manager.add_extra_point()
+			self.queue_free()

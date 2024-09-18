@@ -174,15 +174,15 @@ height = 30.6596
 radius = 28.1135
 height = 121.171
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mnq5j"]
-radius = 3.99668
-height = 13.256
+[sub_resource type="CircleShape2D" id="CircleShape2D_kr71d"]
+radius = 9.43619
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ffyq7"]
 radius = 15.773
 
 [node name="Enemy3Scene" type="CharacterBody2D"]
-collision_mask = 8
+collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_73lgq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -192,8 +192,8 @@ offset = Vector2(0, -16)
 
 [node name="wakeup_area" type="Area2D" parent="."]
 scale = Vector2(0.76, 0.68)
-collision_layer = 4
-collision_mask = 12
+collision_layer = 2
+collision_mask = 8
 
 [node name="wakeup_area_collisionshape" type="CollisionShape2D" parent="wakeup_area"]
 position = Vector2(1, -29)
@@ -204,8 +204,8 @@ shape = SubResource("CapsuleShape2D_6uulg")
 [node name="detection_area" type="Area2D" parent="."]
 position = Vector2(0, -10)
 scale = Vector2(2, 0.58052)
-collision_layer = 4
-collision_mask = 12
+collision_layer = 2
+collision_mask = 8
 
 [node name="detection_area_collisionshape" type="CollisionShape2D" parent="detection_area"]
 position = Vector2(2.11758e-22, -13.7185)
@@ -216,14 +216,13 @@ shape = SubResource("CapsuleShape2D_cqsmd")
 [node name="attack_area" type="Area2D" parent="."]
 position = Vector2(0, 4)
 scale = Vector2(3.77189, 3.25622)
-collision_layer = 4
-collision_mask = 12
+collision_layer = 2
+collision_mask = 8
 
 [node name="attack_area_collisionshape" type="CollisionShape2D" parent="attack_area"]
-position = Vector2(0.265119, -5.22078)
-rotation = 1.5708
+position = Vector2(-0.530238, -5.52788)
 scale = Vector2(0.922078, 1)
-shape = SubResource("CapsuleShape2D_mnq5j")
+shape = SubResource("CircleShape2D_kr71d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.19209e-07, -7)

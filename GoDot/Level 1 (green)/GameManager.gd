@@ -9,7 +9,7 @@ var totalscore = 0
 
 func add_point():
 	score += 1
-	score_label.text = "Score: " + str(score) + " / 10"
+	score_label.text = str(score) + " / 10"
 	print("you collected one thing")
 
 func add_extra_point():
@@ -19,7 +19,7 @@ func add_extra_point():
 		addscore += 2
 	elif GameManager.enemy_type == "Crocodile":
 		addscore += 3
-	score_label.text = "Score: " + str(score) + " / 10" + " + " + str(addscore)
+	#score_label.text = "Score: " + str(score) + " / 10" + " + " + str(addscore)
 
 func _process(delta): #TOTAL POINTS
 	totalscore = score + addscore

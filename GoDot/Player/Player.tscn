@@ -129,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pwggg")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 7.0
 }, {

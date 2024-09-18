@@ -170,14 +170,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uulg"]
-height = 62.7871
+height = 39.6707
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cqsmd"]
-radius = 43.31
-height = 298.809
+radius = 28.1135
+height = 121.171
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kr71d"]
-radius = 26.5
+radius = 9.43619
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k07jr"]
 size = Vector2(33, 20)
@@ -220,7 +220,7 @@ collision_layer = 2
 collision_mask = 8
 
 [node name="attack_area_collisionshape" type="CollisionShape2D" parent="attack_area"]
-position = Vector2(-0.5, -10)
+position = Vector2(-0.324675, -6.85559)
 shape = SubResource("CircleShape2D_kr71d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

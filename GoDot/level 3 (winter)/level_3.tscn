@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cdphajqhv2bnu"]
+[gd_scene load_steps=29 format=3 uid="uid://cdphajqhv2bnu"]
 
 [ext_resource type="PackedScene" uid="uid://64nw0m5jl78e" path="res://killzone.tscn" id="1_24mja"]
 [ext_resource type="Texture2D" uid="uid://c6jnhop5rhgwn" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="2_anwp5"]
@@ -1747,6 +1747,9 @@ sources/2 = SubResource("TileSetAtlasSource_mwtim")
 sources/3 = SubResource("TileSetAtlasSource_u5uty")
 sources/4 = SubResource("TileSetAtlasSource_bu2bu")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yby3"]
+size = Vector2(10.478, 15.1466)
+
 [sub_resource type="Animation" id="Animation_kcwhv"]
 resource_name = "PlatformSummer1"
 length = 1.8
@@ -1871,6 +1874,14 @@ position = Vector2(794, -201)
 [node name="DoorBlue" parent="." instance=ExtResource("8_vfpda")]
 position = Vector2(534, 145)
 scale = Vector2(1.2, 1.2)
+
+[node name="area2D_blue_level3" type="Area2D" parent="DoorBlue"]
+collision_mask = 8
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DoorBlue/area2D_blue_level3"]
+position = Vector2(-1.52588e-05, 0)
+scale = Vector2(1.39976, 1.40846)
+shape = SubResource("RectangleShape2D_6yby3")
 
 [node name="AnimatableBody2D" parent="." instance=ExtResource("7_2rn3p")]
 position = Vector2(128, 101)

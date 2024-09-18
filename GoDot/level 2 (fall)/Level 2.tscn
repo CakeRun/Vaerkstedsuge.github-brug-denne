@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://qhx4cxt4kjmw"]
+[gd_scene load_steps=39 format=3 uid="uid://qhx4cxt4kjmw"]
 
 [ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="1_d4dxq"]
 [ext_resource type="Texture2D" uid="uid://dregkhwcexytk" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_wqq13"]
@@ -4145,6 +4145,9 @@ sources/4 = SubResource("TileSetAtlasSource_cxj1n")
 sources/5 = SubResource("TileSetAtlasSource_a8h8r")
 sources/6 = SubResource("TileSetAtlasSource_5fpcn")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lst0f"]
+size = Vector2(10.478, 15.1466)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oj05q"]
 
 [sub_resource type="Animation" id="Animation_nawke"]
@@ -4286,6 +4289,14 @@ cake cream!"
 [node name="DoorOrange" parent="." instance=ExtResource("15_xerho")]
 position = Vector2(316, 145)
 scale = Vector2(1.2, 1.2)
+
+[node name="area2D_orange_level2" type="Area2D" parent="DoorOrange"]
+collision_mask = 8
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DoorOrange/area2D_orange_level2"]
+position = Vector2(-1.52588e-05, 0)
+scale = Vector2(1.39976, 1.40846)
+shape = SubResource("RectangleShape2D_lst0f")
 
 [node name="platform" type="Node" parent="."]
 

@@ -1,8 +1,7 @@
 extends Node
 
 @onready var teleport_audio_main = $"../teleport_audio"
-@onready var teleport_audio_green = $"../teleport_audio"
-
+@onready var teleport_audio_green = $"../teleport_audio_green"
 #signal scene_change(scene_name)
 var entered_main_door = false
 var entered_green_door = false

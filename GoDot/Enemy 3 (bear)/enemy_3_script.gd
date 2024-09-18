@@ -2,33 +2,26 @@ extends CharacterBody2D
 
 @onready var bear = $AnimatedSprite2D
 @onready var player = %Player
-@onready var game_manager = %GameManager
-
 
 var speed = 200
-var bear_status = "sleeping" #sætter bear til at sove til start
-var health = 2
-var attack_cooldown = false
-
-func enemy():
-	pass 
+var bear_status = "sleeping"
 
 func _physics_process(delta):
 	#collision boy yderst 
-	deal_with_damage()
+	print (bear_status)
 	
-	if bear_status == "sleeping": 
+	if bear_status == "sleeping":
 		bear.play("sleeping")
 		
 	elif bear_status == "wakeup":
-		bear_status = ""
+		bear_status=""
 		bear.play("waking_up")
 		await get_tree().create_timer(1).timeout
 		bear.play("idle")
 
 
 	elif bear_status == "fall_asleep":
-		bear_status = ""
+		bear_status=""
 		bear.play("falling_asleep")
 		await get_tree().create_timer(1).timeout
 		bear.play("sleeping")
@@ -58,14 +51,8 @@ func _physics_process(delta):
 	elif bear_status == "attack":
 		var t = randf_range(0,1)
 		if t<=0.05 : #5% change for at der angribes
-			GameManager.enemy_type = "Bear"
-			GameManager.enemy_attack = true 
 			bear.play("attack")
-			attack_cooldown = true
-			await get_tree().create_timer(0.02).timeout
-			GameManager.enemy_attack = false
-			await get_tree().create_timer(1.2).timeout
-			attack_cooldown = false
+			await get_tree().create_timer(1).timeout
 
 func _on_detection_area_body_entered(player):
 	if bear_status=="":
@@ -83,18 +70,7 @@ func _on_wakeup_area_body_exited(player):
 	bear_status = "fall_asleep"
 
 func _on_attack_area_body_entered(player):
-	if attack_cooldown == false:
-		bear_status = "attack"
+	bear_status = "attack"
 
 func _on_attack_area_body_exited(player):
 	bear_status = "chase"
-
-func deal_with_damage():
-	if GameManager.player_current_attack == true:
-		health = health - 1
-		await get_tree().create_timer(0.5).timeout 
-		print("enemy health - 1")
-		if health <= 0:
-			GameManager.enemy_type = "Bear"
-			game_manager.add_extra_point()
-			self.queue_free()

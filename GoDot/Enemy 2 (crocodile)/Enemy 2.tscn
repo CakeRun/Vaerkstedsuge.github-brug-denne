@@ -202,6 +202,7 @@ size = Vector2(27, 19)
 
 [node name="Crocodile" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_cfj7q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -235,8 +236,6 @@ collision_mask = 8
 shape = SubResource("CircleShape2D_m2k72")
 
 [node name="Croco-Hitbox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Croco-Hitbox"]
 position = Vector2(4.5, 0.5)

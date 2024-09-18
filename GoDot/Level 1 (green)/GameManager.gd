@@ -3,14 +3,13 @@ extends Node
 var score = 0 
 var addscore = 0
 
-var totalscore = 0 
+static var totalscore = 0 
 
 @onready var score_label = $CanvasLayer/ScoreLabel
 
 func add_point():
 	score += 1
 	score_label.text = str(score) + " / 10"
-	print("you collected one thing")
 
 func add_extra_point():
 	if GameManager.enemy_type == "Wormy":

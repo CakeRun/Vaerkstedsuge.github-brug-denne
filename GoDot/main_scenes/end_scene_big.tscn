@@ -5857,24 +5857,25 @@ limit_bottom = 189
 limit_smoothed = true
 
 [node name="Label_won" type="Label" parent="."]
-offset_left = -88.0
+offset_left = -86.0
 offset_top = -143.0
-offset_right = 144.0
-offset_bottom = -111.0
-scale = Vector2(1.0415, 1.0415)
+offset_right = 58.0
+offset_bottom = -117.0
+scale = Vector2(1.19871, 1.19871)
 theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_b2dqy")
 theme_override_font_sizes/font_size = 24
-text = "YOU WON!!"
+text = "YOU WON
+"
 
 [node name="Label_text" type="Label" parent="."]
-offset_left = -46.0
-offset_top = -115.0
-offset_right = 198.0
-offset_bottom = -92.0
-scale = Vector2(0.376787, 0.406986)
+offset_left = -65.0
+offset_top = -112.0
+offset_right = 191.0
+offset_bottom = -89.0
+scale = Vector2(0.50507, 0.545551)
 theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_xl2vt")
 theme_override_font_sizes/font_size = 0
-text = "Here is your cake"
+text = "Here is your cake!"
 horizontal_alignment = 1

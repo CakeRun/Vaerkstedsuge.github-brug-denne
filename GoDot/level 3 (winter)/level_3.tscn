@@ -1829,11 +1829,11 @@ layer_2/tile_data = PackedInt32Array(786458, 196609, 1, 786459, 262145, 1, 78646
 
 [node name="Label_level" type="Label" parent="TileMap"]
 offset_left = 548.0
-offset_top = 131.0
+offset_top = 134.0
 offset_right = 750.0
-offset_bottom = 185.0
-scale = Vector2(0.649988, 0.649988)
-theme_override_colors/font_color = Color(0.00392157, 0.258824, 0.45098, 0.286275)
+offset_bottom = 188.0
+scale = Vector2(0.731312, 0.731312)
+theme_override_colors/font_color = Color(0.00392157, 0.258824, 0.45098, 0.4)
 theme_override_fonts/font = ExtResource("9_gw1q0")
 theme_override_font_sizes/font_size = 8
 text = "Collect all the

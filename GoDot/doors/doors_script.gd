@@ -8,6 +8,7 @@ extends Node
 
 static var levels_completed = 0
 
+
 #LEVEL 1
 static var entered_green_main = false
 static var entered_green_level1 = false
@@ -22,16 +23,14 @@ static var entered_blue_level3 = false
 
 
 func _process(delta):
-	#print(levels_completed)
-	
 	#### LEVEL 1 ####
 	if entered_green_main == true and Input.is_action_just_pressed("enter"):
 		print(levels_completed)
 		
-		if levels_completed == 0:
+		if levels_completed == 0 and not teleport_audio_main.playing:
 			print("entering level 1")
 			teleport_audio_main.play()
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(0.4).timeout
 			
 			if get_tree() == null:
 				print("scene change")
@@ -42,10 +41,10 @@ func _process(delta):
 	if entered_orange_main == true and Input.is_action_just_pressed("enter"):
 		print(levels_completed)
 		
-		if levels_completed == 1:
+		if levels_completed == 1 and not teleport_audio_main.playing:
 			print("entering level 2")
 			teleport_audio_main.play()
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(0.4).timeout
 			
 			if get_tree() == null:
 				print("scene change")
@@ -57,10 +56,10 @@ func _process(delta):
 	if entered_blue_main == true and Input.is_action_just_pressed("enter") and levels_completed == 2:
 		print(levels_completed)
 		
-		if levels_completed == 2:
+		if levels_completed == 2 and not teleport_audio_main.playing:
 			print("entering level 3")
 			teleport_audio_main.play()
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(0.4).timeout
 			
 			if get_tree() == null:
 				print("scene change")
@@ -69,12 +68,12 @@ func _process(delta):
 	
 	
 	#### Leaving a level ####
-	if GameManager.current_level_score >= 0 and Input.is_action_just_pressed("enter"):
+	if GameManager.current_level_score >= 1 and Input.is_action_just_pressed("enter"):
 		#green
-		if entered_green_level1 == true:
+		if entered_green_level1 == true and not teleport_audio_green.playing:
 			print("going to main")
 			teleport_audio_green.play()
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(0.4).timeout
 		
 			if get_tree() == null:
 				print("get_tree() is null!")
@@ -86,10 +85,10 @@ func _process(delta):
 				print(levels_completed)
 
 		#orange
-		if entered_orange_level2 == true:
+		if entered_orange_level2 == true and not teleport_audio_orange.playing:
 			print("going to main")
 			teleport_audio_orange.play()
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(0.4).timeout
 			get_tree().change_scene_to_file("res://main_scenes/main_scene_2.tscn")
 			
 			if levels_completed == 1: #sikrer at det kun updaterer det én gang
@@ -97,19 +96,20 @@ func _process(delta):
 				print(levels_completed)
 		
 		#blue
-		if entered_blue_level3 == true:
+		if entered_blue_level3 == true and not teleport_audio_blue.playing:
 			print("going to main end")
 			teleport_audio_blue.play()
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(0.4).timeout
 			
 			if get_tree() == null:
 				print("get_tree() is null!")
-			elif GameManager.total_score >= 1:
-				get_tree().change_scene_to_file("res://main_scenes/end_scene_small.tscn")
-			elif GameManager.total_score >= 2:
-				get_tree().change_scene_to_file("res://main_scenes/end_scene_medium.tscn")
-			elif GameManager.total_score >= 3:
-				get_tree().change_scene_to_file("res://main_scenes/end_scene_big.tscn")
+
+			#elif total_score >= 1: #IKKE KORREKT ANGIVET (totalscore)
+				#get_tree().change_scene_to_file("res://main_scenes/end_scene_small.tscn")
+			#elif total_score >= 2: #IKKE KORREKT ANGIVET (totalscore) 
+				#get_tree().change_scene_to_file("res://main_scenes/end_scene_medium.tscn")
+			#elif total_score >= 3: #IKKE KORREKT ANGIVET (totalscore)
+				#get_tree().change_scene_to_file("res://main_scenes/end_scene_big.tscn")
 			
 			if levels_completed == 2: #sikrer at det kun updaterer det én gang
 				levels_completed = 3

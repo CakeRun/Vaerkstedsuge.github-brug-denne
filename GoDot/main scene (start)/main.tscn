@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxl2i3jmcxsjo"]
+[gd_scene load_steps=11 format=3 uid="uid://bxl2i3jmcxsjo"]
 
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="1_8tar1"]
 [ext_resource type="PackedScene" uid="uid://b7jhvuktgw15c" path="res://doors/door_blue.tscn" id="2_cbrhr"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dpayos8v2k0p4" path="res://doors/door_green.tscn" id="4_n2bf1"]
 [ext_resource type="PackedScene" uid="uid://clorv0bljo0xc" path="res://doors/door_orange.tscn" id="5_avbri"]
 [ext_resource type="FontFile" uid="uid://lobebsc6nhjr" path="res://Graphics/Font/PixelOperator8.ttf" id="6_6cn8s"]
+[ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="7_7jpvn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
 texture = ExtResource("1_8tar1")
@@ -133,6 +134,9 @@ text = "Level 3"
 
 [node name="Player" parent="." instance=ExtResource("3_nkcri")]
 position = Vector2(-84, -2)
+
+[node name="teleport_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_7jpvn")
 
 [connection signal="body_entered" from="DoorGreen/Area2D_green_main" to="DoorGreen" method="_on_area_2d_green_main_body_entered"]
 [connection signal="body_exited" from="DoorGreen/Area2D_green_main" to="DoorGreen" method="_on_area_2d_green_main_body_exited"]

@@ -21,6 +21,6 @@ func add_extra_point():
 		addscore += 3
 	score_label.text = "Score: " + str(score) + " / 10" + " + " + str(addscore)
 
-func total_points(delta):
+func _process(delta): #TOTAL POINTS
 	totalscore = score + addscore
 	GameManager.current_level_score = totalscore

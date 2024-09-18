@@ -3,6 +3,8 @@ extends Node
 var score = 0 
 var addscore = 0
 
+var totalscore = 0 
+
 @onready var score_label = $CanvasLayer/ScoreLabel
 
 func add_point():
@@ -17,3 +19,7 @@ func add_extra_point():
 	elif GameManager.enemy_type == "Bear":
 		addscore += 3
 	score_label.text = "Score: " + str(score) + " / 10" + " + " + str(addscore)
+
+func total_points():
+	totalscore = score + addscore
+	GameManager.current_level_score = totalscore

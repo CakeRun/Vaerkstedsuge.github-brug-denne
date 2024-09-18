@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ba5x0nl33l275" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="6_xgdej"]
 [ext_resource type="Texture2D" uid="uid://t3xmeajl4dy8" path="res://Graphics/BackgroundFall.png" id="7_yjnww"]
 [ext_resource type="PackedScene" uid="uid://chseesgkhofm3" path="res://level 2 (fall)/animatable_body_2d.tscn" id="8_6ckl1"]
-[ext_resource type="PackedScene" uid="uid://64nw0m5jl78e" path="res://killzone.tscn" id="9_nuwi6"]
+[ext_resource type="PackedScene" path="res://killzone.tscn" id="9_nuwi6"]
 [ext_resource type="PackedScene" uid="uid://cu5d3ucmmw8bx" path="res://platform_fall.tscn" id="10_gdg2f"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="11_hwchh"]
 [ext_resource type="PackedScene" uid="uid://kkhss8y6c5h8" path="res://Ingrediens/level 2 - cream/sugar_scene.tscn" id="12_vq8em"]
@@ -4272,7 +4272,7 @@ position = Vector2(-55, -44)
 position = Vector2(109, 68)
 
 [node name="killzone" parent="." instance=ExtResource("9_nuwi6")]
-collision_mask = 1
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(295, 212)
@@ -4297,7 +4297,7 @@ libraries = {
 autoplay = "platformFall4"
 
 [node name="Player" parent="." instance=ExtResource("11_hwchh")]
-position = Vector2(351, 161)
+position = Vector2(325, 157)
 scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

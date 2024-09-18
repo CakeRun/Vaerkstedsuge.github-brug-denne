@@ -1849,7 +1849,7 @@ libraries = {
 autoplay = "PlatformSummer1"
 
 [node name="Player" parent="." instance=ExtResource("9_gyxn4")]
-position = Vector2(541, 157)
+position = Vector2(536, 151)
 scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

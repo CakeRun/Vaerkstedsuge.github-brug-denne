@@ -5887,21 +5887,6 @@ position = Vector2(-1.52588e-05, 0)
 scale = Vector2(1.39976, 1.40846)
 shape = SubResource("RectangleShape2D_8j2d3")
 
-[node name="Label_level1" type="Label" parent="."]
-offset_left = -114.0
-offset_top = -48.0
-offset_right = -14.0
-offset_bottom = -25.0
-scale = Vector2(0.376787, 0.406986)
-theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
-theme_override_fonts/font = ExtResource("7_0dyc1")
-theme_override_font_sizes/font_size = 0
-text = "Level 1"
-metadata/_edit_use_anchors_ = true
-
-[node name="Player" parent="." instance=ExtResource("8_h6mrc")]
-position = Vector2(-94, -13)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-10, 5)
 offset = Vector2(10, -70)
@@ -5915,7 +5900,34 @@ limit_smoothed = true
 [node name="teleport_audio_main" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_fs6gl")
 
-[node name="Label_level2" type="Label" parent="."]
+[node name="labels" type="Node" parent="."]
+
+[node name="Label_unlocked" type="Label" parent="labels"]
+offset_left = -59.0
+offset_top = -152.0
+offset_right = 197.0
+offset_bottom = -129.0
+scale = Vector2(0.459027, 0.495817)
+theme_override_colors/font_color = Color(0.903723, 0.666637, 0.588805, 1)
+theme_override_fonts/font = ExtResource("7_0dyc1")
+theme_override_font_sizes/font_size = 0
+text = "*level 2 unlocked*"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label_level3" type="Label" parent="labels"]
+offset_left = 78.0
+offset_top = -48.0
+offset_right = 178.0
+offset_bottom = -25.0
+scale = Vector2(0.376787, 0.406986)
+theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
+theme_override_fonts/font = ExtResource("7_0dyc1")
+theme_override_font_sizes/font_size = 0
+text = "Level 3
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label_level2" type="Label" parent="labels"]
 offset_left = -18.0
 offset_top = -48.0
 offset_right = 82.0
@@ -5929,18 +5941,20 @@ text = "Level 2
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label_level3" type="Label" parent="."]
-offset_left = 78.0
+[node name="Label_level1" type="Label" parent="labels"]
+offset_left = -114.0
 offset_top = -48.0
-offset_right = 178.0
+offset_right = -14.0
 offset_bottom = -25.0
 scale = Vector2(0.376787, 0.406986)
 theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
 theme_override_fonts/font = ExtResource("7_0dyc1")
 theme_override_font_sizes/font_size = 0
-text = "Level 3
-"
+text = "Level 1"
 metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("8_h6mrc")]
+position = Vector2(-94, -13)
 
 [connection signal="body_entered" from="DoorBlue/area2D_blue_main" to="DoorBlue" method="_on_area_2d_blue_main_body_entered"]
 [connection signal="body_exited" from="DoorBlue/area2D_blue_main" to="DoorBlue" method="_on_area_2d_blue_main_body_exited"]

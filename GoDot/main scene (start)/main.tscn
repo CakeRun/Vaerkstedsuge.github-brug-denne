@@ -86,11 +86,11 @@ layer_1/name = "Foreground"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="DoorBlue" parent="." instance=ExtResource("2_cbrhr")]
-position = Vector2(117, -19)
+position = Vector2(96, -19)
 scale = Vector2(1.5, 1.5)
 
 [node name="DoorGreen" parent="." instance=ExtResource("4_n2bf1")]
-position = Vector2(-111, -19)
+position = Vector2(-96, -19)
 scale = Vector2(1.5, 1.5)
 
 [node name="Area2D_green_main" type="Area2D" parent="DoorGreen"]
@@ -105,35 +105,38 @@ shape = SubResource("RectangleShape2D_8b5gm")
 position = Vector2(9.53674e-07, -19)
 scale = Vector2(1.5, 1.5)
 
-[node name="Label" type="Label" parent="."]
-offset_left = -127.0
+[node name="Label_level1" type="Label" parent="."]
+offset_left = -113.0
 offset_top = -48.0
-offset_right = -39.0
+offset_right = -25.0
 offset_bottom = -25.0
 scale = Vector2(0.376787, 0.406986)
+theme_override_colors/font_color = Color(0.92056, 0.779182, 0.721443, 1)
 theme_override_fonts/font = ExtResource("6_6cn8s")
 text = "Level 1"
 
-[node name="Label2" type="Label" parent="."]
-offset_left = -16.0
-offset_top = -47.0
-offset_right = 72.0
-offset_bottom = -24.0
+[node name="Label_level2" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -48.0
+offset_right = 71.0
+offset_bottom = -25.0
 scale = Vector2(0.376787, 0.406986)
+theme_override_colors/font_color = Color(0.921569, 0.780392, 0.721569, 1)
 theme_override_fonts/font = ExtResource("6_6cn8s")
 text = "Level 2"
 
-[node name="Label3" type="Label" parent="."]
-offset_left = 100.0
-offset_top = -47.0
-offset_right = 188.0
-offset_bottom = -24.0
+[node name="Label_level3" type="Label" parent="."]
+offset_left = 79.0
+offset_top = -48.0
+offset_right = 167.0
+offset_bottom = -25.0
 scale = Vector2(0.376787, 0.406986)
+theme_override_colors/font_color = Color(0.921569, 0.780392, 0.721569, 1)
 theme_override_fonts/font = ExtResource("6_6cn8s")
 text = "Level 3"
 
 [node name="Player" parent="." instance=ExtResource("3_nkcri")]
-position = Vector2(-84, -2)
+position = Vector2(-50, -1)
 
 [node name="teleport_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_7jpvn")

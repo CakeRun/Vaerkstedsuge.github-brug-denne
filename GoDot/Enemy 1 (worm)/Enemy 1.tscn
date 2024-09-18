@@ -39,8 +39,7 @@ size = Vector2(20, 10)
 size = Vector2(24, 12)
 
 [node name="Worm" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 9
+collision_mask = 8
 script = ExtResource("1_1u01h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -65,8 +64,8 @@ target_position = Vector2(16, 10)
 target_position = Vector2(-15, 10)
 
 [node name="worm_hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 9
+collision_layer = 4
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worm_hitbox"]
 position = Vector2(1, 1)

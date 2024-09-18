@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b7jhvuktgw15c" path="res://doors/door_blue.tscn" id="2_cbrhr"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="3_nkcri"]
 [ext_resource type="PackedScene" uid="uid://dpayos8v2k0p4" path="res://doors/door_green.tscn" id="4_n2bf1"]
-[ext_resource type="PackedScene" uid="uid://clorv0bljo0xc" path="res://doors/door_orange.tscn" id="5_avbri"]
+[ext_resource type="PackedScene" uid="uid://mvejfwqi4eh7" path="res://doors/door_orange.tscn" id="5_avbri"]
 [ext_resource type="FontFile" uid="uid://lobebsc6nhjr" path="res://Graphics/Font/PixelOperator8.ttf" id="6_6cn8s"]
 [ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="7_7jpvn"]
 

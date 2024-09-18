@@ -5942,6 +5942,8 @@ text = "Level 3
 "
 metadata/_edit_use_anchors_ = true
 
+[connection signal="body_entered" from="DoorBlue/area2D_blue_main" to="DoorBlue" method="_on_area_2d_blue_main_body_entered"]
+[connection signal="body_exited" from="DoorBlue/area2D_blue_main" to="DoorBlue" method="_on_area_2d_blue_main_body_exited"]
 [connection signal="body_entered" from="DoorOrange/area2D_orange_main" to="DoorOrange" method="_on_area_2d_orange_main_body_entered"]
 [connection signal="body_exited" from="DoorOrange/area2D_orange_main" to="DoorOrange" method="_on_area_2d_orange_main_body_exited"]
 [connection signal="body_entered" from="DoorGreen/area2D_green_main" to="DoorGreen" method="_on_area_2d_green_main_body_entered"]

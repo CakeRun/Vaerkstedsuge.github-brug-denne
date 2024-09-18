@@ -1953,3 +1953,6 @@ stream = ExtResource("14_q6w5h")
 
 [node name="teleport_audio_blue" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_q6w5h")
+
+[connection signal="body_entered" from="DoorBlue/area2D_blue_level3" to="DoorBlue" method="_on_area_2d_blue_level_3_body_entered"]
+[connection signal="body_exited" from="DoorBlue/area2D_blue_level3" to="DoorBlue" method="_on_area_2d_blue_level_3_body_exited"]

@@ -6,7 +6,7 @@ var direction = 1
 var chase = false
 var player = null
 
-var health = 2
+var health = 3
 var player_inattack_zone = false
 var enemy_attack_cooldown = true
 
@@ -17,6 +17,13 @@ var enemy_attack_cooldown = true
 @onready var animated_sprite = $AnimatedSprite2D
 
 @onready var game_manager = %GameManager
+
+func enemy():
+	pass
+
+func _physics_process(delta):
+	deal_with_damage()
+	enemy_attack()
 
 
 func _process(delta):
@@ -61,7 +68,7 @@ func enemy_attack():
 		enemy_attack_cooldown = false 
 		await get_tree().create_timer(0.02).timeout #til at sikre, at vi dør ikke konstant
 		GameManager.enemy_attack = false
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 		enemy_attack_cooldown = true
 	elif player_inattack_zone == false:
 		animated_sprite.play("Walk")

@@ -198,10 +198,10 @@ size = Vector2(26, 14)
 radius = 59.0085
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0ej8"]
-size = Vector2(27, 19)
+size = Vector2(36, 19)
 
 [node name="Crocodile" type="CharacterBody2D"]
-collision_layer = 2
+collision_mask = 8
 script = ExtResource("1_cfj7q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -228,18 +228,18 @@ target_position = Vector2(15, 12)
 target_position = Vector2(-15, 11)
 
 [node name="detection" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 8
+collision_layer = 4
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_m2k72")
 
 [node name="Croco-Hitbox" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 4
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Croco-Hitbox"]
-position = Vector2(4.5, 0.5)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_h0ej8")
 debug_color = Color(0.746082, 0.413969, 0.551118, 0.42)
 

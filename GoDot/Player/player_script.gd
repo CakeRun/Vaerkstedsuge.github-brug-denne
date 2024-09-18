@@ -84,10 +84,13 @@ func enemy_attack():
 
 func attack():
 	if Input.is_action_just_pressed("attack"):
-		GameManager.player_current_attack = true  
+		GameManager.player_current_attack = true 
 		attack_ip = true 
-		$AnimatedSprite2D.play("hit")
-		await get_tree().create_timer(1.2).timeout
+		await get_tree().create_timer(0.02).timeout
 		GameManager.player_current_attack = false
+		$AnimatedSprite2D.play("hit") 
+		await get_tree().create_timer(1.2).timeout
 		attack_ip = false 
+		
+		
 

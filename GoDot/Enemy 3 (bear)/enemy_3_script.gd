@@ -1,78 +1,78 @@
 extends CharacterBody2D
 
 @onready var bear = $AnimatedSprite2D
-@onready var player = $Player
+@onready var player = $"../CharacterBody2D" #muligvis ikke vores player
 
 var speed = 200
-var player_status = ""
-
-var is_body_entered = false
-var wakeup = false
-
-func _ready():
-	if player_status == "" and is_body_entered == false:
-		bear.play("sleeping")
+var bear_status = "sleeping"
 
 func _physics_process(delta):
 	#collision boy yderst 
-	if player_status == "wakeup" and is_body_entered == true:
-		wakeup = true 
+	print (bear_status)
 	
-		if wakeup == true:
-			bear.play("waking_up")
-			await get_tree().create_timer(1).timeout
-			bear.play("idle")
-			wakeup = false 
-	
-	elif player_status == "fall_asleep":
+	if bear_status == "sleeping":
+		bear.play("sleeping")
+		
+	elif bear_status == "wakeup":
+		bear_status=""
+		bear.play("waking_up")
+		await get_tree().create_timer(1).timeout
+		bear.play("idle")
+
+
+	elif bear_status == "fall_asleep":
+		bear_status=""
 		bear.play("falling_asleep")
 		await get_tree().create_timer(1).timeout
 		bear.play("sleeping")
+		bear_status="sleeping"
 		
-	
 	#collision shape imellem 
-	if player_status == "chase": #and position.x <= (max x koordinat for platform) and position.x >= (min koordinat for platform)	
-		position.x += (player.position.x - position.x)/speed
+	elif bear_status == "chase": #and position.x <= (max x koordinat for platform) and position.x >= (min koordinat for platform)	
+		#position.x += (player.position.x - position.x)/speed
+		
 		bear.play("walking")
 		
-		if (player.position.x - position.x) > 0:
-			bear.flip_h = true 
+		if player.position.x <= position.x:
+			position.x-= 1
 		else:
-			bear.flip_h = false 
+			position.x += 1
+		
+		var threshold = 0.5
+		if abs(player.position.x - position.x) > threshold:
+			if (player.position.x - position.x) > 0:
+				bear.flip_h = true 
+			elif (player.position.x - position.x) < 0:
+				bear.flip_h = false 
+		else:
+			bear.play("idle")
 	
-	elif player_status == "idle":
-		bear.play("idle")
-	
-	#collision shape midterst	
-	if player_status == "attack":
-		#animerer attack efter et tilfædigt stykke tid mellem 0 og 1 sekund
-		#var t = randf_range(0,1)
-		#get_tree().create_timer(t).timeoutbear.play("attack")
-		bear.play("attack")
 
-	
-#yderste collision - wake up detector
-func _on_wakeup_area_body_entered(player):
-	player_status = "wakeup"
-	is_body_entered = true
-	print("wakey")
+	elif bear_status == "attack":
+		
+		var t = randf_range(0,1)
+		
+		if t<=0.02 : #2% change for at der angribes
+			bear.play("attacking")
+			await get_tree().create_timer(1).timeout
 
-func _on_wakeup_area_body_exited(player):
-	player_status = "fall_asleep"
-	is_body_entered = false
-	print("sleepy")
-
-#midterste collision - chase detector
 func _on_detection_area_body_entered(player):
-	player_status = "chase"
+	if bear_status=="":
+		bear_status = "chase"
 
 func _on_detection_area_body_exited(player):
-	player_status = "idle"
+		bear_status = ""
+		bear.play("idle")
+	
+func _on_wakeup_area_body_entered(player):
+	if bear_status == "sleeping":
+		bear_status = "wakeup"
 
+func _on_wakeup_area_body_exited(player):
+	bear_status = "fall_asleep"
 
-#inderste collision - attack detector
 func _on_attack_area_body_entered(player):
-	player_status = "attack"
+	bear_status = "attack"
 
 func _on_attack_area_body_exited(player):
-	player_status = "chase"
+	bear_status = "chase"

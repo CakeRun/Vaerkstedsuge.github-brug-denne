@@ -129,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pwggg")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 7.0
 }, {
@@ -204,6 +204,8 @@ size = Vector2(18, 27)
 radius = 24.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 3
 script = ExtResource("1_5rfv5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -218,13 +220,9 @@ position = Vector2(-3, -13.5)
 shape = SubResource("RectangleShape2D_48hdi")
 
 [node name="PlayerHitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
 position = Vector2(-2, -14)
 shape = SubResource("CircleShape2D_qbvet")
-
-[node name="attack_cooldown" type="Timer" parent="."]
-wait_time = 0.5
-
-[node name="deal_damage_cooldown" type="Timer" parent="."]
-wait_time = 1.2

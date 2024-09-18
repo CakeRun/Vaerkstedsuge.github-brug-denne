@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1ko10aern5er"]
+[gd_scene load_steps=9 format=3 uid="uid://c1ko10aern5er"]
 
 [ext_resource type="Script" path="res://Enemy 1 (worm)/Wormy.gd" id="1_1u01h"]
 [ext_resource type="Texture2D" uid="uid://dh0riep0w2olt" path="res://Graphics/Worm/Movement_(32 x 32).png" id="1_tq4wl"]
@@ -35,7 +35,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqvyd"]
 size = Vector2(20, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rarh8"]
+size = Vector2(24, 12)
+
 [node name="Worm" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_1u01h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -43,7 +48,7 @@ sprite_frames = SubResource("SpriteFrames_uvlm8")
 autoplay = "default"
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="fjern?" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_hqvyd")
 
@@ -58,3 +63,14 @@ target_position = Vector2(16, 10)
 
 [node name="edgeLeft" type="RayCast2D" parent="."]
 target_position = Vector2(-15, 10)
+
+[node name="worm_hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="worm_hitbox"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rarh8")
+
+[connection signal="body_entered" from="worm_hitbox" to="." method="_on_worm_hitbox_body_entered"]
+[connection signal="body_exited" from="worm_hitbox" to="." method="_on_worm_hitbox_body_exited"]

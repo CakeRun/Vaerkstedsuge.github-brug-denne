@@ -72,5 +72,6 @@ func deal_with_damage():
 		await get_tree().create_timer(0.5).timeout #her dør den ikke med det samme
 		print("enemy health - 1")
 		if health <= 0: 
+			GameManager.enemy_type = "Crocodile"
 			game_manager.add_extra_point()
 			self.queue_free()

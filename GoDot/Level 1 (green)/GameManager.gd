@@ -10,5 +10,10 @@ func add_point():
 	score_label.text = "Score: " + str(score) + " / 10"
 
 func add_extra_point():
-	addscore += 1
+	if GameManager.enemy_type == "Wormy":
+		addscore += 1
+	elif GameManager.enemy_type == "Crocodile":
+		addscore += 2
+	elif GameManager.enemy_type == "Bear":
+		addscore += 3
 	score_label.text = "Score: " + str(score) + " / 10" + " + " + str(addscore)

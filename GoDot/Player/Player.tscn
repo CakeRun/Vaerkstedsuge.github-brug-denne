@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c0ayqo0w41tl0"]
+[gd_scene load_steps=35 format=3 uid="uid://c0ayqo0w41tl0"]
 
 [ext_resource type="Script" path="res://Player/player_script.gd" id="1_5rfv5"]
 [ext_resource type="Texture2D" uid="uid://ng2vttln3dj" path="res://Graphics/Player/Ground_smash (64 x 48).png" id="2_5gmgr"]
@@ -203,6 +203,12 @@ size = Vector2(14, 27)
 [sub_resource type="CircleShape2D" id="CircleShape2D_qbvet"]
 radius = 24.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ih17x"]
+bg_color = Color(0.857869, 0.310185, 0.180744, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5riy3"]
+bg_color = Color(0.304907, 0.696486, 0.376954, 1)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 8
 script = ExtResource("1_5rfv5")
@@ -225,3 +231,14 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
 position = Vector2(-2, -14)
 shape = SubResource("CircleShape2D_qbvet")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -12.0
+offset_top = -36.0
+offset_right = 8.0
+offset_bottom = -32.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ih17x")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5riy3")
+max_value = 6.0
+value = 5.0
+show_percentage = false

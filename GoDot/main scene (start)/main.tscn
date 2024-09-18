@@ -111,7 +111,7 @@ offset_top = -48.0
 offset_right = -25.0
 offset_bottom = -25.0
 scale = Vector2(0.376787, 0.406986)
-theme_override_colors/font_color = Color(0.92056, 0.779182, 0.721443, 1)
+theme_override_colors/font_color = Color(0.960157, 0.886874, 0.85721, 1)
 theme_override_fonts/font = ExtResource("6_6cn8s")
 text = "Level 1"
 
@@ -121,7 +121,7 @@ offset_top = -48.0
 offset_right = 71.0
 offset_bottom = -25.0
 scale = Vector2(0.376787, 0.406986)
-theme_override_colors/font_color = Color(0.921569, 0.780392, 0.721569, 1)
+theme_override_colors/font_color = Color(0.960784, 0.886275, 0.858824, 1)
 theme_override_fonts/font = ExtResource("6_6cn8s")
 text = "Level 2"
 
@@ -131,7 +131,7 @@ offset_top = -48.0
 offset_right = 167.0
 offset_bottom = -25.0
 scale = Vector2(0.376787, 0.406986)
-theme_override_colors/font_color = Color(0.921569, 0.780392, 0.721569, 1)
+theme_override_colors/font_color = Color(0.960784, 0.886275, 0.858824, 1)
 theme_override_fonts/font = ExtResource("6_6cn8s")
 text = "Level 3"
 

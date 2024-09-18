@@ -52,7 +52,7 @@ func _physics_process(delta):
 		
 		var t = randf_range(0,1)
 		
-		if t<=0.02 : #2% change for at der angribes
+		if t<=0.05 : #2% change for at der angribes
 			bear.play("attacking")
 			await get_tree().create_timer(1).timeout
 

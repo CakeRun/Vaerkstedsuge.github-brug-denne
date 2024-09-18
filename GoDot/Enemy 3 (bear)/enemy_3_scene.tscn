@@ -183,6 +183,7 @@ radius = 26.5
 size = Vector2(33, 20)
 
 [node name="Enemy3Scene" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_73lgq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -191,7 +192,8 @@ animation = &"walking"
 offset = Vector2(0, -16)
 
 [node name="wakeup_area" type="Area2D" parent="."]
-collision_mask = 2
+collision_layer = 2
+collision_mask = 8
 
 [node name="wakeup_area_collisionshape" type="CollisionShape2D" parent="wakeup_area"]
 position = Vector2(1, -29)
@@ -202,7 +204,8 @@ shape = SubResource("CapsuleShape2D_6uulg")
 [node name="detection_area" type="Area2D" parent="."]
 position = Vector2(0, -10)
 scale = Vector2(2, 1.02052)
-collision_mask = 2
+collision_layer = 2
+collision_mask = 8
 
 [node name="detection_area_collisionshape" type="CollisionShape2D" parent="detection_area"]
 position = Vector2(2.11758e-22, -13.7185)
@@ -212,7 +215,8 @@ shape = SubResource("CapsuleShape2D_cqsmd")
 
 [node name="attack_area" type="Area2D" parent="."]
 scale = Vector2(3.08, 1.60453)
-collision_mask = 2
+collision_layer = 2
+collision_mask = 8
 
 [node name="attack_area_collisionshape" type="CollisionShape2D" parent="attack_area"]
 position = Vector2(-0.5, -10)

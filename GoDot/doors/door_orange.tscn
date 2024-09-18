@@ -36,4 +36,4 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v77ql")
 autoplay = "default"
-frame_progress = 0.071946
+frame_progress = 0.942406

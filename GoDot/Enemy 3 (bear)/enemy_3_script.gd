@@ -8,7 +8,7 @@ var bear_status = "sleeping"
 
 func _physics_process(delta):
 	#collision boy yderst 
-	print (bear_status)
+	#print (bear_status)
 	
 	if bear_status == "sleeping":
 		bear.play("sleeping")

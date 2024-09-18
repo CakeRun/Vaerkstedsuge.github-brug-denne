@@ -38,5 +38,4 @@ script = ExtResource("1_cijxy")
 [node name="green_door_animated_sprite_2d" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u6h0t")
 autoplay = "default"
-frame = 1
-frame_progress = 0.110598
+frame_progress = 0.825776

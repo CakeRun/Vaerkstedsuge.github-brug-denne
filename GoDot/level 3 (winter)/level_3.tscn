@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cdphajqhv2bnu"]
+[gd_scene load_steps=30 format=3 uid="uid://cdphajqhv2bnu"]
 
 [ext_resource type="PackedScene" uid="uid://64nw0m5jl78e" path="res://killzone.tscn" id="1_24mja"]
 [ext_resource type="Texture2D" uid="uid://c6jnhop5rhgwn" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="2_anwp5"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b4d3da6e5hvgj" path="res://Ingrediens/level 3 - berries/blueberry_scene.tscn" id="10_1o2ps"]
 [ext_resource type="PackedScene" uid="uid://8gxaihi88b7y" path="res://Ingrediens/level 3 - berries/cherry_scene.tscn" id="11_06rff"]
 [ext_resource type="PackedScene" uid="uid://bgd0q5mhfph1g" path="res://Ingrediens/level 3 - berries/strawberry_scene.tscn" id="12_44hfb"]
+[ext_resource type="Script" path="res://doors/doors_script.gd" id="12_ld6uu"]
 [ext_resource type="PackedScene" uid="uid://b868hhucom5e8" path="res://Enemy 2 (crocodile)/Enemy 2.tscn" id="13_1170j"]
 [ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="14_q6w5h"]
 [ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="15_smlhd"]
@@ -1874,6 +1875,7 @@ position = Vector2(794, -201)
 [node name="DoorBlue" parent="." instance=ExtResource("8_vfpda")]
 position = Vector2(534, 145)
 scale = Vector2(1.2, 1.2)
+script = ExtResource("12_ld6uu")
 
 [node name="area2D_blue_level3" type="Area2D" parent="DoorBlue"]
 collision_mask = 8
@@ -1947,4 +1949,7 @@ position = Vector2(669, -167)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-39, 12)
+stream = ExtResource("14_q6w5h")
+
+[node name="teleport_audio_blue" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_q6w5h")

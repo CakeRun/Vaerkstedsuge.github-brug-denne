@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://300m4q7pyn5u" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="4_fck1e"]
 [ext_resource type="Texture2D" uid="uid://6eeb6n4ox77t" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="5_5jsj7"]
 [ext_resource type="Texture2D" uid="uid://bk71h2nv20ar0" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="6_sqroi"]
-[ext_resource type="PackedScene" uid="uid://lgx0iaf2ps3x" path="res://platformSummer.tscn" id="7_2rn3p"]
+[ext_resource type="PackedScene" path="res://platformSummer.tscn" id="7_2rn3p"]
 [ext_resource type="PackedScene" uid="uid://b7jhvuktgw15c" path="res://doors/door_blue.tscn" id="8_vfpda"]
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="9_gw1q0"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="9_gyxn4"]
@@ -1795,6 +1795,7 @@ _data = {
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("15_smlhd")
+totalscore = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 

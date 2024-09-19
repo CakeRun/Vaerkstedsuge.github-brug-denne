@@ -5882,6 +5882,7 @@ text = "Here is your cake!"
 horizontal_alignment = 1
 
 [node name="TotalScoreLabel" type="Label" parent="."]
+unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

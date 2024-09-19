@@ -9,3 +9,5 @@ var enemy_type = "String"
 var total_score = 0
 
 var current_level_score = 0
+
+var levels_completed = 0

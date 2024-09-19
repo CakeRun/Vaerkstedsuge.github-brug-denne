@@ -1795,7 +1795,6 @@ _data = {
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("15_smlhd")
-totalscore = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
@@ -1813,6 +1812,7 @@ text = "0/10"
 metadata/_edit_use_anchors_ = true
 
 [node name="TotalScoreLabel3" type="Label" parent="GameManager/CanvasLayer"]
+unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

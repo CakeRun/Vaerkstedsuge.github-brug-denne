@@ -86,9 +86,8 @@ func _process(delta):
 
 			if levels_completed == 0: #sikrer at det kun updaterer det én gang
 				levels_completed = 1
+				GameManager.levels_completed += 1
 				print(levels_completed)
-				
-			GameManager.current_level_score = 0
 
 		#orange
 		if entered_orange_level2 == true and not teleport_audio_orange.playing:
@@ -99,9 +98,8 @@ func _process(delta):
 			
 			if levels_completed == 1: #sikrer at det kun updaterer det én gang
 				levels_completed = 2
+				GameManager.levels_completed += 1
 				print(levels_completed)
-			
-			GameManager.current_level_score = 0
 		
 		#blue
 		if entered_blue_level3 == true and not teleport_audio_blue.playing:
@@ -112,18 +110,16 @@ func _process(delta):
 			if get_tree() == null:
 				print("get_tree() is null!")
 
-			#elif total_score >= 1: #IKKE KORREKT ANGIVET (totalscore)
-				#get_tree().change_scene_to_file("res://main_scenes/end_scene_small.tscn")
-			#elif total_score >= 2: #IKKE KORREKT ANGIVET (totalscore) 
-				#get_tree().change_scene_to_file("res://main_scenes/end_scene_medium.tscn")
-			#elif total_score >= 3: #IKKE KORREKT ANGIVET (totalscore)
-				#get_tree().change_scene_to_file("res://main_scenes/end_scene_big.tscn")
+			elif GameManager.total_score >= 1: #IKKE KORREKT ANGIVET (totalscore)
+				get_tree().change_scene_to_file("res://main_scenes/end_scene_small.tscn")
+			elif GameManager.total_score >= 2: #IKKE KORREKT ANGIVET (totalscore) 
+				get_tree().change_scene_to_file("res://main_scenes/end_scene_medium.tscn")
+			elif GameManager.total_score >= 2: #IKKE KORREKT ANGIVET (totalscore)
+				get_tree().change_scene_to_file("res://main_scenes/end_scene_big.tscn")
 			
 			if levels_completed == 2: #sikrer at det kun updaterer det én gang
 				levels_completed = 3
 				print(levels_completed)
-			
-			GameManager.current_level_score = 0
 
 #### LEVEL 1 ####
 #green door - main

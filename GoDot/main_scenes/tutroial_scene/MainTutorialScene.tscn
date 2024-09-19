@@ -5852,7 +5852,7 @@ size = Vector2(9, 138)
 size = Vector2(38, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_di7ap"]
-size = Vector2(157, 156)
+size = Vector2(210.754, 58.2659)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b4sd"]
 size = Vector2(56, 71)
@@ -6072,7 +6072,8 @@ shape = SubResource("RectangleShape2D_ainkt")
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextDetectors/jump"]
-position = Vector2(57.5, -83)
+position = Vector2(76.0949, -34.5)
+scale = Vector2(0.691848, 2.14534)
 shape = SubResource("RectangleShape2D_di7ap")
 
 [node name="mission" type="Area2D" parent="TextDetectors"]

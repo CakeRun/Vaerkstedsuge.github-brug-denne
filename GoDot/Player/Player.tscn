@@ -1,10 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://c0ayqo0w41tl0"]
+[gd_scene load_steps=36 format=3 uid="uid://c0ayqo0w41tl0"]
 
 [ext_resource type="Script" path="res://Player/player_script.gd" id="1_5rfv5"]
 [ext_resource type="Texture2D" uid="uid://ng2vttln3dj" path="res://Graphics/Player/Ground_smash (64 x 48).png" id="2_5gmgr"]
 [ext_resource type="Texture2D" uid="uid://drhsgqrf6m3jq" path="res://Graphics/Player/Idle (32 x 32).png" id="3_dw65p"]
 [ext_resource type="Texture2D" uid="uid://copwr4bxl7fhd" path="res://Graphics/Player/Falling (32 x 32).png" id="4_fmkyv"]
 [ext_resource type="Texture2D" uid="uid://dafeysir5ql8x" path="res://Graphics/Player/Running.png" id="5_es2li"]
+[ext_resource type="AudioStream" uid="uid://dwfajt8k84vx2" path="res://audio/bonk-sound-effect-36055.wav" id="6_567bl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmjrd"]
 atlas = ExtResource("2_5gmgr")
@@ -243,3 +244,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_5riy3")
 max_value = 6.0
 value = 5.0
 show_percentage = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_567bl")

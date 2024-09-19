@@ -15,6 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var health_bar = $HealthBar
+@onready var bonk = $AudioStreamPlayer2D
 
 
 func _physics_process(delta):
@@ -98,6 +99,7 @@ func attack():
 		await get_tree().create_timer(0.02).timeout
 		GameManager.player_current_attack = false
 		$AnimatedSprite2D.play("hit") 
+		bonk.play()
 		await get_tree().create_timer(1.2).timeout
 		attack_ip = false 
 		

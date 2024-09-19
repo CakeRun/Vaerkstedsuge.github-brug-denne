@@ -8,7 +8,6 @@ extends Node
 
 static var levels_completed = 0
 
-
 #LEVEL 1
 static var entered_green_main = false
 static var entered_green_level1 = false
@@ -69,7 +68,7 @@ func _process(delta):
 	
 	#### Leaving a level ####
 	if GameManager.current_level_score >= 1 and Input.is_action_just_pressed("enter"):
-		#green
+		#green	
 		if entered_green_level1 == true and not teleport_audio_green.playing:
 			print("going to main")
 			teleport_audio_green.play()
@@ -118,7 +117,6 @@ func _process(delta):
 #### LEVEL 1 ####
 #green door - main
 func _on_area_2d_green_main_body_entered(body):
-	print("in level 1 collision")
 	if levels_completed == 0:
 		entered_green_main = true
 

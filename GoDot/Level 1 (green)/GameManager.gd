@@ -24,4 +24,4 @@ func _process(delta): #TOTAL POINTS
 	totalscore = score + addscore
 	GameManager.current_level_score = totalscore
 	
-	total_score_label.text = "POINTS:" + str(totalscore).pad_zeros(2)
+	#total_score_label.text = "POINTS:" + str(totalscore).pad_zeros(2)

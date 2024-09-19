@@ -1,9 +1,5 @@
 extends Area2D
 
-
-
-#@onready var game_manager = %GameManager
-#@onready var animation_player = $AnimationPlayer
 @onready var pickup_sound = %AudioStreamPlayer2D
 
 @onready var game_manager = %GameManager

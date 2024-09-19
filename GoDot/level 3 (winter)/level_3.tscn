@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cdphajqhv2bnu"]
+[gd_scene load_steps=30 format=3 uid="uid://cdphajqhv2bnu"]
 
 [ext_resource type="PackedScene" uid="uid://64nw0m5jl78e" path="res://killzone.tscn" id="1_24mja"]
 [ext_resource type="Texture2D" uid="uid://c6jnhop5rhgwn" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="2_anwp5"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b4d3da6e5hvgj" path="res://Ingrediens/level 3 - berries/blueberry_scene.tscn" id="10_1o2ps"]
 [ext_resource type="PackedScene" uid="uid://8gxaihi88b7y" path="res://Ingrediens/level 3 - berries/cherry_scene.tscn" id="11_06rff"]
 [ext_resource type="PackedScene" uid="uid://bgd0q5mhfph1g" path="res://Ingrediens/level 3 - berries/strawberry_scene.tscn" id="12_44hfb"]
+[ext_resource type="Script" path="res://doors/doors_script.gd" id="12_ld6uu"]
 [ext_resource type="PackedScene" uid="uid://b868hhucom5e8" path="res://Enemy 2 (crocodile)/Enemy 2.tscn" id="13_1170j"]
 [ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="14_q6w5h"]
 [ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="15_smlhd"]
@@ -1747,6 +1748,9 @@ sources/2 = SubResource("TileSetAtlasSource_mwtim")
 sources/3 = SubResource("TileSetAtlasSource_u5uty")
 sources/4 = SubResource("TileSetAtlasSource_bu2bu")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yby3"]
+size = Vector2(10.478, 15.1466)
+
 [sub_resource type="Animation" id="Animation_kcwhv"]
 resource_name = "PlatformSummer1"
 length = 1.8
@@ -1794,16 +1798,16 @@ script = ExtResource("15_smlhd")
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
 [node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 231.0
-offset_bottom = 61.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 239.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0.832186, 0.928297, 1, 1)
 theme_override_colors/font_shadow_color = Color(3.08037e-06, 0.465051, 0.68834, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("16_j382v")
-theme_override_font_sizes/font_size = 52
-text = "0 / 10"
+theme_override_font_sizes/font_size = 45
+text = "0/10"
 metadata/_edit_use_anchors_ = true
 
 [node name="killzone" parent="." instance=ExtResource("1_24mja")]
@@ -1825,11 +1829,11 @@ layer_2/tile_data = PackedInt32Array(786458, 196609, 1, 786459, 262145, 1, 78646
 
 [node name="Label_level" type="Label" parent="TileMap"]
 offset_left = 548.0
-offset_top = 131.0
+offset_top = 134.0
 offset_right = 750.0
-offset_bottom = 185.0
-scale = Vector2(0.649988, 0.649988)
-theme_override_colors/font_color = Color(0.00392157, 0.258824, 0.45098, 0.286275)
+offset_bottom = 188.0
+scale = Vector2(0.567281, 0.567281)
+theme_override_colors/font_color = Color(0.00392157, 0.258824, 0.45098, 0.4)
 theme_override_fonts/font = ExtResource("9_gw1q0")
 theme_override_font_sizes/font_size = 8
 text = "Collect all the
@@ -1871,6 +1875,15 @@ position = Vector2(794, -201)
 [node name="DoorBlue" parent="." instance=ExtResource("8_vfpda")]
 position = Vector2(534, 145)
 scale = Vector2(1.2, 1.2)
+script = ExtResource("12_ld6uu")
+
+[node name="area2D_blue_level3" type="Area2D" parent="DoorBlue"]
+collision_mask = 8
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DoorBlue/area2D_blue_level3"]
+position = Vector2(-1.52588e-05, 0)
+scale = Vector2(1.39976, 1.40846)
+shape = SubResource("RectangleShape2D_6yby3")
 
 [node name="AnimatableBody2D" parent="." instance=ExtResource("7_2rn3p")]
 position = Vector2(128, 101)
@@ -1891,6 +1904,9 @@ limit_left = -150
 limit_top = -300
 limit_right = 1000
 limit_bottom = 200
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
 
 [node name="frugt" type="Node" parent="."]
 
@@ -1937,3 +1953,9 @@ position = Vector2(669, -167)
 unique_name_in_owner = true
 position = Vector2(-39, 12)
 stream = ExtResource("14_q6w5h")
+
+[node name="teleport_audio_blue" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_q6w5h")
+
+[connection signal="body_entered" from="DoorBlue/area2D_blue_level3" to="DoorBlue" method="_on_area_2d_blue_level_3_body_entered"]
+[connection signal="body_exited" from="DoorBlue/area2D_blue_level3" to="DoorBlue" method="_on_area_2d_blue_level_3_body_exited"]

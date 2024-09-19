@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d0x6wqm8rkrni" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="9_3c7pl"]
 [ext_resource type="Texture2D" uid="uid://cterbiusxq6g4" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="10_8it87"]
 [ext_resource type="PackedScene" path="res://Level 1 (green)/small_platform_green.tscn" id="11_3um4d"]
-[ext_resource type="PackedScene" path="res://platform_green.tscn" id="12_8r1xm"]
+[ext_resource type="PackedScene" uid="uid://34jhboicktq2" path="res://platform_green.tscn" id="12_8r1xm"]
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="12_ul827"]
 [ext_resource type="PackedScene" uid="uid://dpayos8v2k0p4" path="res://doors/door_green.tscn" id="13_ltpma"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="14_4d2uq"]
@@ -2703,7 +2703,7 @@ sources/6 = SubResource("TileSetAtlasSource_c4c3i")
 sources/7 = SubResource("TileSetAtlasSource_vbmte")
 sources/8 = SubResource("TileSetAtlasSource_i6x2k")
 
-[sub_resource type="Animation" id="Animation_e2ees"]
+[sub_resource type="Animation" id="Animation_waq3f"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2715,11 +2715,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(514, 166)]
+"values": [Vector2(514, 158)]
 }
 
-[sub_resource type="Animation" id="Animation_24abv"]
-resource_name = "platformGreen1"
+[sub_resource type="Animation" id="Animation_ph3ud"]
+resource_name = "platformGreen"
 length = 1.8
 loop_mode = 2
 tracks/0/type = "value"
@@ -2732,13 +2732,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(514, 166), Vector2(602, 171)]
+"values": [Vector2(505, 158), Vector2(605, 183)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rig6g"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y2vpm"]
 _data = {
-"RESET": SubResource("Animation_e2ees"),
-"platformGreen1": SubResource("Animation_24abv")
+"RESET": SubResource("Animation_waq3f"),
+"platformGreen": SubResource("Animation_ph3ud")
 }
 
 [sub_resource type="Animation" id="Animation_dki5h"]
@@ -2832,17 +2832,36 @@ script = ExtResource("1_j0q3r")
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
 [node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 211.0
-offset_bottom = 51.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 239.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0.84928, 0.935517, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.321144, 0.482644, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("20_t7sqs")
-theme_override_font_sizes/font_size = 52
-text = "0 / 10"
+theme_override_font_sizes/font_size = 45
+text = "00/10"
 metadata/_edit_use_anchors_ = true
+
+[node name="TotalScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -405.0
+offset_top = 16.0
+offset_right = -13.0
+offset_bottom = 69.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.84928, 0.935517, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.321144, 0.482644, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/font = ExtResource("20_t7sqs")
+theme_override_font_sizes/font_size = 45
+text = "POINTS:000
+"
+horizontal_alignment = 2
 
 [node name="TileMap1Green" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_fys3p")
@@ -2865,7 +2884,7 @@ theme_override_fonts/font = ExtResource("12_ul827")
 theme_override_font_sizes/font_size = 8
 text = "Collect all the
 ingrediens for
-the cake layers!"
+the cake base!"
 
 [node name="platforms" type="Node" parent="."]
 
@@ -2897,13 +2916,13 @@ position = Vector2(316, 63)
 position = Vector2(284, 83)
 
 [node name="platformGreen" parent="." instance=ExtResource("12_8r1xm")]
-position = Vector2(514, 166)
+position = Vector2(514, 158)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platformGreen"]
 libraries = {
-"": SubResource("AnimationLibrary_rig6g")
+"": SubResource("AnimationLibrary_y2vpm")
 }
-autoplay = "platformGreen1"
+autoplay = "platformGreen"
 
 [node name="platformGreen2" parent="." instance=ExtResource("12_8r1xm")]
 position = Vector2(141, -56)
@@ -2927,10 +2946,10 @@ autoplay = "platfromGreen2"
 position = Vector2(17, 50)
 scale = Vector2(1.2, 1.2)
 
-[node name="area2D_green_level_one" type="Area2D" parent="DoorGreen"]
+[node name="area2D_green_level1" type="Area2D" parent="DoorGreen"]
 collision_mask = 8
 
-[node name="CollisionShape" type="CollisionShape2D" parent="DoorGreen/area2D_green_level_one"]
+[node name="CollisionShape" type="CollisionShape2D" parent="DoorGreen/area2D_green_level1"]
 position = Vector2(-1.52588e-05, 0)
 scale = Vector2(1.39976, 1.40846)
 shape = SubResource("RectangleShape2D_masb2")
@@ -3013,5 +3032,5 @@ position = Vector2(304, 169)
 [node name="teleport_audio_green" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_1hycd")
 
-[connection signal="body_entered" from="DoorGreen/area2D_green_level_one" to="DoorGreen" method="_on_area_2d_green_level_one_body_entered"]
-[connection signal="body_exited" from="DoorGreen/area2D_green_level_one" to="DoorGreen" method="_on_area_2d_green_level_one_body_exited"]
+[connection signal="body_entered" from="DoorGreen/area2D_green_level1" to="DoorGreen" method="_on_area_2d_green_level_1_body_entered"]
+[connection signal="body_exited" from="DoorGreen/area2D_green_level1" to="DoorGreen" method="_on_area_2d_green_level_1_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://qhx4cxt4kjmw"]
+[gd_scene load_steps=40 format=3 uid="uid://qhx4cxt4kjmw"]
 
 [ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="1_d4dxq"]
 [ext_resource type="Texture2D" uid="uid://dregkhwcexytk" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_wqq13"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="11_hwchh"]
 [ext_resource type="PackedScene" uid="uid://kkhss8y6c5h8" path="res://Ingrediens/level 2 - cream/sugar_scene.tscn" id="12_vq8em"]
 [ext_resource type="PackedScene" uid="uid://b3flsgh4u6kou" path="res://Ingrediens/level 2 - cream/whippedcream_scene.tscn" id="13_er7vs"]
+[ext_resource type="Script" path="res://doors/doors_script.gd" id="13_o7axm"]
 [ext_resource type="PackedScene" uid="uid://28831wnaue7r" path="res://Ingrediens/level 2 - cream/milk_scene.tscn" id="14_dra1a"]
 [ext_resource type="PackedScene" uid="uid://mvejfwqi4eh7" path="res://doors/door_orange.tscn" id="15_xerho"]
 [ext_resource type="PackedScene" uid="uid://bcige3vmvpyl3" path="res://Enemy 3 (bear)/enemy_3_scene.tscn" id="16_jd36p"]
@@ -4145,6 +4146,9 @@ sources/4 = SubResource("TileSetAtlasSource_cxj1n")
 sources/5 = SubResource("TileSetAtlasSource_a8h8r")
 sources/6 = SubResource("TileSetAtlasSource_5fpcn")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lst0f"]
+size = Vector2(10.478, 15.1466)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oj05q"]
 
 [sub_resource type="Animation" id="Animation_nawke"]
@@ -4247,16 +4251,16 @@ script = ExtResource("1_d4dxq")
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
 [node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 231.0
-offset_bottom = 61.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 239.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(1, 0.819588, 0.472653, 1)
 theme_override_colors/font_shadow_color = Color(0.551681, 0.132109, 0.169618, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("2_noxbo")
-theme_override_font_sizes/font_size = 52
-text = "0 / 10"
+theme_override_font_sizes/font_size = 45
+text = "0/10"
 metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -4270,12 +4274,12 @@ layer_2/name = "platofrms"
 layer_2/tile_data = PackedInt32Array(19, 65536, 3, -65516, 65537, 5, 20, 131072, 3, 21, 131072, 3, -7, 65537, 1, 65529, 65537, 2, -6, 131073, 1, 65530, 131073, 2, -5, 196609, 1, 65531, 196609, 2, 22, 458752, 3, -65510, 589824, 3, -65509, 851968, 3, -65506, 589824, 3, -65505, 851968, 3, -65502, 589824, 3, -65501, 851968, 3, 38, 65536, 3, 39, 131072, 3, 40, 131072, 3, 41, 458752, 3, 655361, 65536, 3, 720897, 65536, 4, 655362, 131072, 3, 720898, 131072, 4, 655363, 458752, 3, 720899, 458752, 4, 786438, 65536, 3, 786439, 131072, 3, 786440, 131072, 3, 786441, 458752, 3, 786445, 65536, 3, 786446, 131072, 3, 786447, 458752, 3, 655378, 65536, 3, 720914, 65536, 4, 655379, 131072, 3, 720915, 131072, 4, 655380, 131072, 3, 720916, 131072, 4, 655382, 458752, 3, 720918, 458752, 4, 655381, 131072, 3, 720917, 131072, 4, 720944, 131072, 3, 786480, 131072, 4, 720945, 131072, 3, 786481, 131072, 4, 720946, 131072, 3, 786482, 131072, 4, 720947, 131072, 3, 786483, 131072, 4, 720949, 262144, 1, 786485, 262144, 6, 720951, 262144, 1, 786487, 262144, 6, 720948, 131072, 3, 786484, 131072, 4, 720952, 131072, 3, 786488, 131072, 4, 720953, 458752, 3, 786489, 458752, 4, 720921, 589824, 3, 720922, 851968, 3, 720925, 589824, 3, 720926, 851968, 3, 720929, 65536, 3, 786465, 65536, 4, 720930, 131072, 3, 786466, 131072, 4, 720931, 131072, 3, 786467, 131072, 4, 720932, 458752, 3, 786468, 458752, 4, 262143, 131072, 4, 196608, 131072, 4, 196609, 131072, 4, 196610, 458752, 4, 196607, 131072, 3, 131072, 131072, 3, 131073, 131072, 3, 131074, 458752, 3, 393226, 65536, 3, 458762, 65536, 4, 393227, 131072, 3, 458763, 131072, 4, 393228, 131072, 3, 458764, 131072, 4, 393229, 131072, 3, 458765, 131072, 4, 393230, 458752, 3, 458766, 458752, 4, 196599, 65536, 3, 262135, 65536, 4, 196600, 131072, 3, 262136, 131072, 4, 196601, 131072, 3, 262137, 131072, 4, 196602, 131072, 3, 262138, 131072, 4, 196603, 131072, 3, 262139, 131072, 4, 196604, 131072, 3, 262140, 131072, 4, 196605, 131072, 3, 262141, 131072, 4, 196606, 131072, 3, 262142, 131072, 4, 131065, 65537, 3, 131066, 131073, 3, 131067, 196609, 3, 524344, 327681, 1, 589880, 327681, 2, 655416, 327681, 3, 524345, 393217, 1, 589881, 393217, 2, 655417, 393217, 3, 524346, 458753, 1, 589882, 458753, 2, 655418, 458753, 3, 720904, 65537, 5, 655393, 196609, 5, 589845, 196609, 5, 131068, 196609, 5, 720942, 65536, 3, 786478, 65536, 4, 720943, 131072, 3, 786479, 131072, 4, 786486, 262144, 6, 720950, 262144, 1, 327732, 65536, 4, 327733, 458752, 4, 196656, 196609, 5, 262196, 65536, 3, 262197, 458752, 3, 327710, 655360, 3, 327708, 589824, 3, 327709, 655360, 3, 262174, 65537, 5, 327711, 851968, 3, -196560, 65536, 4, -196559, 131072, 4, -262094, 458752, 3, -196558, 458752, 4, -262096, 65536, 3, -262095, 131072, 3, -327630, 196609, 5, 65574, 65536, 4, 65575, 131072, 4, 65576, 131072, 4, 65577, 458752, 4, 65555, 65536, 4, 65556, 131072, 4, 65557, 131072, 4, 65558, 458752, 4)
 
 [node name="Label_level" type="Label" parent="."]
-offset_left = 341.0
-offset_top = 107.0
-offset_right = 521.0
-offset_bottom = 180.0
-scale = Vector2(0.594326, 0.594326)
-theme_override_colors/font_color = Color(0.65098, 0.490196, 0.552941, 0.34902)
+offset_left = 339.0
+offset_top = 97.0
+offset_right = 519.0
+offset_bottom = 170.0
+scale = Vector2(0.623478, 0.623478)
+theme_override_colors/font_color = Color(0.840211, 0.7279, 0.770482, 0.784314)
 theme_override_fonts/font = ExtResource("20_qvf1e")
 theme_override_font_sizes/font_size = 8
 text = "Collect all
@@ -4286,6 +4290,15 @@ cake cream!"
 [node name="DoorOrange" parent="." instance=ExtResource("15_xerho")]
 position = Vector2(316, 145)
 scale = Vector2(1.2, 1.2)
+script = ExtResource("13_o7axm")
+
+[node name="area2D_orange_level2" type="Area2D" parent="DoorOrange"]
+collision_mask = 8
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DoorOrange/area2D_orange_level2"]
+position = Vector2(-1.52588e-05, 0)
+scale = Vector2(1.39976, 1.40846)
+shape = SubResource("RectangleShape2D_lst0f")
 
 [node name="platform" type="Node" parent="."]
 
@@ -4349,6 +4362,9 @@ limit_left = -200
 limit_top = -125
 limit_right = 1000
 limit_bottom = 208
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
 
 [node name="Node" type="Node" parent="."]
 
@@ -4387,3 +4403,9 @@ position = Vector2(-95, 33)
 
 [node name="Enemy3Scene2" parent="." instance=ExtResource("16_jd36p")]
 position = Vector2(871, 176)
+
+[node name="teleport_audio_orange" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_r1s0l")
+
+[connection signal="body_entered" from="DoorOrange/area2D_orange_level2" to="DoorOrange" method="_on_area_2d_orange_level_2_body_entered"]
+[connection signal="body_exited" from="DoorOrange/area2D_orange_level2" to="DoorOrange" method="_on_area_2d_orange_level_2_body_exited"]

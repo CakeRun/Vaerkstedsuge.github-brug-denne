@@ -178,10 +178,9 @@ height = 121.171
 radius = 9.43619
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ffyq7"]
-radius = 15.773
+radius = 20.3342
 
 [node name="Enemy3Scene" type="CharacterBody2D"]
-collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_73lgq")
 
@@ -192,8 +191,8 @@ offset = Vector2(0, -16)
 
 [node name="wakeup_area" type="Area2D" parent="."]
 scale = Vector2(0.76, 0.68)
-collision_layer = 2
-collision_mask = 8
+collision_layer = 4
+collision_mask = 12
 
 [node name="wakeup_area_collisionshape" type="CollisionShape2D" parent="wakeup_area"]
 position = Vector2(1, -29)
@@ -204,8 +203,8 @@ shape = SubResource("CapsuleShape2D_6uulg")
 [node name="detection_area" type="Area2D" parent="."]
 position = Vector2(0, -10)
 scale = Vector2(2, 0.58052)
-collision_layer = 2
-collision_mask = 8
+collision_layer = 4
+collision_mask = 12
 
 [node name="detection_area_collisionshape" type="CollisionShape2D" parent="detection_area"]
 position = Vector2(2.11758e-22, -13.7185)
@@ -216,8 +215,8 @@ shape = SubResource("CapsuleShape2D_cqsmd")
 [node name="attack_area" type="Area2D" parent="."]
 position = Vector2(0, 4)
 scale = Vector2(3.77189, 3.25622)
-collision_layer = 2
-collision_mask = 8
+collision_layer = 4
+collision_mask = 12
 
 [node name="attack_area_collisionshape" type="CollisionShape2D" parent="attack_area"]
 position = Vector2(-0.530238, -5.52788)
@@ -225,9 +224,10 @@ scale = Vector2(0.922078, 1)
 shape = SubResource("CircleShape2D_kr71d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.19209e-07, -7)
+position = Vector2(1, -12)
 scale = Vector2(1.1483, -0.570441)
 shape = SubResource("CircleShape2D_ffyq7")
+debug_color = Color(0.786556, 0.394323, 0.474455, 0.42)
 
 [connection signal="body_entered" from="wakeup_area" to="." method="_on_wakeup_area_body_entered"]
 [connection signal="body_exited" from="wakeup_area" to="." method="_on_wakeup_area_body_exited"]

@@ -10,6 +10,7 @@ var addscore = 0
 @onready var total_score_label_3 = %TotalScoreLabel3
 
 func _ready():
+	GameManager.ingredient_score = 0
 	if GameManager.levels_completed == 1:
 		total_score_label_2.text = "POINTS:" + str(GameManager.total_score).pad_zeros(3)
 	if GameManager.levels_completed == 2:
@@ -17,6 +18,8 @@ func _ready():
 
 func add_point():
 	score += 1
+	GameManager.ingredient_score += 1
+	
 	GameManager.current_level_score += 1
 	GameManager.total_score += 1
 	score_label.text = str(score).pad_zeros(2) + "/10"

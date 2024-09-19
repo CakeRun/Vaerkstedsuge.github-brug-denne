@@ -1952,9 +1952,6 @@ position = Vector2(865, -260)
 [node name="StrawberryScene" parent="frugt" instance=ExtResource("12_44hfb")]
 position = Vector2(775, -84)
 
-[node name="StrawberryScene2" parent="frugt" instance=ExtResource("12_44hfb")]
-position = Vector2(368, 10)
-
 [node name="StrawberryScene3" parent="frugt" instance=ExtResource("12_44hfb")]
 position = Vector2(407, -164)
 

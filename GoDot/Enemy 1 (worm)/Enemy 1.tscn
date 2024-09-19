@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1ko10aern5er"]
+[gd_scene load_steps=10 format=3 uid="uid://c1ko10aern5er"]
 
 [ext_resource type="Script" path="res://Enemy 1 (worm)/Wormy.gd" id="1_1u01h"]
 [ext_resource type="Texture2D" uid="uid://dh0riep0w2olt" path="res://Graphics/Worm/Movement_(32 x 32).png" id="1_tq4wl"]
@@ -39,8 +39,10 @@ height = 24.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rarh8"]
 size = Vector2(26, 13)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txgtw"]
+size = Vector2(37, 17)
+
 [node name="Worm" type="CharacterBody2D"]
-collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_1u01h")
 
@@ -67,13 +69,24 @@ target_position = Vector2(16, 10)
 target_position = Vector2(-15, 10)
 
 [node name="worm_hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 9
+collision_layer = 4
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worm_hitbox"]
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_rarh8")
 debug_color = Color(0.656519, 0.46764, 0.591904, 0.42)
 
+[node name="wormy_gets_die" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wormy_gets_die"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_txgtw")
+debug_color = Color(0.471138, 0.531613, 0.69425, 0.42)
+
 [connection signal="body_entered" from="worm_hitbox" to="." method="_on_worm_hitbox_body_entered"]
 [connection signal="body_exited" from="worm_hitbox" to="." method="_on_worm_hitbox_body_exited"]
+[connection signal="body_entered" from="wormy_gets_die" to="." method="_on_wormy_gets_die_body_entered"]
+[connection signal="body_exited" from="wormy_gets_die" to="." method="_on_wormy_gets_die_body_exited"]

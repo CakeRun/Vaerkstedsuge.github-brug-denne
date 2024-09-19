@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cdphajqhv2bnu"]
+[gd_scene load_steps=31 format=3 uid="uid://cdphajqhv2bnu"]
 
 [ext_resource type="PackedScene" uid="uid://64nw0m5jl78e" path="res://killzone.tscn" id="1_24mja"]
 [ext_resource type="Texture2D" uid="uid://c6jnhop5rhgwn" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="2_anwp5"]
@@ -15,9 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://bgd0q5mhfph1g" path="res://Ingrediens/level 3 - berries/strawberry_scene.tscn" id="12_44hfb"]
 [ext_resource type="Script" path="res://doors/doors_script.gd" id="12_ld6uu"]
 [ext_resource type="PackedScene" uid="uid://b868hhucom5e8" path="res://Enemy 2 (crocodile)/Enemy 2.tscn" id="13_1170j"]
-[ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="14_q6w5h"]
 [ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="15_smlhd"]
 [ext_resource type="FontFile" uid="uid://lobebsc6nhjr" path="res://Graphics/Font/PixelOperator8.ttf" id="16_j382v"]
+[ext_resource type="AudioStream" uid="uid://bn371ypkjntwy" path="res://audio/A-reveal-4_1.wav" id="18_850n5"]
+[ext_resource type="AudioStream" uid="uid://bgxs2yi0mjy8f" path="res://audio/Dreamy.wav" id="19_third"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n8uff"]
 normal = Vector2(0.00881023, -0.999961)
@@ -1810,6 +1811,25 @@ theme_override_font_sizes/font_size = 45
 text = "0/10"
 metadata/_edit_use_anchors_ = true
 
+[node name="TotalScoreLabel3" type="Label" parent="GameManager/CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -405.0
+offset_top = 16.0
+offset_right = -13.0
+offset_bottom = 69.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.831373, 0.929412, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.466667, 0.690196, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/font = ExtResource("16_j382v")
+theme_override_font_sizes/font_size = 45
+text = "POINTS:000
+"
+horizontal_alignment = 2
+
 [node name="killzone" parent="." instance=ExtResource("1_24mja")]
 collision_mask = 9
 
@@ -1952,10 +1972,10 @@ position = Vector2(669, -167)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-39, 12)
-stream = ExtResource("14_q6w5h")
+stream = ExtResource("18_850n5")
 
 [node name="teleport_audio_blue" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_q6w5h")
+stream = ExtResource("19_third")
 
 [connection signal="body_entered" from="DoorBlue/area2D_blue_level3" to="DoorBlue" method="_on_area_2d_blue_level_3_body_entered"]
 [connection signal="body_exited" from="DoorBlue/area2D_blue_level3" to="DoorBlue" method="_on_area_2d_blue_level_3_body_exited"]

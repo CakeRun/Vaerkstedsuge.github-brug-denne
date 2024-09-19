@@ -22,9 +22,11 @@ static var entered_blue_level3 = false
 
 
 func _process(delta):
+	print(GameManager.total_score)
+	
 	#### LEVEL 1 ####
 	if entered_green_main == true and Input.is_action_just_pressed("enter"):
-		print(levels_completed)
+		#print(levels_completed)
 		
 		if levels_completed == 0 and not teleport_audio_main.playing:
 			print("entering level 1")
@@ -38,7 +40,7 @@ func _process(delta):
 
 	#### LEVEL 2 ####
 	if entered_orange_main == true and Input.is_action_just_pressed("enter"):
-		print(levels_completed)
+		#print(levels_completed)
 		
 		if levels_completed == 1 and not teleport_audio_main.playing:
 			print("entering level 2")
@@ -53,7 +55,7 @@ func _process(delta):
 
 	#### LEVEL 3 ####
 	if entered_blue_main == true and Input.is_action_just_pressed("enter") and levels_completed == 2:
-		print(levels_completed)
+		#print(levels_completed)
 		
 		if levels_completed == 2 and not teleport_audio_main.playing:
 			print("entering level 3")

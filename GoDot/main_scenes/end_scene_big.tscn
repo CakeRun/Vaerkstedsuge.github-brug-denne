@@ -5844,7 +5844,7 @@ layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array(-65536, 327680, 2, -131071, 786432, 2, -65535, 393216, 2, -65534, 458752, 2)
 
 [node name="Player" parent="." instance=ExtResource("3_j30yh")]
-position = Vector2(-96, -22)
+position = Vector2(-96, -19)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-10, 5)
@@ -5880,8 +5880,7 @@ theme_override_font_sizes/font_size = 0
 text = "Here is your cake!"
 horizontal_alignment = 1
 
-[node name="TotalScoreLabel" type="Label" parent="."]
-unique_name_in_owner = true
+[node name="TotalScoreLabel_end_big" type="Label" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

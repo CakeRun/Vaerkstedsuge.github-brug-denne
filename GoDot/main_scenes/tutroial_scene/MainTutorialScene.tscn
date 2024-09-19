@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7dinulb11amm"]
+[gd_scene load_steps=20 format=3 uid="uid://b7dinulb11amm"]
 
 [ext_resource type="Script" path="res://main_scenes/tutroial_scene/MainTutorialScene.gd" id="1_0yw30"]
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="1_djclk"]
@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="7_mcjrf"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="8_ogavk"]
 [ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="9_i7pcl"]
-[ext_resource type="PackedScene" path="res://platformMainTutorial.tscn" id="10_djpel"]
+[ext_resource type="PackedScene" uid="uid://dh8bp7kym6e2q" path="res://platformMainTutorial.tscn" id="10_djpel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
 texture = ExtResource("1_djclk")
@@ -5845,8 +5845,17 @@ sources/2 = SubResource("TileSetAtlasSource_yjydk")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8j2d3"]
 size = Vector2(10.478, 15.1466)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o7be"]
+size = Vector2(9, 138)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ainkt"]
 size = Vector2(38, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_di7ap"]
+size = Vector2(157, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6b4sd"]
+size = Vector2(56, 71)
 
 [node name="Main" type="Node2D"]
 position = Vector2(-9, -7)
@@ -5862,43 +5871,51 @@ layer_1/tile_data = PackedInt32Array(-589835, 196608, 3, -524299, 196608, 3, -45
 layer_2/name = "Foreground"
 layer_2/tile_data = PackedInt32Array()
 
-[node name="DoorBlue" parent="." instance=ExtResource("3_8cbd5")]
-position = Vector2(96, -18)
+[node name="Doors" type="Node" parent="."]
+
+[node name="DoorBlue" parent="Doors" instance=ExtResource("3_8cbd5")]
+position = Vector2(87, -25)
 scale = Vector2(1.44011, 1.44011)
 script = ExtResource("4_e5528")
 
-[node name="area2D_blue_main" type="Area2D" parent="DoorBlue"]
+[node name="area2D_blue_main" type="Area2D" parent="Doors/DoorBlue"]
 collision_mask = 8
 
-[node name="CollisionShape" type="CollisionShape2D" parent="DoorBlue/area2D_blue_main"]
+[node name="CollisionShape" type="CollisionShape2D" parent="Doors/DoorBlue/area2D_blue_main"]
 position = Vector2(-1.52588e-05, 0)
 scale = Vector2(1.39976, 1.40846)
 shape = SubResource("RectangleShape2D_8j2d3")
 
-[node name="DoorOrange" parent="." instance=ExtResource("5_wdu5r")]
-position = Vector2(0, -18)
+[node name="DoorOrange" parent="Doors" instance=ExtResource("5_wdu5r")]
+position = Vector2(-9, -25)
 scale = Vector2(1.43926, 1.43926)
 script = ExtResource("4_e5528")
 
-[node name="area2D_orange_main" type="Area2D" parent="DoorOrange"]
+[node name="area2D_orange_main" type="Area2D" parent="Doors/DoorOrange"]
 collision_mask = 8
 
-[node name="CollisionShape" type="CollisionShape2D" parent="DoorOrange/area2D_orange_main"]
+[node name="CollisionShape" type="CollisionShape2D" parent="Doors/DoorOrange/area2D_orange_main"]
 position = Vector2(-1.52588e-05, 0)
 scale = Vector2(1.39976, 1.40846)
 shape = SubResource("RectangleShape2D_8j2d3")
 
-[node name="DoorGreen" parent="." instance=ExtResource("6_s15xc")]
-position = Vector2(-96, -18)
+[node name="DoorGreen" parent="Doors" instance=ExtResource("6_s15xc")]
+position = Vector2(-105, -25)
 scale = Vector2(1.43965, 1.43965)
 
-[node name="area2D_green_main" type="Area2D" parent="DoorGreen"]
+[node name="area2D_green_main" type="Area2D" parent="Doors/DoorGreen"]
 collision_mask = 8
 
-[node name="CollisionShape" type="CollisionShape2D" parent="DoorGreen/area2D_green_main"]
+[node name="CollisionShape" type="CollisionShape2D" parent="Doors/DoorGreen/area2D_green_main"]
 position = Vector2(-1.52588e-05, 0)
 scale = Vector2(1.39976, 1.40846)
 shape = SubResource("RectangleShape2D_8j2d3")
+
+[node name="Block" type="StaticBody2D" parent="Doors"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Block"]
+position = Vector2(-88.5, -69)
+shape = SubResource("RectangleShape2D_2o7be")
 
 [node name="Player" parent="." instance=ExtResource("8_ogavk")]
 z_index = 1
@@ -5959,15 +5976,15 @@ text = "Level 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_jump" type="Label" parent="txt"]
-offset_left = 41.0
-offset_top = -72.0
-offset_right = 233.0
-offset_bottom = -49.0
+offset_left = 47.0
+offset_top = -77.0
+offset_right = 239.0
+offset_bottom = -54.0
 scale = Vector2(0.376787, 0.406986)
 theme_override_colors/font_color = Color(0.903723, 0.666637, 0.588805, 1)
 theme_override_fonts/font = ExtResource("7_mcjrf")
 theme_override_font_sizes/font_size = 0
-text = "Space to jump"
+text = "Space to jump!"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_move" type="Label" parent="txt"]
@@ -5984,15 +6001,28 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_mission" type="Label" parent="txt"]
-offset_left = -40.0
-offset_top = -139.0
-offset_right = 152.0
-offset_bottom = -85.0
+offset_left = -39.0
+offset_top = -149.0
+offset_right = 153.0
+offset_bottom = -95.0
 scale = Vector2(0.376787, 0.406986)
 theme_override_colors/font_color = Color(0.901961, 0.666667, 0.588235, 1)
 theme_override_fonts/font = ExtResource("7_mcjrf")
 theme_override_font_sizes/font_size = 0
-text = "Now go collect ingredients!"
+text = "Now go collect ingredients..."
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label_mission2" type="Label" parent="txt"]
+offset_left = 41.0
+offset_top = -134.0
+offset_right = 233.0
+offset_bottom = -61.0
+scale = Vector2(0.376787, 0.406986)
+theme_override_colors/font_color = Color(0.901961, 0.666667, 0.588235, 1)
+theme_override_fonts/font = ExtResource("7_mcjrf")
+theme_override_font_sizes/font_size = 0
+text = "... and defend yourself with X"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -6029,16 +6059,41 @@ position = Vector2(40, -52)
 [node name="platform" parent="platforms" instance=ExtResource("10_djpel")]
 position = Vector2(-57, -52)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="TextDetectors" type="Node" parent="."]
+
+[node name="door" type="Area2D" parent="TextDetectors"]
+position = Vector2(-9, -7)
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextDetectors/door"]
 position = Vector2(-96, -18.5)
 shape = SubResource("RectangleShape2D_ainkt")
 
-[connection signal="body_entered" from="DoorOrange/area2D_orange_main" to="DoorOrange" method="_on_area_2d_orange_main_body_entered"]
-[connection signal="body_exited" from="DoorOrange/area2D_orange_main" to="DoorOrange" method="_on_area_2d_orange_main_body_exited"]
-[connection signal="body_entered" from="DoorGreen/area2D_green_main" to="DoorGreen" method="_on_area_2d_green_main_body_entered"]
-[connection signal="body_exited" from="DoorGreen/area2D_green_main" to="DoorGreen" method="_on_area_2d_green_main_body_exited"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="jump" type="Area2D" parent="TextDetectors"]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextDetectors/jump"]
+position = Vector2(57.5, -83)
+shape = SubResource("RectangleShape2D_di7ap")
+
+[node name="mission" type="Area2D" parent="TextDetectors"]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextDetectors/mission"]
+position = Vector2(-8, -130.5)
+shape = SubResource("RectangleShape2D_6b4sd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[connection signal="body_entered" from="Doors/DoorOrange/area2D_orange_main" to="Doors/DoorOrange" method="_on_area_2d_orange_main_body_entered"]
+[connection signal="body_exited" from="Doors/DoorOrange/area2D_orange_main" to="Doors/DoorOrange" method="_on_area_2d_orange_main_body_exited"]
+[connection signal="body_entered" from="Doors/DoorGreen/area2D_green_main" to="Doors/DoorGreen" method="_on_area_2d_green_main_body_entered"]
+[connection signal="body_exited" from="Doors/DoorGreen/area2D_green_main" to="Doors/DoorGreen" method="_on_area_2d_green_main_body_exited"]
+[connection signal="body_entered" from="TextDetectors/door" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="TextDetectors/door" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="TextDetectors/jump" to="." method="_on_jump_body_entered"]
+[connection signal="body_exited" from="TextDetectors/jump" to="." method="_on_jump_body_exited"]
+[connection signal="body_entered" from="TextDetectors/mission" to="." method="_on_mission_body_entered"]
+[connection signal="body_exited" from="TextDetectors/mission" to="." method="_on_mission_body_exited"]

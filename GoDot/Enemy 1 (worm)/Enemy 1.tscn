@@ -43,7 +43,6 @@ size = Vector2(26, 13)
 size = Vector2(37, 17)
 
 [node name="Worm" type="CharacterBody2D"]
-collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_1u01h")
 
@@ -70,8 +69,8 @@ target_position = Vector2(16, 10)
 target_position = Vector2(-15, 10)
 
 [node name="worm_hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 9
+collision_layer = 4
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worm_hitbox"]
 position = Vector2(1, 0.5)
@@ -79,6 +78,8 @@ shape = SubResource("RectangleShape2D_rarh8")
 debug_color = Color(0.656519, 0.46764, 0.591904, 0.42)
 
 [node name="wormy_gets_die" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wormy_gets_die"]
 position = Vector2(1, -1)

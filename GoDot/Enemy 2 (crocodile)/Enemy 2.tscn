@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b868hhucom5e8"]
+[gd_scene load_steps=34 format=3 uid="uid://b868hhucom5e8"]
 
 [ext_resource type="Texture2D" uid="uid://bobg5bx2u0j7k" path="res://Graphics/Crocodile/Crawl_&_Blink_(32 x 32).png" id="1_aemro"]
 [ext_resource type="Script" path="res://Enemy 2 (crocodile)/Crocoscript.gd" id="1_cfj7q"]
@@ -200,6 +200,9 @@ radius = 59.0085
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0ej8"]
 size = Vector2(34, 17.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvpma"]
+size = Vector2(75, 31)
+
 [node name="Crocodile" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 9
@@ -244,7 +247,18 @@ position = Vector2(0, 0.75)
 shape = SubResource("RectangleShape2D_h0ej8")
 debug_color = Color(0.746082, 0.413969, 0.551118, 0.42)
 
+[node name="Croc_gets_die" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Croc_gets_die"]
+position = Vector2(0.5, -5.5)
+shape = SubResource("RectangleShape2D_tvpma")
+debug_color = Color(0.588293, 0.541821, 0.245769, 0.42)
+
 [connection signal="body_entered" from="detection" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Croco-Hitbox" to="." method="_on_croco_hitbox_body_entered"]
 [connection signal="body_exited" from="Croco-Hitbox" to="." method="_on_croco_hitbox_body_exited"]
+[connection signal="body_entered" from="Croc_gets_die" to="." method="_on_croc_gets_die_body_entered"]
+[connection signal="body_exited" from="Croc_gets_die" to="." method="_on_croc_gets_die_body_exited"]

@@ -4373,6 +4373,7 @@ autoplay = "platformFall4"
 
 [node name="Player" parent="." instance=ExtResource("11_hwchh")]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(318, 144)
 scale = Vector2(0.8, 0.8)
 

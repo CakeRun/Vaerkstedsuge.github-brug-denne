@@ -18,6 +18,7 @@ var direction = 1
 var health = 1
 var player_inattack_zone = false
 var enemy_attack_cooldown = true
+var wormy_die_zone = false
 
 func _physics_process(delta):
 	deal_with_damage()
@@ -44,6 +45,14 @@ func _on_worm_hitbox_body_exited(body):
 	if body.has_method("player"):
 		player_inattack_zone = false
 
+func _on_wormy_gets_die_body_entered(body):
+	if body.has_method("player"):
+		wormy_die_zone = true
+
+func _on_wormy_gets_die_body_exited(body):
+	if body.has_method("player"):
+		wormy_die_zone = false
+
 func enemy_attack():
 	if player_inattack_zone and enemy_attack_cooldown == true:
 		GameManager.enemy_type = "Wormy" 
@@ -55,7 +64,7 @@ func enemy_attack():
 		enemy_attack_cooldown = true
 
 func deal_with_damage():
-	if player_inattack_zone and GameManager.player_current_attack == true:
+	if wormy_die_zone and GameManager.player_current_attack == true:
 		health = health - 1
 		await get_tree().create_timer(0.5).timeout #her dør den ikke med det samme
 		print("enemy health - 1")
@@ -63,3 +72,4 @@ func deal_with_damage():
 			GameManager.enemy_type = "Wormy"
 			game_manager.add_extra_point()
 			self.queue_free()
+

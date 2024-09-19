@@ -4424,7 +4424,7 @@ position = Vector2(897, 173)
 position = Vector2(-95, 33)
 
 [node name="Enemy3Scene2" parent="." instance=ExtResource("16_jd36p")]
-position = Vector2(871, 176)
+position = Vector2(866, 176)
 
 [node name="teleport_audio_orange" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_y16cj")

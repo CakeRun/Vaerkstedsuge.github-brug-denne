@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b55uo1iy14pxg"]
+[gd_scene load_steps=10 format=3 uid="uid://b55uo1iy14pxg"]
 
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="1_gcxh7"]
 [ext_resource type="Texture2D" uid="uid://deg377hwwlxgl" path="res://Graphics/background_main_color.png" id="2_t7fr6"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="3_j30yh"]
 [ext_resource type="FontFile" uid="uid://lobebsc6nhjr" path="res://Graphics/Font/PixelOperator8.ttf" id="5_b2dqy"]
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="5_xl2vt"]
+[ext_resource type="Script" path="res://main_scenes/total_score_end_number.gd" id="6_dtkw3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
 texture = ExtResource("1_gcxh7")
@@ -5880,14 +5881,14 @@ theme_override_font_sizes/font_size = 0
 text = "Here is your cake!"
 horizontal_alignment = 1
 
-[node name="TotalScoreLabel_end_big" type="Label" parent="."]
+[node name="TotalScoreLabel" type="Label" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -42.0
+offset_left = -41.0
 offset_top = -68.0
-offset_right = 37.0
-offset_bottom = -47.0
+offset_right = 38.0
+offset_bottom = -59.0
 grow_horizontal = 0
 scale = Vector2(1.05439, 0.928097)
 size_flags_horizontal = 8
@@ -5895,7 +5896,17 @@ theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("5_b2dqy")
 theme_override_font_sizes/font_size = 8
-text = "TOTAL SCORE:
-000
-"
+text = "TOTAL SCORE:"
 horizontal_alignment = 1
+
+[node name="total_score_end_big" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -10.0
+offset_top = -58.0
+offset_right = 30.0
+offset_bottom = -35.0
+theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_b2dqy")
+theme_override_font_sizes/font_size = 8
+text = "000"
+script = ExtResource("6_dtkw3")

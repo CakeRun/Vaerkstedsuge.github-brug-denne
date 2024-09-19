@@ -34,7 +34,7 @@ func _process(delta):
 	if ray_cast_left.is_colliding() or edge_left.is_colliding() == false:
 		direction = 1
 		animated_sprite.flip_h = true
-	if chase:
+	if chase and edge_left.is_colliding() and edge_right.is_colliding():
 		position.x += ((player.position.x - position.x)/speed_chase)
 		if player.position.x < position.x:
 			animated_sprite.flip_h = false

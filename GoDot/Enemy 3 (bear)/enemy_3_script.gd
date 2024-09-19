@@ -4,6 +4,10 @@ extends CharacterBody2D
 @onready var player = %Player
 @onready var game_manager = %GameManager
 
+@onready var edge_left = $edge_left
+@onready var edge_right = $edge_right
+
+
 var speed = 200
 var bear_status = "sleeping"
 
@@ -35,7 +39,7 @@ func _physics_process(delta):
 		bear_status="sleeping"
 		
 	#collision shape imellem 
-	elif bear_status == "chase": #and position.x <= (max x koordinat for platform) and position.x >= (min koordinat for platform)	
+	elif bear_status == "chase" and edge_left.is_colliding() and edge_right.is_colliding(): #and position.x <= (max x koordinat for platform) and position.x >= (min koordinat for platform)	
 		#position.x += (player.position.x - position.x)/speed
 		
 		bear.play("walking")

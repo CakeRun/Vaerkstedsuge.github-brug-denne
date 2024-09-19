@@ -230,6 +230,14 @@ scale = Vector2(1.1483, -0.570441)
 shape = SubResource("CircleShape2D_ffyq7")
 debug_color = Color(0.786556, 0.394323, 0.474455, 0.42)
 
+[node name="edge_left" type="RayCast2D" parent="."]
+position = Vector2(0, -9)
+target_position = Vector2(-21, 13)
+
+[node name="edge_right" type="RayCast2D" parent="."]
+position = Vector2(0, -9)
+target_position = Vector2(21, 13)
+
 [connection signal="body_entered" from="wakeup_area" to="." method="_on_wakeup_area_body_entered"]
 [connection signal="body_exited" from="wakeup_area" to="." method="_on_wakeup_area_body_exited"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]

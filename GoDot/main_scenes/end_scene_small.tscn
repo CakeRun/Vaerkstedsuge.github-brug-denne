@@ -5881,7 +5881,7 @@ theme_override_font_sizes/font_size = 0
 text = "Here is your cake!"
 horizontal_alignment = 1
 
-[node name="TotalScoreLabel" type="Label" parent="."]
+[node name="TotalScoreLabel_end" type="Label" parent="."]
 unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0

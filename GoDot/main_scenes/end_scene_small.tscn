@@ -5880,14 +5880,14 @@ theme_override_font_sizes/font_size = 0
 text = "Here is your cake!"
 horizontal_alignment = 1
 
-[node name="TotalScoreLabel_end_small" type="Label" parent="."]
+[node name="TotalScoreLabel" type="Label" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -42.0
+offset_left = -41.0
 offset_top = -68.0
-offset_right = 37.0
-offset_bottom = -47.0
+offset_right = 38.0
+offset_bottom = -59.0
 grow_horizontal = 0
 scale = Vector2(1.05439, 0.928097)
 size_flags_horizontal = 8
@@ -5895,7 +5895,5 @@ theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("4_xk38l")
 theme_override_font_sizes/font_size = 8
-text = "TOTAL SCORE:
-000
-"
+text = "TOTAL SCORE:"
 horizontal_alignment = 1

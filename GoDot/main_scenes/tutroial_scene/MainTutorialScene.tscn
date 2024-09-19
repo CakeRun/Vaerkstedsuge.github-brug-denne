@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="7_mcjrf"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="8_ogavk"]
 [ext_resource type="AudioStream" uid="uid://bgxs2yi0mjy8f" path="res://audio/Dreamy.wav" id="9_qfy2q"]
-[ext_resource type="PackedScene" path="res://platformMainTutorial.tscn" id="10_djpel"]
+[ext_resource type="PackedScene" uid="uid://dh8bp7kym6e2q" path="res://platformMainTutorial.tscn" id="10_djpel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
 texture = ExtResource("1_djclk")

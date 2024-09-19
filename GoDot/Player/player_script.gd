@@ -88,6 +88,7 @@ func enemy_attack():
 			health_bar.value = health
 	if health <= 0:
 		GameManager.enemy_attack = false
+		GameManager.total_score = GameManager.total_score - GameManager.current_level_score
 		get_tree().reload_current_scene()
 
 func attack():

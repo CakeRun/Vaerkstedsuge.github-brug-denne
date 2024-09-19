@@ -8,6 +8,9 @@ extends Node
 @onready var teleport_audio_orange = $"../teleport_audio_orange"
 @onready var teleport_audio_blue = $"../teleport_audio_blue"
 
+@onready var total_score_label = %TotalScoreLabel
+
+
 @onready var player = $"../Player"
 
 static var levels_completed = 0
@@ -74,7 +77,7 @@ func _process(delta):
 				get_tree().change_scene_to_file("res://Level 3 (winter)/level_3.tscn")
 
 	#### Leaving a level ####
-	if GameManager.current_level_score >= 0 and Input.is_action_just_pressed("enter"):
+	if GameManager.current_level_score >= 1 and Input.is_action_just_pressed("enter"):
 		#green	
 		if entered_green_level1 == true and not teleport_audio_green.playing:
 			print("going to main")
@@ -112,11 +115,13 @@ func _process(delta):
 			if get_tree() == null:
 				print("get_tree() is null!")
 
-			elif GameManager.total_score == 1:
+			elif GameManager.total_score <= 3 and GameManager.total_score >= 1:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_small.tscn")
-			elif GameManager.total_score == 2: 
+				
+				
+			elif GameManager.total_score <= 6  and GameManager.total_score > 3:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_medium.tscn")
-			elif GameManager.total_score == 2: 
+			elif GameManager.total_score >= 9 and GameManager.total_score > 6:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_big.tscn")
 			
 			if levels_completed == 2: #sikrer at det kun updaterer det én gang

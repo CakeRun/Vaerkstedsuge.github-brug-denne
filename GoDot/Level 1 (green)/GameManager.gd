@@ -5,7 +5,6 @@ var addscore = 0
 @export var totalscore = 0 
 
 @onready var score_label = $CanvasLayer/ScoreLabel
-
 @onready var total_score_label_1 = %TotalScoreLabel1
 @onready var total_score_label_2 = %TotalScoreLabel2
 @onready var total_score_label_3 = %TotalScoreLabel3
@@ -13,6 +12,8 @@ var addscore = 0
 func _ready():
 	if GameManager.levels_completed == 1:
 		total_score_label_2.text = "POINTS:" + str(GameManager.total_score).pad_zeros(3)
+	if GameManager.levels_completed == 2:
+		total_score_label_3.text = "POINTS:" + str(GameManager.total_score).pad_zeros(3)
 
 func add_point():
 	score += 1

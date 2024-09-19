@@ -8,10 +8,9 @@ extends Node
 @onready var teleport_audio_orange = $"../teleport_audio_orange"
 @onready var teleport_audio_blue = $"../teleport_audio_blue"
 
-@onready var total_score_label = %TotalScoreLabel
-
 
 @onready var player = $"../Player"
+
 
 static var levels_completed = 0
 
@@ -117,12 +116,15 @@ func _process(delta):
 
 			elif GameManager.total_score <= 3 and GameManager.total_score >= 1:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_small.tscn")
-				
+				#GameManager.total_score_end_small.text = "TOTAL SCORE:" +  str(GameManager.total_score)
 				
 			elif GameManager.total_score <= 6  and GameManager.total_score > 3:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_medium.tscn")
+				#GameManager.total_score_end_medium.text = "TOTAL SCORE:" +  str(GameManager.total_score)
+				
 			elif GameManager.total_score >= 9 and GameManager.total_score > 6:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_big.tscn")
+				#GameManager.total_score_end_big.text = "TOTAL SCORE:" +  str(GameManager.total_score)
 			
 			if levels_completed == 2: #sikrer at det kun updaterer det én gang
 				levels_completed = 3

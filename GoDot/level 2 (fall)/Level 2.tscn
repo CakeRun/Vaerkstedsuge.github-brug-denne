@@ -4261,7 +4261,7 @@ theme_override_colors/font_shadow_color = Color(0.551681, 0.132109, 0.169618, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("2_noxbo")
 theme_override_font_sizes/font_size = 45
-text = "0/10"
+text = "00/10"
 metadata/_edit_use_anchors_ = true
 
 [node name="TotalScoreLabel2" type="Label" parent="GameManager/CanvasLayer"]

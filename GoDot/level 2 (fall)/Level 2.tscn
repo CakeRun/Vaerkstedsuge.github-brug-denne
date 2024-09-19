@@ -1,7 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://qhx4cxt4kjmw"]
+[gd_scene load_steps=41 format=3 uid="uid://qhx4cxt4kjmw"]
 
 [ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="1_d4dxq"]
 [ext_resource type="Texture2D" uid="uid://dregkhwcexytk" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_wqq13"]
+[ext_resource type="AudioStream" uid="uid://bn371ypkjntwy" path="res://audio/A-reveal-4_1.wav" id="1_xy1p1"]
 [ext_resource type="Texture2D" uid="uid://bvkkw8kyxcavf" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Autumn_entities (16 x 16).png" id="2_l3t5a"]
 [ext_resource type="FontFile" uid="uid://lobebsc6nhjr" path="res://Graphics/Font/PixelOperator8.ttf" id="2_noxbo"]
 [ext_resource type="Texture2D" uid="uid://bxygh80dl2bau" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Background parts/_Complete_static_BG_(288 x 208).png" id="3_5bytn"]
@@ -19,8 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://28831wnaue7r" path="res://Ingrediens/level 2 - cream/milk_scene.tscn" id="14_dra1a"]
 [ext_resource type="PackedScene" uid="uid://clorv0bljo0xc" path="res://doors/door_orange.tscn" id="15_xerho"]
 [ext_resource type="PackedScene" uid="uid://bcige3vmvpyl3" path="res://Enemy 3 (bear)/enemy_3_scene.tscn" id="16_jd36p"]
-[ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="18_r1s0l"]
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="20_qvf1e"]
+[ext_resource type="AudioStream" uid="uid://bgxs2yi0mjy8f" path="res://audio/Dreamy.wav" id="22_y16cj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jmvf"]
 texture = ExtResource("1_wqq13")
@@ -4242,7 +4243,7 @@ _data = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-39, 12)
-stream = ExtResource("18_r1s0l")
+stream = ExtResource("1_xy1p1")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -4405,7 +4406,7 @@ position = Vector2(-95, 33)
 position = Vector2(871, 176)
 
 [node name="teleport_audio_orange" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("18_r1s0l")
+stream = ExtResource("22_y16cj")
 
 [connection signal="body_entered" from="DoorOrange/area2D_orange_level2" to="DoorOrange" method="_on_area_2d_orange_level_2_body_entered"]
 [connection signal="body_exited" from="DoorOrange/area2D_orange_level2" to="DoorOrange" method="_on_area_2d_orange_level_2_body_exited"]

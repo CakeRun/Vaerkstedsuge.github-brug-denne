@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b7dinulb11amm"]
+[gd_scene load_steps=21 format=3 uid="uid://b7dinulb11amm"]
 
 [ext_resource type="Script" path="res://main_scenes/tutroial_scene/MainTutorialScene.gd" id="1_0yw30"]
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="1_djclk"]
@@ -10,7 +10,8 @@
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="7_mcjrf"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="8_ogavk"]
 [ext_resource type="AudioStream" uid="uid://bgxs2yi0mjy8f" path="res://audio/Dreamy.wav" id="9_qfy2q"]
-[ext_resource type="PackedScene" path="res://platformMainTutorial.tscn" id="10_djpel"]
+[ext_resource type="PackedScene" uid="uid://dh8bp7kym6e2q" path="res://platformMainTutorial.tscn" id="10_djpel"]
+[ext_resource type="Texture2D" uid="uid://cr8kcx2n13453" path="res://Graphics/placeholders/arrow.png" id="12_ga3gh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
 texture = ExtResource("1_djclk")
@@ -5852,7 +5853,7 @@ size = Vector2(9, 138)
 size = Vector2(38, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_di7ap"]
-size = Vector2(210.754, 58.2659)
+size = Vector2(245.581, 75.2795)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b4sd"]
 size = Vector2(56, 71)
@@ -6000,10 +6001,10 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Label_mission" type="Label" parent="txt"]
-offset_left = -39.0
-offset_top = -149.0
-offset_right = 153.0
-offset_bottom = -95.0
+offset_left = -110.0
+offset_top = -129.0
+offset_right = 82.0
+offset_bottom = -75.0
 scale = Vector2(0.376787, 0.406986)
 theme_override_colors/font_color = Color(0.901961, 0.666667, 0.588235, 1)
 theme_override_fonts/font = ExtResource("7_mcjrf")
@@ -6072,7 +6073,7 @@ shape = SubResource("RectangleShape2D_ainkt")
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextDetectors/jump"]
-position = Vector2(76.0949, -34.5)
+position = Vector2(52.9524, -83.25)
 scale = Vector2(0.691848, 2.14534)
 shape = SubResource("RectangleShape2D_di7ap")
 
@@ -6084,8 +6085,17 @@ position = Vector2(-8, -130.5)
 shape = SubResource("RectangleShape2D_6b4sd")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.7
+wait_time = 0.583
 one_shot = true
+
+[node name="arrow2" type="Sprite2D" parent="."]
+position = Vector2(-46, -81)
+rotation = -1.5702
+texture = ExtResource("12_ga3gh")
+
+[node name="arrow1" type="Sprite2D" parent="."]
+position = Vector2(38, -80)
+texture = ExtResource("12_ga3gh")
 
 [connection signal="body_entered" from="Doors/DoorOrange/area2D_orange_main" to="Doors/DoorOrange" method="_on_area_2d_orange_main_body_entered"]
 [connection signal="body_exited" from="Doors/DoorOrange/area2D_orange_main" to="Doors/DoorOrange" method="_on_area_2d_orange_main_body_exited"]

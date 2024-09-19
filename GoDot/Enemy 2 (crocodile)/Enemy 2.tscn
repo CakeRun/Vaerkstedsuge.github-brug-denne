@@ -201,7 +201,7 @@ radius = 59.0085
 size = Vector2(34, 17.5)
 
 [node name="Crocodile" type="CharacterBody2D"]
-collision_mask = 8
+collision_mask = 9
 script = ExtResource("1_cfj7q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

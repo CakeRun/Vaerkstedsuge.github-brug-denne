@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://kkhss8y6c5h8" path="res://Ingrediens/level 2 - cream/sugar_scene.tscn" id="12_vq8em"]
 [ext_resource type="PackedScene" uid="uid://b3flsgh4u6kou" path="res://Ingrediens/level 2 - cream/whippedcream_scene.tscn" id="13_er7vs"]
 [ext_resource type="PackedScene" uid="uid://28831wnaue7r" path="res://Ingrediens/level 2 - cream/milk_scene.tscn" id="14_dra1a"]
-[ext_resource type="PackedScene" uid="uid://clorv0bljo0xc" path="res://doors/door_orange.tscn" id="15_xerho"]
+[ext_resource type="PackedScene" uid="uid://mvejfwqi4eh7" path="res://doors/door_orange.tscn" id="15_xerho"]
 [ext_resource type="PackedScene" uid="uid://bcige3vmvpyl3" path="res://Enemy 3 (bear)/enemy_3_scene.tscn" id="16_jd36p"]
 [ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="18_r1s0l"]
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="20_qvf1e"]

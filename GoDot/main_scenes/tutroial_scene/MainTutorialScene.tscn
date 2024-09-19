@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dpayos8v2k0p4" path="res://doors/door_green.tscn" id="6_s15xc"]
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="7_mcjrf"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="8_ogavk"]
-[ext_resource type="AudioStream" uid="uid://cfpwn7cx82w0c" path="res://Ingrediens/ingredient_pickup_sound.mp3" id="9_i7pcl"]
-[ext_resource type="PackedScene" path="res://platformMainTutorial.tscn" id="10_djpel"]
+[ext_resource type="AudioStream" uid="uid://bgxs2yi0mjy8f" path="res://audio/Dreamy.wav" id="9_qfy2q"]
+[ext_resource type="PackedScene" uid="uid://dh8bp7kym6e2q" path="res://platformMainTutorial.tscn" id="10_djpel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
 texture = ExtResource("1_djclk")
@@ -5915,7 +5915,7 @@ limit_bottom = 189
 limit_smoothed = true
 
 [node name="teleport_audio_main" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_i7pcl")
+stream = ExtResource("9_qfy2q")
 
 [node name="txt" type="Node" parent="."]
 

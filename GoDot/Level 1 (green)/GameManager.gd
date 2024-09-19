@@ -2,7 +2,7 @@ extends Node
 
 var score = 0 
 var addscore = 0
-var totalscore = 0 
+@export var totalscore = 0 
 
 @onready var score_label = $CanvasLayer/ScoreLabel
 @onready var total_score_label = $CanvasLayer/TotalScoreLabel

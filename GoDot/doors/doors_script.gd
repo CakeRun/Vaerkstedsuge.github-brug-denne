@@ -119,15 +119,12 @@ func _process(delta):
 
 			elif GameManager.total_score <= 3 and GameManager.total_score >= 1:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_small.tscn")
-		
-				
+
 			elif GameManager.total_score <= 6  and GameManager.total_score > 3:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_medium.tscn")
-				total_score_end_medium.text = str(GameManager.total_score).pad_zeros(3)
-				
+
 			elif GameManager.total_score >= 9 and GameManager.total_score > 6:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_big.tscn")
-				total_score_end_big.text = str(GameManager.total_score).pad_zeros(3)
 			
 			if levels_completed == 2: #sikrer at det kun updaterer det én gang
 				levels_completed = 3

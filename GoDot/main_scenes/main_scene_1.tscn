@@ -5837,7 +5837,7 @@ sources/2 = SubResource("TileSetAtlasSource_yjydk")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8j2d3"]
 size = Vector2(10.478, 15.1466)
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xilym")

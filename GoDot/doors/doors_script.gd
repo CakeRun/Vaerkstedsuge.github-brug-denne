@@ -1,9 +1,13 @@
 extends Node
 
-@onready var teleport_audio_main = $"../teleport_audio_main"
+@onready var teleport_audio_main_tut = $"../../teleport_audio_main_tut"
+@onready var teleport_audio_main1 = $"../teleport_audio_main"
+@onready var teleport_audio_main2 = $"../teleport_audio_main"
+
 @onready var teleport_audio_green = $"../teleport_audio_green"
 @onready var teleport_audio_orange = $"../teleport_audio_orange"
 @onready var teleport_audio_blue = $"../teleport_audio_blue"
+
 @onready var player = $"../Player"
 
 static var levels_completed = 0
@@ -27,10 +31,10 @@ func _process(delta):
 	#### LEVEL 1 ####
 	if entered_green_main == true and Input.is_action_just_pressed("enter"):
 		#print(levels_completed)
-		
-		if levels_completed == 0 and not teleport_audio_main.playing:
+
+		if levels_completed == 0 and not teleport_audio_main_tut.playing:
 			print("entering level 1")
-			teleport_audio_main.play()
+			teleport_audio_main_tut.play()
 			await get_tree().create_timer(2.6).timeout
 			
 			if get_tree() == null:
@@ -42,9 +46,9 @@ func _process(delta):
 	if entered_orange_main == true and Input.is_action_just_pressed("enter"):
 		#print(levels_completed)
 		
-		if levels_completed == 1 and not teleport_audio_main.playing:
+		if levels_completed == 1 and not teleport_audio_main1.playing:
 			print("entering level 2")
-			teleport_audio_main.play()
+			teleport_audio_main1.play()
 			await get_tree().create_timer(2.6).timeout
 			
 			if get_tree() == null:
@@ -57,17 +61,16 @@ func _process(delta):
 	if entered_blue_main == true and Input.is_action_just_pressed("enter") and levels_completed == 2:
 		#print(levels_completed)
 		
-		if levels_completed == 2 and not teleport_audio_main.playing:
+		if levels_completed == 2 and not teleport_audio_main2.playing:
 			print("entering level 3")
-			teleport_audio_main.play()
+			teleport_audio_main2.play()
 			await get_tree().create_timer(2.6).timeout
 			
 			if get_tree() == null:
 				print("scene change")
 			else:
 				get_tree().change_scene_to_file("res://Level 3 (winter)/level_3.tscn")
-	
-	
+
 	#### Leaving a level ####
 	if GameManager.current_level_score >= 1 and Input.is_action_just_pressed("enter"):
 		#green	

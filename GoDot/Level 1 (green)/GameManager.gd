@@ -17,7 +17,7 @@ func add_extra_point():
 	elif GameManager.enemy_type == "Bear":
 		addscore += 10
 	elif GameManager.enemy_type == "Crocodile":
-		addscore += 20
+		addscore += 25
 	#score_label.text = "Score: " + str(score) + " / 10" + " + " + str(addscore)
 
 func _process(delta): #TOTAL POINTS

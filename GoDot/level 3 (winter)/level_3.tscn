@@ -1807,7 +1807,7 @@ theme_override_colors/font_shadow_color = Color(3.08037e-06, 0.465051, 0.68834, 
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("16_j382v")
 theme_override_font_sizes/font_size = 45
-text = "0 / 10"
+text = "0/10"
 metadata/_edit_use_anchors_ = true
 
 [node name="killzone" parent="." instance=ExtResource("1_24mja")]

@@ -40,7 +40,7 @@ height = 24.0
 size = Vector2(26, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txgtw"]
-size = Vector2(37, 17)
+size = Vector2(56, 17)
 
 [node name="Worm" type="CharacterBody2D"]
 collision_layer = 2
@@ -83,7 +83,7 @@ collision_layer = 4
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wormy_gets_die"]
-position = Vector2(1, -1)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_txgtw")
 debug_color = Color(0.471138, 0.531613, 0.69425, 0.42)
 

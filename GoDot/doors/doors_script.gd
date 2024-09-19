@@ -31,7 +31,6 @@ static var entered_blue_level3 = false
 
 
 func _process(delta):
-	print(GameManager.total_score)
 	
 	#### LEVEL 1 ####
 	if entered_green_main == true and Input.is_action_just_pressed("enter"):
@@ -79,7 +78,7 @@ func _process(delta):
 				get_tree().change_scene_to_file("res://Level 3 (winter)/level_3.tscn")
 
 	#### Leaving a level ####
-	if GameManager.current_level_score >= 1 and Input.is_action_just_pressed("enter"):
+	if GameManager.current_level_score >= 10 and Input.is_action_just_pressed("enter"):
 		#green	
 		if entered_green_level1 == true and not teleport_audio_green.playing:
 			print("going to main")
@@ -117,13 +116,13 @@ func _process(delta):
 			if get_tree() == null:
 				print("get_tree() is null!")
 
-			elif GameManager.total_score <= 3 and GameManager.total_score >= 1:
+			elif GameManager.total_score <= 40 and GameManager.total_score >= 30:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_small.tscn")
 
-			elif GameManager.total_score <= 6  and GameManager.total_score > 3:
+			elif GameManager.total_score <= 80  and GameManager.total_score > 40:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_medium.tscn")
 
-			elif GameManager.total_score >= 9 and GameManager.total_score > 6:
+			elif GameManager.total_score <= 100 and GameManager.total_score > 80:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_big.tscn")
 			
 			if levels_completed == 2: #sikrer at det kun updaterer det én gang

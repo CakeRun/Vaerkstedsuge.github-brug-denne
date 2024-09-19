@@ -1795,6 +1795,7 @@ _data = {
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("15_smlhd")
+totalscore = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 

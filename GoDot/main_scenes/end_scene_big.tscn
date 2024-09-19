@@ -5858,11 +5858,11 @@ limit_bottom = 189
 limit_smoothed = true
 
 [node name="Label_won" type="Label" parent="."]
-offset_left = -86.0
-offset_top = -143.0
-offset_right = 58.0
-offset_bottom = -117.0
-scale = Vector2(1.19871, 1.19871)
+offset_left = -93.0
+offset_top = -144.0
+offset_right = 51.0
+offset_bottom = -118.0
+scale = Vector2(1.29524, 1.29524)
 theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_b2dqy")
 theme_override_font_sizes/font_size = 24
@@ -5871,12 +5871,32 @@ text = "YOU WON
 
 [node name="Label_text" type="Label" parent="."]
 offset_left = -65.0
-offset_top = -112.0
+offset_top = -111.0
 offset_right = 191.0
-offset_bottom = -89.0
+offset_bottom = -88.0
 scale = Vector2(0.50507, 0.545551)
 theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_xl2vt")
 theme_override_font_sizes/font_size = 0
 text = "Here is your cake!"
+horizontal_alignment = 1
+
+[node name="TotalScoreLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_top = -68.0
+offset_right = 37.0
+offset_bottom = -47.0
+grow_horizontal = 0
+scale = Vector2(1.05439, 0.928097)
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/font = ExtResource("5_b2dqy")
+theme_override_font_sizes/font_size = 8
+text = "TOTAL SCORE:
+000
+"
 horizontal_alignment = 1

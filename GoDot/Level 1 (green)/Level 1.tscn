@@ -2829,6 +2829,7 @@ size = Vector2(1269, 80)
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_j0q3r")
+totalscore = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 

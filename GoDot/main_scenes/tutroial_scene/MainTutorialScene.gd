@@ -27,9 +27,7 @@ func _on_area_2d_body_exited(body):
 #space to jump
 func _on_jump_body_entered(body):
 	label_jump.visible = true
-	get_tree().create_timer(0.7)
-	timer.start()
-	await timer.timeout
+	await get_tree().create_timer(0.7).timeout
 	arrow_1.visible = true
 func _on_jump_body_exited(body):
 	arrow_1.visible = false

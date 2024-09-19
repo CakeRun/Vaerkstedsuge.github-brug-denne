@@ -5946,9 +5946,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label_unlocked" type="Label" parent="Labels"]
 offset_left = -59.0
-offset_top = -152.0
+offset_top = -132.0
 offset_right = 197.0
-offset_bottom = -129.0
+offset_bottom = -109.0
 scale = Vector2(0.459027, 0.495817)
 theme_override_colors/font_color = Color(0.903723, 0.666637, 0.588805, 1)
 theme_override_fonts/font = ExtResource("7_y7q5v")

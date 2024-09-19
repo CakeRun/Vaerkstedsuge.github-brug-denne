@@ -11,3 +11,4 @@ func _on_body_entered(body):
 
 func _on_timer_timeout():
 	get_tree().reload_current_scene()
+	GameManager.total_score = GameManager.total_score - GameManager.current_level_score

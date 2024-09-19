@@ -87,6 +87,8 @@ func _process(delta):
 			if levels_completed == 0: #sikrer at det kun updaterer det én gang
 				levels_completed = 1
 				print(levels_completed)
+				
+			GameManager.current_level_score = 0
 
 		#orange
 		if entered_orange_level2 == true and not teleport_audio_orange.playing:
@@ -98,6 +100,8 @@ func _process(delta):
 			if levels_completed == 1: #sikrer at det kun updaterer det én gang
 				levels_completed = 2
 				print(levels_completed)
+			
+			GameManager.current_level_score = 0
 		
 		#blue
 		if entered_blue_level3 == true and not teleport_audio_blue.playing:
@@ -118,6 +122,8 @@ func _process(delta):
 			if levels_completed == 2: #sikrer at det kun updaterer det én gang
 				levels_completed = 3
 				print(levels_completed)
+			
+			GameManager.current_level_score = 0
 
 #### LEVEL 1 ####
 #green door - main

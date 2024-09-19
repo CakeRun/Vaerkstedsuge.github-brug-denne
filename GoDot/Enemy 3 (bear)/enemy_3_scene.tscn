@@ -178,7 +178,7 @@ height = 121.171
 radius = 9.43619
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ffyq7"]
-radius = 15.773
+radius = 20.3342
 
 [node name="Enemy3Scene" type="CharacterBody2D"]
 collision_mask = 9
@@ -224,9 +224,10 @@ scale = Vector2(0.922078, 1)
 shape = SubResource("CircleShape2D_kr71d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.19209e-07, -7)
+position = Vector2(1, -12)
 scale = Vector2(1.1483, -0.570441)
 shape = SubResource("CircleShape2D_ffyq7")
+debug_color = Color(0.786556, 0.394323, 0.474455, 0.42)
 
 [connection signal="body_entered" from="wakeup_area" to="." method="_on_wakeup_area_body_entered"]
 [connection signal="body_exited" from="wakeup_area" to="." method="_on_wakeup_area_body_exited"]

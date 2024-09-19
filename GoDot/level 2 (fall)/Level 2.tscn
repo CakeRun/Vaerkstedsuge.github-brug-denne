@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://qhx4cxt4kjmw"]
+[gd_scene load_steps=42 format=3 uid="uid://qhx4cxt4kjmw"]
 
 [ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="1_d4dxq"]
 [ext_resource type="Texture2D" uid="uid://dregkhwcexytk" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_wqq13"]
@@ -4238,6 +4238,9 @@ _data = {
 "platformFall4": SubResource("Animation_jabrp")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_iec60"]
+radius = 10.0633
+
 [node name="Level2" type="Node2D"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -4377,6 +4380,7 @@ autoplay = "platformFall4"
 unique_name_in_owner = true
 position = Vector2(318, 144)
 scale = Vector2(0.8, 0.8)
+collision_mask = 9
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -4420,14 +4424,44 @@ position = Vector2(348, -3)
 [node name="WhippedcreamScene4" parent="Node" instance=ExtResource("13_er7vs")]
 position = Vector2(897, 173)
 
-[node name="Enemy3Scene" parent="." instance=ExtResource("16_jd36p")]
-position = Vector2(-95, 33)
+[node name="Enemy3_1" parent="." instance=ExtResource("16_jd36p")]
+position = Vector2(-92, 32)
+collision_layer = 1
+collision_mask = 8
 
-[node name="Enemy3Scene2" parent="." instance=ExtResource("16_jd36p")]
-position = Vector2(866, 176)
+[node name="attack_area1" type="Area2D" parent="Enemy3_1"]
+position = Vector2(0, 4)
+scale = Vector2(3.77189, 3.25622)
+collision_layer = 4
+collision_mask = 12
+
+[node name="attack_area_collisionshape" type="CollisionShape2D" parent="Enemy3_1/attack_area1"]
+position = Vector2(0, -5.52788)
+scale = Vector2(0.922078, 1)
+shape = SubResource("CircleShape2D_iec60")
+
+[node name="Enemy3_2" parent="." instance=ExtResource("16_jd36p")]
+position = Vector2(870, 176)
+collision_layer = 1
+collision_mask = 8
+
+[node name="attack_area2" type="Area2D" parent="Enemy3_2"]
+position = Vector2(-962, -140)
+scale = Vector2(3.77189, 3.25622)
+collision_layer = 4
+collision_mask = 12
+
+[node name="attack_area_collisionshape" type="CollisionShape2D" parent="Enemy3_2/attack_area2"]
+position = Vector2(0, -5.52788)
+scale = Vector2(0.922078, 1)
+shape = SubResource("CircleShape2D_iec60")
 
 [node name="teleport_audio_orange" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_y16cj")
 
 [connection signal="body_entered" from="DoorOrange/area2D_orange_level2" to="DoorOrange" method="_on_area_2d_orange_level_2_body_entered"]
 [connection signal="body_exited" from="DoorOrange/area2D_orange_level2" to="DoorOrange" method="_on_area_2d_orange_level_2_body_exited"]
+[connection signal="body_entered" from="Enemy3_1/attack_area1" to="Enemy3_1" method="_on_attack_area_1_body_entered"]
+[connection signal="body_exited" from="Enemy3_1/attack_area1" to="Enemy3_1" method="_on_attack_area_1_body_exited"]
+[connection signal="body_entered" from="Enemy3_2/attack_area2" to="Enemy3_2" method="_on_attack_area_2_body_entered"]
+[connection signal="body_exited" from="Enemy3_2/attack_area2" to="Enemy3_2" method="_on_attack_area_2_body_exited"]

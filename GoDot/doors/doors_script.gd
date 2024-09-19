@@ -47,6 +47,7 @@ func _process(delta):
 		#print(levels_completed)
 		
 		if levels_completed == 1 and not teleport_audio_main1.playing:
+			GameManager.current_level_score = 0
 			print("entering level 2")
 			teleport_audio_main1.play()
 			await get_tree().create_timer(2.6).timeout
@@ -62,6 +63,7 @@ func _process(delta):
 		#print(levels_completed)
 		
 		if levels_completed == 2 and not teleport_audio_main2.playing:
+			GameManager.current_level_score = 0
 			print("entering level 3")
 			teleport_audio_main2.play()
 			await get_tree().create_timer(2.6).timeout

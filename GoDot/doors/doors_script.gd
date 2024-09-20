@@ -78,7 +78,7 @@ func _process(delta):
 				get_tree().change_scene_to_file("res://Level 3 (winter)/level_3.tscn")
 
 	#### Leaving a level ####
-	if GameManager.ingredient_score >= 1 and Input.is_action_just_pressed("enter"):
+	if GameManager.ingredient_score = 10 and Input.is_action_just_pressed("enter"):
 		#green	
 		if entered_green_level1 == true and not teleport_audio_green.playing:
 			print("going to main")

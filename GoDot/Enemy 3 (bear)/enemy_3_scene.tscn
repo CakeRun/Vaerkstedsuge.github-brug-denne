@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bcige3vmvpyl3"]
+[gd_scene load_steps=28 format=3 uid="uid://bcige3vmvpyl3"]
 
 [ext_resource type="Script" path="res://Enemy 3 (bear)/enemy_3_script.gd" id="1_73lgq"]
 [ext_resource type="Texture2D" uid="uid://87uo136c58t7" path="res://Graphics/Bear/Sleeping_&_Wakeup_(48 x 32).png" id="2_8vvpa"]
@@ -175,10 +175,13 @@ radius = 28.1135
 height = 121.171
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kr71d"]
-radius = 9.43619
+radius = 5.95195
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ffyq7"]
 radius = 20.3342
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oe53n"]
+height = 68.0
 
 [node name="Enemy3Scene" type="CharacterBody2D"]
 collision_layer = 2
@@ -220,9 +223,10 @@ collision_layer = 4
 collision_mask = 12
 
 [node name="attack_area_collisionshape" type="CollisionShape2D" parent="attack_area"]
-position = Vector2(-0.530238, -5.52788)
+position = Vector2(0, -5.22078)
 scale = Vector2(0.922078, 1)
 shape = SubResource("CircleShape2D_kr71d")
+debug_color = Color(0.760419, 0.403159, 0.546152, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -12)
@@ -238,9 +242,19 @@ target_position = Vector2(-21, 13)
 position = Vector2(0, -9)
 target_position = Vector2(21, 13)
 
+[node name="bear_gets_die" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bear_gets_die"]
+position = Vector2(1, -11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oe53n")
+debug_color = Color(0.199347, 0.622195, 0.446577, 0.42)
+
 [connection signal="body_entered" from="wakeup_area" to="." method="_on_wakeup_area_body_entered"]
 [connection signal="body_exited" from="wakeup_area" to="." method="_on_wakeup_area_body_exited"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="attack_area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="attack_area" to="." method="_on_attack_area_body_exited"]
+[connection signal="body_entered" from="bear_gets_die" to="." method="_on_bear_gets_die_body_entered"]
+[connection signal="body_exited" from="bear_gets_die" to="." method="_on_bear_gets_die_body_exited"]

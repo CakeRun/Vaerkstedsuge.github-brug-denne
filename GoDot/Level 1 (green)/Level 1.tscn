@@ -3018,7 +3018,7 @@ position = Vector2(507, -52)
 position = Vector2(844, -179)
 
 [node name="FlourScene4" parent="Collectables" instance=ExtResource("16_nideg")]
-position = Vector2(581, 36)
+position = Vector2(633, 61)
 
 [node name="ButterScene2" parent="Collectables" instance=ExtResource("17_34q8t")]
 position = Vector2(386, -51)

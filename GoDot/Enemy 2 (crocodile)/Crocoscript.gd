@@ -69,18 +69,20 @@ func _on_croc_gets_die_body_exited(body):
 	if body.has_method("player"):
 		croc_die_zone = false
 
-func enemy_attack():
+func enemy_attack():		
 	if player_inattack_zone and enemy_attack_cooldown == true:
-		GameManager.enemy_type = "Crocodile" 
-		GameManager.enemy_attack = true 
-		animated_sprite.play("chomp")
-		enemy_attack_cooldown = false 
-		await get_tree().create_timer(0.02).timeout #til at sikre, at vi dør ikke konstant
-		GameManager.enemy_attack = false
-		await get_tree().create_timer(2).timeout
-		enemy_attack_cooldown = true
-	elif player_inattack_zone == false:
-		animated_sprite.play("Walk")
+		var t = randf_range(0,1)
+		if t<=0.05 : #5% change for at der angribes
+			GameManager.enemy_type = "Crocodile" 
+			GameManager.enemy_attack = true 
+			animated_sprite.play("chomp")
+			enemy_attack_cooldown = false 
+			await get_tree().create_timer(0.02).timeout #til at sikre, at vi dør ikke konstant
+			GameManager.enemy_attack = false
+			await get_tree().create_timer(1).timeout
+			enemy_attack_cooldown = true
+		elif player_inattack_zone == false:
+			animated_sprite.play("Walk")
 
 func deal_with_damage():
 	if croc_die_zone and GameManager.player_current_attack == true:

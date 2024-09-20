@@ -13,6 +13,7 @@ var bear_status = "sleeping"
 
 var health = 2
 var attack_cooldown = false
+var player_inattack_zone = false 
 
 func enemy():
 	pass 
@@ -62,10 +63,10 @@ func _physics_process(delta):
 	elif bear_status == "attack":
 		var t = randf_range(0,1)
 		if t<=0.05 : #5% change for at der angribes
-			GameManager.enemy_type = "Bear"
-			GameManager.enemy_attack = true 
 			bear.play("attack")
 			attack_cooldown = true
+			GameManager.enemy_attack = true 
+			GameManager.enemy_type = "Bear"
 			await get_tree().create_timer(0.02).timeout
 			GameManager.enemy_attack = false
 			await get_tree().create_timer(1.2).timeout
@@ -93,8 +94,14 @@ func _on_attack_area_body_entered(player):
 func _on_attack_area_body_exited(player):
 	bear_status = "chase"
 
+func _on_bear_gets_die_body_entered(player):
+	player_inattack_zone = true
+
+func _on_bear_gets_die_body_exited(body):
+	player_inattack_zone = false
+
 func deal_with_damage():
-	if GameManager.player_current_attack == true:
+	if GameManager.player_current_attack and player_inattack_zone == true:
 		health = health - 1
 		await get_tree().create_timer(0.5).timeout 
 		print("enemy health - 1")
@@ -102,3 +109,4 @@ func deal_with_damage():
 			GameManager.enemy_type = "Bear"
 			game_manager.add_extra_point()
 			self.queue_free()
+

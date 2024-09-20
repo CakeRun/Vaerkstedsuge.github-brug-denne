@@ -94,16 +94,20 @@ func _on_attack_area_body_entered(player):
 func _on_attack_area_body_exited(player):
 	bear_status = "chase"
 
-func _on_bear_gets_die_body_entered(player):
-	player_inattack_zone = true
+func _on_bear_gets_die_body_entered(body):
+	if body.has_method("player"):
+		player_inattack_zone = true
+		print("player_inattack_zone = true")
 
 func _on_bear_gets_die_body_exited(body):
-	player_inattack_zone = false
+	if body.has_method("player"):
+		player_inattack_zone = false
+		print("player_inattack_zone = false")
 
 func deal_with_damage():
 	if GameManager.player_current_attack and player_inattack_zone == true:
+		await get_tree().create_timer(0.2).timeout
 		health = health - 1
-		await get_tree().create_timer(0.5).timeout 
 		print("enemy health - 1")
 		if health <= 0:
 			GameManager.enemy_type = "Bear"

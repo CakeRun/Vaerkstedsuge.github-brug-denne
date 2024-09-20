@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://cdphajqhv2bnu"]
+[gd_scene load_steps=32 format=3 uid="uid://cdphajqhv2bnu"]
 
 [ext_resource type="PackedScene" uid="uid://64nw0m5jl78e" path="res://killzone.tscn" id="1_24mja"]
 [ext_resource type="Texture2D" uid="uid://c6jnhop5rhgwn" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="2_anwp5"]
 [ext_resource type="Texture2D" uid="uid://cl8vavbkm0r" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="3_iepeq"]
+[ext_resource type="Script" path="res://Level 3 (winter)/portal_label_blue.gd" id="3_jnsk0"]
 [ext_resource type="Texture2D" uid="uid://300m4q7pyn5u" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="4_fck1e"]
 [ext_resource type="Texture2D" uid="uid://6eeb6n4ox77t" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="5_5jsj7"]
 [ext_resource type="Texture2D" uid="uid://bk71h2nv20ar0" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="6_sqroi"]
@@ -1830,6 +1831,28 @@ theme_override_font_sizes/font_size = 45
 text = "POINTS:000
 "
 horizontal_alignment = 2
+
+[node name="portal_label_blue" type="Label" parent="GameManager/CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 15.0
+offset_right = 313.0
+offset_bottom = 68.0
+grow_horizontal = 2
+scale = Vector2(0.648663, 0.648663)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.831373, 0.929412, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.466667, 0.690196, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/font = ExtResource("16_j382v")
+theme_override_font_sizes/font_size = 36
+text = "*portal is open*"
+script = ExtResource("3_jnsk0")
+metadata/_edit_use_anchors_ = true
 
 [node name="killzone" parent="." instance=ExtResource("1_24mja")]
 collision_mask = 9

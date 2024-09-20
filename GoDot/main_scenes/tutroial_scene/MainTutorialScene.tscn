@@ -5859,6 +5859,33 @@ size = Vector2(245.581, 75.2795)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b4sd"]
 size = Vector2(56, 71)
 
+[sub_resource type="Animation" id="Animation_scrpl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.458824, 0.239216, 0.235294, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_dm2c8"]
 resource_name = "disepear"
 length = 3.5
@@ -5885,33 +5912,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_scrpl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.458824, 0.239216, 0.235294, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i6eaa"]
@@ -6097,7 +6097,7 @@ scale = Vector2(0.376787, 0.406986)
 theme_override_colors/font_color = Color(0.911375, 0.687796, 0.614412, 1)
 theme_override_fonts/font = ExtResource("7_mcjrf")
 theme_override_font_sizes/font_size = 0
-text = "Press E to enter doors"
+text = "Press E to enter portals"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 

@@ -72,7 +72,7 @@ func _on_croc_gets_die_body_exited(body):
 func enemy_attack():		
 	if player_inattack_zone and enemy_attack_cooldown == true:
 		var t = randf_range(0,1)
-		if t<=0.05 : #5% change for at der angribes
+		if t<=0.10 : #5% change for at der angribes
 			GameManager.enemy_type = "Crocodile" 
 			GameManager.enemy_attack = true 
 			animated_sprite.play("chomp")

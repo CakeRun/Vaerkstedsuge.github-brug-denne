@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bcige3vmvpyl3"]
+[gd_scene load_steps=30 format=3 uid="uid://bcige3vmvpyl3"]
 
 [ext_resource type="Script" path="res://Enemy 3 (bear)/enemy_3_script.gd" id="1_73lgq"]
 [ext_resource type="Texture2D" uid="uid://87uo136c58t7" path="res://Graphics/Bear/Sleeping_&_Wakeup_(48 x 32).png" id="2_8vvpa"]
@@ -184,6 +184,23 @@ height = 108.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ffyq7"]
 radius = 20.3342
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rl5qw"]
+bg_color = Color(0.857869, 0.310185, 0.180744, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.105882, 0.0784314, 0.117647, 1)
+expand_margin_top = 1.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_f78of"]
+content_margin_top = 2.0
+content_margin_right = 0.0
+color = Color(0.219608, 0.666667, 0.388235, 1)
+grow_begin = -1.0
+grow_end = -1.0
+thickness = 3
+
 [node name="Enemy3Scene" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 9
@@ -253,6 +270,18 @@ target_position = Vector2(-21, 13)
 [node name="edge_right" type="RayCast2D" parent="."]
 position = Vector2(0, -9)
 target_position = Vector2(21, 13)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -12.0
+offset_top = -34.0
+offset_right = 8.0
+offset_bottom = -30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_rl5qw")
+theme_override_styles/fill = SubResource("StyleBoxLine_f78of")
+max_value = 2.0
+value = 2.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="wakeup_area" to="." method="_on_wakeup_area_body_entered"]
 [connection signal="body_exited" from="wakeup_area" to="." method="_on_wakeup_area_body_exited"]

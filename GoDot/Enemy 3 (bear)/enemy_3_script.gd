@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 @onready var edge_left = $edge_left
 @onready var edge_right = $edge_right
+@onready var health_bar = $HealthBar
 
 
 var speed = 200
@@ -108,6 +109,7 @@ func deal_with_damage():
 	if GameManager.player_current_attack and player_inattack_zone == true:
 		await get_tree().create_timer(0.2).timeout
 		health = health - 1
+		health_bar.value = health 
 		print("enemy health - 1")
 		if health <= 0:
 			GameManager.enemy_type = "Bear"

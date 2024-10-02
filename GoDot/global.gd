@@ -13,3 +13,5 @@ var ingredient_score = 0
 var current_level_score = 0
 
 var levels_completed = 0
+
+var player_heal = false

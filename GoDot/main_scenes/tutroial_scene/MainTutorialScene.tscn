@@ -6166,7 +6166,6 @@ texture = ExtResource("12_ga3gh")
 [node name="titel_start" type="Node" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="titel_start"]
-visible = false
 z_index = 2
 offset_left = -511.0
 offset_top = -331.0

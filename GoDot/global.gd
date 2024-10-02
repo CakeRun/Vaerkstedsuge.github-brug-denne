@@ -15,3 +15,5 @@ var current_level_score = 0
 var levels_completed = 0
 
 var total_time = 0
+
+var player_heal = false

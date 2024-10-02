@@ -61,17 +61,19 @@ func _physics_process(delta):
 			bear.play("idle")
 	
 
-	elif bear_status == "attack":
-		var t = randf_range(0,1)
-		if t<=0.05 : #5% change for at der angribes
-			bear.play("attack")
-			attack_cooldown = true
-			GameManager.enemy_attack = true 
-			GameManager.enemy_type = "Bear"
-			await get_tree().create_timer(0.02).timeout
-			GameManager.enemy_attack = false
-			await get_tree().create_timer(1.2).timeout
-			attack_cooldown = false
+	elif bear_status == "attack" and attack_cooldown == false:
+		bear.play("attack")
+		attack_cooldown = true
+		print("attack_cooldown = true")
+		GameManager.enemy_attack = true 
+		print("enemy attack = true")
+		GameManager.enemy_type = "Bear"
+		await get_tree().create_timer(0.02).timeout
+		GameManager.enemy_attack = false
+		print("enemy attack = false")
+		await get_tree().create_timer(0.8).timeout
+		attack_cooldown = false
+		print("attack_cooldown = false")
 
 func _on_detection_area_body_entered(player):
 	if bear_status=="":
@@ -98,12 +100,12 @@ func _on_attack_area_body_exited(player):
 func _on_bear_gets_die_body_entered(body):
 	if body.has_method("player"):
 		player_inattack_zone = true
-		print("player_inattack_zone = true")
+#		print("player_inattack_zone = true")
 
 func _on_bear_gets_die_body_exited(body):
 	if body.has_method("player"):
 		player_inattack_zone = false
-		print("player_inattack_zone = false")
+#		print("player_inattack_zone = false")
 
 func deal_with_damage():
 	if GameManager.player_current_attack and player_inattack_zone == true:

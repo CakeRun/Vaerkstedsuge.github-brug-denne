@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b7dinulb11amm"]
+[gd_scene load_steps=26 format=3 uid="uid://b7dinulb11amm"]
 
 [ext_resource type="Script" path="res://main_scenes/tutroial_scene/MainTutorialScene.gd" id="1_0yw30"]
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="1_djclk"]
@@ -5920,6 +5920,10 @@ _data = {
 "disepear": SubResource("Animation_dm2c8")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w50bt"]
+normal = Vector2(0, 1)
+distance = 9.15219
+
 [node name="Main" type="Node2D"]
 position = Vector2(-9, -7)
 script = ExtResource("1_0yw30")
@@ -6183,6 +6187,12 @@ libraries = {
 "": SubResource("AnimationLibrary_i6eaa")
 }
 autoplay = "disepear"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2, -170)
+shape = SubResource("WorldBoundaryShape2D_w50bt")
 
 [connection signal="body_entered" from="Doors/DoorOrange/area2D_orange_main" to="Doors/DoorOrange" method="_on_area_2d_orange_main_body_entered"]
 [connection signal="body_exited" from="Doors/DoorOrange/area2D_orange_main" to="Doors/DoorOrange" method="_on_area_2d_orange_main_body_exited"]

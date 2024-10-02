@@ -4307,6 +4307,8 @@ text = "*portal is open*"
 script = ExtResource("4_ski62")
 metadata/_edit_use_anchors_ = true
 
+[node name="Level_time" type="Timer" parent="GameManager"]
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, -1)
 tile_set = SubResource("TileSet_y5qin")

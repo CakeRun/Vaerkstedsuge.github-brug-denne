@@ -14,6 +14,8 @@ extends Node
 
 @onready var player = $"../Player"
 
+@onready var level_time = $"../GameManager/Level_time"
+
 
 static var levels_completed = 0
 
@@ -134,6 +136,7 @@ func _process(delta):
 func _on_area_2d_green_main_body_entered(body):
 	if levels_completed == 0:
 		entered_green_main = true
+		
 
 func _on_area_2d_green_main_body_exited(body):
 		entered_green_main = false

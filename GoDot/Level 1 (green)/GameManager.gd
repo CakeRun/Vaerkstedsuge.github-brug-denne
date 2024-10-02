@@ -16,6 +16,8 @@ func _ready():
 	if GameManager.levels_completed == 2:
 		total_score_label_3.text = "POINTS:" + str(GameManager.total_score).pad_zeros(3)
 
+
+
 func add_point():
 	score += 1
 	GameManager.ingredient_score += 1

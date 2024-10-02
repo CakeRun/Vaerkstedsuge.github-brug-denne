@@ -26,6 +26,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	enemy_attack()
 	attack()
+	player_heal()
 	
 
 	# Handle jump.
@@ -106,3 +107,9 @@ func attack():
 		bonk.play()
 		await get_tree().create_timer(1.2).timeout
 		attack_ip = false 
+
+func player_heal():
+	if GameManager.player_heal == true:
+		health = health + 2
+		print("health + 2")
+		health_bar.value = health 

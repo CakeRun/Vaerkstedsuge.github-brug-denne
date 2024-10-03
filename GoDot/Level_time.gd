@@ -1,20 +1,17 @@
 extends Timer
 
 var setCount = 10000
-var remaining 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+# if GameManager.levels_completed == 0:   #til hvis den skal være forskellig for de tre levels
 func start_count():
 	start(setCount)
 	
 func stop_count():
 	stop()
-	remaining = get_time_left
+	var remaining = get_time_left
+	print(remaining, "time left")
 	GameManager.total_time = setCount - remaining
+	print(GameManager.total_time, "total time spent so far")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://cdphajqhv2bnu"]
+[gd_scene load_steps=33 format=3 uid="uid://cdphajqhv2bnu"]
 
 [ext_resource type="PackedScene" uid="uid://64nw0m5jl78e" path="res://killzone.tscn" id="1_24mja"]
 [ext_resource type="Texture2D" uid="uid://c6jnhop5rhgwn" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="2_anwp5"]
 [ext_resource type="Texture2D" uid="uid://cl8vavbkm0r" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="3_iepeq"]
 [ext_resource type="Script" path="res://Level 3 (winter)/portal_label_blue.gd" id="3_jnsk0"]
+[ext_resource type="Script" path="res://Level_time.gd" id="4_e5o7p"]
 [ext_resource type="Texture2D" uid="uid://300m4q7pyn5u" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="4_fck1e"]
 [ext_resource type="Texture2D" uid="uid://6eeb6n4ox77t" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="5_5jsj7"]
 [ext_resource type="Texture2D" uid="uid://bk71h2nv20ar0" path="res://Graphics/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="6_sqroi"]
@@ -1855,6 +1856,7 @@ script = ExtResource("3_jnsk0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Level_time" type="Timer" parent="GameManager"]
+script = ExtResource("4_e5o7p")
 
 [node name="killzone" parent="." instance=ExtResource("1_24mja")]
 collision_mask = 9

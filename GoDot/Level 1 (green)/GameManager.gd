@@ -9,12 +9,18 @@ var addscore = 0
 @onready var total_score_label_2 = %TotalScoreLabel2
 @onready var total_score_label_3 = %TotalScoreLabel3
 
+#@onready var level_time = $Level_time
+
+
 func _ready():
 	GameManager.ingredient_score = 0
 	if GameManager.levels_completed == 1:
 		total_score_label_2.text = "POINTS:" + str(GameManager.total_score).pad_zeros(3)
 	if GameManager.levels_completed == 2:
 		total_score_label_3.text = "POINTS:" + str(GameManager.total_score).pad_zeros(3)
+#	level_time.start_count()
+
+
 
 func add_point():
 	score += 1

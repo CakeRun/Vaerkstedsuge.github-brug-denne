@@ -14,6 +14,9 @@ extends Node
 
 @onready var player = $"../Player"
 
+@onready var level_time = $"../GameManager/Level_time"
+
+
 
 static var levels_completed = 0
 
@@ -45,6 +48,7 @@ func _process(delta):
 				print("scene change")
 			else:
 				get_tree().change_scene_to_file("res://Level 1 (green)/Level 1.tscn")
+				level_time.start_count() #til at starte timeren i level 1 når denne scene startes
 
 	#### LEVEL 2 ####
 	if entered_orange_main == true and Input.is_action_just_pressed("enter"):
@@ -60,6 +64,7 @@ func _process(delta):
 				print("scene change")
 			else:
 				get_tree().change_scene_to_file("res://level 2 (fall)/Level 2.tscn")
+				level_time.start_count() #til at starte timeren i level 2 når denne scene startes
 	
 
 	#### LEVEL 3 ####
@@ -76,11 +81,13 @@ func _process(delta):
 				print("scene change")
 			else:
 				get_tree().change_scene_to_file("res://Level 3 (winter)/level_3.tscn")
+				level_time.start_count() #til at starte timeren i level 3 når denne scene startes
 
 	#### Leaving a level ####
 	if GameManager.ingredient_score == 10 and Input.is_action_just_pressed("enter"):
 		#green	
 		if entered_green_level1 == true and not teleport_audio_green.playing:
+			level_time.stop_count() #til at stoppe timeren
 			print("going to main")
 			teleport_audio_green.play()
 			await get_tree().create_timer(2.6).timeout
@@ -97,6 +104,7 @@ func _process(delta):
 
 		#orange
 		if entered_orange_level2 == true and not teleport_audio_orange.playing:
+			level_time.stop_count() #til at stoppe timeren
 			print("going to main")
 			teleport_audio_orange.play()
 			await get_tree().create_timer(2.6).timeout
@@ -109,6 +117,7 @@ func _process(delta):
 		
 		#blue
 		if entered_blue_level3 == true and not teleport_audio_blue.playing:
+			level_time.stop_count() #til at stoppe timeren
 			print("going to main end")
 			teleport_audio_blue.play()
 			await get_tree().create_timer(2.6).timeout
@@ -134,6 +143,7 @@ func _process(delta):
 func _on_area_2d_green_main_body_entered(body):
 	if levels_completed == 0:
 		entered_green_main = true
+		
 
 func _on_area_2d_green_main_body_exited(body):
 		entered_green_main = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3nf1r47enc30"]
+[gd_scene load_steps=13 format=3 uid="uid://c3nf1r47enc30"]
 
 [ext_resource type="Script" path="res://main_scenes/end_scene.gd" id="1_sa6gk"]
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="1_sy1b6"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="5_fgwwq"]
 [ext_resource type="Script" path="res://main_scenes/total_score_end_number.gd" id="6_odqoc"]
 [ext_resource type="AudioStream" uid="uid://bndnxo5gss8v2" path="res://audio/medieval-fanfare-6826.wav" id="7_73cy4"]
+[ext_resource type="PackedScene" uid="uid://kea1bjrto1u0" path="res://playagain_button.tscn" id="9_osavm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
 texture = ExtResource("1_sy1b6")
@@ -5916,3 +5917,6 @@ script = ExtResource("6_odqoc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_73cy4")
+
+[node name="Node2D" parent="." instance=ExtResource("9_osavm")]
+position = Vector2(1, -84)

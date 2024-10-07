@@ -28,6 +28,10 @@ func _physics_process(delta):
 	attack()
 	player_heal()
 	
+	if health > 6:
+		health = 6
+		print(health)
+	
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -67,6 +71,7 @@ func player():
 
 func _ready():
 	health_bar.value = health 
+
 
 #determines if enemy is within attack range
 func _on_player_hitbox_body_entered(body):

@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d0x6wqm8rkrni" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="9_3c7pl"]
 [ext_resource type="Texture2D" uid="uid://cterbiusxq6g4" path="res://Graphics/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="10_8it87"]
 [ext_resource type="PackedScene" path="res://Level 1 (green)/small_platform_green.tscn" id="11_3um4d"]
-[ext_resource type="PackedScene" uid="uid://34jhboicktq2" path="res://platform_green.tscn" id="12_8r1xm"]
+[ext_resource type="PackedScene" path="res://platform_green.tscn" id="12_8r1xm"]
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="12_ul827"]
 [ext_resource type="PackedScene" uid="uid://dpayos8v2k0p4" path="res://doors/door_green.tscn" id="13_ltpma"]
 [ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="14_4d2uq"]
@@ -2890,7 +2890,7 @@ text = "*portal is open*"
 script = ExtResource("4_jrhqd")
 metadata/_edit_use_anchors_ = true
 
-[node name="Level_time" type="Timer" parent="GameManager"]
+[node name="Level_time1" type="Timer" parent="GameManager"]
 script = ExtResource("4_ri3n3")
 
 [node name="TileMap1Green" type="TileMap" parent="."]

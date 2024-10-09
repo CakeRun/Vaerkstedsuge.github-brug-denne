@@ -11,7 +11,6 @@ var addscore = 0
 
 #@onready var level_time = $Level_time
 
-
 func _ready():
 	GameManager.ingredient_score = 0
 	if GameManager.levels_completed == 1:

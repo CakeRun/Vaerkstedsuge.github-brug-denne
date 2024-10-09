@@ -125,7 +125,10 @@ func _process(delta):
 			if get_tree() == null:
 				print("get_tree() is null!")
 
-			elif GameManager.total_score <= 40 and GameManager.total_score >= 30:
+			elif GameManager.total_score == 30:
+				get_tree().change_scene_to_file("res://main_scenes/end_scene_burned.tscn")
+				
+			elif GameManager.total_score <= 40 and GameManager.total_score > 30:
 				get_tree().change_scene_to_file("res://main_scenes/end_scene_small.tscn")
 
 			elif GameManager.total_score <= 80  and GameManager.total_score > 40:

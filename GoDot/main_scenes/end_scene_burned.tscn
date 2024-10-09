@@ -5989,4 +5989,4 @@ position = Vector2(25, -20)
 sprite_frames = SubResource("SpriteFrames_2bh38")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.782205
+frame_progress = 0.81076

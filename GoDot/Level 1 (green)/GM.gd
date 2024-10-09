@@ -9,40 +9,16 @@ var addscore = 0
 @onready var total_score_label_2 = %TotalScoreLabel2
 @onready var total_score_label_3 = %TotalScoreLabel3
 
-@onready var level_time_1 = $Level_time1
-@onready var level_time_2 = $Level_time2
-@onready var level_time_3 = $Level_time3
-
-
-
-#@onready var level_time = $Level_time #tf er det her??
+#@onready var level_time = $Level_time
 
 func _ready():
 	GameManager.ingredient_score = 0
-	if GameManager.levels_completed == 0: #første timer skal startes
-		level_time_1.start_count()
 	if GameManager.levels_completed == 1:
 		total_score_label_2.text = "POINTS:" + str(GameManager.total_score).pad_zeros(3)
-		GameManager.level_complete = true
-		level_time_2.start_count()
 	if GameManager.levels_completed == 2:
 		total_score_label_3.text = "POINTS:" + str(GameManager.total_score).pad_zeros(3)
-		GameManager.level_complete = true
-		level_time_3.start_count()
-	if GameManager.levels_completed == 3:
-		GameManager.level_complete = true
+#	level_time.start_count()
 
-
-#func _process(delta):
-#	if GameManager.levels_completed == 1 and GameManager.level_complete == true:
-#		level_time_1.stop_count()
-#		GameManager.level_complete = false
-#	if GameManager.levels_completed == 2 and GameManager.level_complete == true:
-#		level_time_2.stop_count()
-#		GameManager.level_complete = false
-#	if GameManager.levels_completed == 3 and GameManager.level_complete == true:
-#		level_time_3.stop_count()
-#		GameManager.level_complete = false
 
 
 func add_point():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bnvu1u5n3ogav"]
+[gd_scene load_steps=23 format=3 uid="uid://fd07p42grca8"]
 
 [ext_resource type="Script" path="res://main_scenes/end_scene.gd" id="1_reett"]
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="2_qnh06"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://cgg08qnogn8sv" path="res://audio/wah-wah-sad-trombone-6347.mp3" id="9_vmo80"]
 [ext_resource type="PackedScene" uid="uid://kea1bjrto1u0" path="res://playagain_button.tscn" id="10_dotji"]
 [ext_resource type="Texture2D" uid="uid://bj2iqd34gefdw" path="res://burned_cupcake_animation.png" id="11_626mb"]
+[ext_resource type="Script" path="res://main_scenes/Time_taken.gd" id="12_ud0ek"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
 texture = ExtResource("2_qnh06")
@@ -5892,7 +5893,7 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="Main2" type="Node2D"]
+[node name="Main3" type="Node2D"]
 script = ExtResource("1_reett")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -5991,3 +5992,15 @@ sprite_frames = SubResource("SpriteFrames_2bh38")
 animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.490781
+
+[node name="Label_timer" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -40.0
+offset_top = -48.0
+offset_right = 30.0
+offset_bottom = -30.0
+theme_override_colors/font_color = Color(0.860269, 0.782387, 0.800069, 1)
+theme_override_fonts/font = ExtResource("5_w7kbd")
+theme_override_font_sizes/font_size = 8
+text = "TIMER:"
+script = ExtResource("12_ud0ek")

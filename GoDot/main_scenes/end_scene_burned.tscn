@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="6_ynmwp"]
 [ext_resource type="Script" path="res://main_scenes/total_score_end_number.gd" id="7_j0iey"]
 [ext_resource type="AudioStream" uid="uid://bndnxo5gss8v2" path="res://audio/medieval-fanfare-6826.wav" id="8_fofuj"]
-[ext_resource type="AudioStream" uid="uid://bp121anx5mcf8" path="res://audio/party-horn-unenthusiastic-the-foundation-1-00-02.mp3" id="9_0ayk4"]
+[ext_resource type="AudioStream" uid="uid://cgg08qnogn8sv" path="res://audio/wah-wah-sad-trombone-6347.mp3" id="9_vmo80"]
 [ext_resource type="PackedScene" uid="uid://kea1bjrto1u0" path="res://playagain_button.tscn" id="10_dotji"]
 [ext_resource type="Texture2D" uid="uid://bj2iqd34gefdw" path="res://burned_cupcake_animation.png" id="11_626mb"]
 
@@ -5977,8 +5977,9 @@ script = ExtResource("7_j0iey")
 stream = ExtResource("8_fofuj")
 
 [node name="sad" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_0ayk4")
-volume_db = -2.301
+stream = ExtResource("9_vmo80")
+volume_db = -7.464
+pitch_scale = 0.91
 
 [node name="Node2D" parent="." instance=ExtResource("10_dotji")]
 position = Vector2(1, -84)
@@ -5989,4 +5990,4 @@ position = Vector2(25, -20)
 sprite_frames = SubResource("SpriteFrames_2bh38")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.275331
+frame_progress = 0.490781

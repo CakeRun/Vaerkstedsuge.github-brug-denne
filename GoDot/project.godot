@@ -18,7 +18,6 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 GameManager="*res://global.gd"
 BackgroundMusic="*res://audio/background_music.tscn"
-DoorsScript="*res://doors/doors_script.gd"
 
 [input]
 

@@ -19,6 +19,7 @@ extends Node
 @onready var level_time_3 = $"../GameManager/Level_time3"
 
 
+
 static var levels_completed = 0
 
 #LEVEL 1
@@ -40,7 +41,7 @@ func _process(delta):
 	if entered_green_main == true and Input.is_action_just_pressed("enter"):
 		#print(levels_completed)
 
-		if levels_completed == 0: #and not teleport_audio_main_tut.playing:
+		if levels_completed == 0 and not teleport_audio_main_tut.playing:
 			print("entering level 1")
 			teleport_audio_main_tut.play()
 			await get_tree().create_timer(2.6).timeout

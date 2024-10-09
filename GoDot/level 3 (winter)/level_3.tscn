@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bgd0q5mhfph1g" path="res://Ingrediens/level 3 - berries/strawberry_scene.tscn" id="12_44hfb"]
 [ext_resource type="Script" path="res://doors/doors_script.gd" id="12_ld6uu"]
 [ext_resource type="PackedScene" uid="uid://b868hhucom5e8" path="res://Enemy 2 (crocodile)/Enemy 2.tscn" id="13_1170j"]
-[ext_resource type="Script" path="res://Level 1 (green)/GameManager.gd" id="15_smlhd"]
+[ext_resource type="Script" path="res://Level 1 (green)/GM.gd" id="15_smlhd"]
 [ext_resource type="FontFile" uid="uid://lobebsc6nhjr" path="res://Graphics/Font/PixelOperator8.ttf" id="16_j382v"]
 [ext_resource type="AudioStream" uid="uid://bn371ypkjntwy" path="res://audio/A-reveal-4_1.wav" id="18_850n5"]
 [ext_resource type="AudioStream" uid="uid://bgxs2yi0mjy8f" path="res://audio/Dreamy.wav" id="19_third"]

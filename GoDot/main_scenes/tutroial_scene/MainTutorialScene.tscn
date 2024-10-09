@@ -5928,6 +5928,8 @@ distance = 9.15219
 position = Vector2(-9, -7)
 script = ExtResource("1_0yw30")
 
+[node name="GameManager" type="Node" parent="."]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xilym")
 format = 2

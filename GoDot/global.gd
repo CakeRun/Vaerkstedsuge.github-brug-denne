@@ -16,4 +16,6 @@ var levels_completed = 0
 
 var total_time = 0
 
+var level_complete = false
+
 var player_heal = false

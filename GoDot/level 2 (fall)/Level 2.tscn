@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bxygh80dl2bau" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Background parts/_Complete_static_BG_(288 x 208).png" id="3_5bytn"]
 [ext_resource type="Texture2D" uid="uid://c5wc6rbivxap2" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="4_3hsrs"]
 [ext_resource type="Script" path="res://level 2 (fall)/portal_label_orange.gd" id="4_ski62"]
-[ext_resource type="Script" path="res://Level_time2.gd" id="5_0w35p"]
 [ext_resource type="Texture2D" uid="uid://gxf2r8n7b1k2" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png" id="5_14px6"]
+[ext_resource type="Script" path="res://Level_time.gd" id="5_eorev"]
 [ext_resource type="Texture2D" uid="uid://ba5x0nl33l275" path="res://Graphics/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="6_xgdej"]
 [ext_resource type="Texture2D" uid="uid://t3xmeajl4dy8" path="res://Graphics/BackgroundFall.png" id="7_yjnww"]
 [ext_resource type="PackedScene" uid="uid://chseesgkhofm3" path="res://level 2 (fall)/animatable_body_2d.tscn" id="8_6ckl1"]
@@ -4308,8 +4308,8 @@ text = "*portal is open*"
 script = ExtResource("4_ski62")
 metadata/_edit_use_anchors_ = true
 
-[node name="Level_time2" type="Timer" parent="GameManager"]
-script = ExtResource("5_0w35p")
+[node name="Level_time" type="Timer" parent="GameManager"]
+script = ExtResource("5_eorev")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, -1)

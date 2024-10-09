@@ -1,18 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3nf1r47enc30"]
+[gd_scene load_steps=22 format=3 uid="uid://bnvu1u5n3ogav"]
 
-[ext_resource type="Script" path="res://main_scenes/end_scene.gd" id="1_sa6gk"]
-[ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="1_sy1b6"]
-[ext_resource type="Texture2D" uid="uid://deg377hwwlxgl" path="res://Graphics/background_main_color.png" id="2_0rkm7"]
-[ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="3_rk1av"]
-[ext_resource type="FontFile" uid="uid://lobebsc6nhjr" path="res://Graphics/Font/PixelOperator8.ttf" id="4_eetkl"]
-[ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="5_fgwwq"]
-[ext_resource type="Script" path="res://main_scenes/total_score_end_number.gd" id="6_odqoc"]
-[ext_resource type="AudioStream" uid="uid://bndnxo5gss8v2" path="res://audio/medieval-fanfare-6826.wav" id="7_73cy4"]
-[ext_resource type="AudioStream" uid="uid://bp121anx5mcf8" path="res://audio/party-horn-unenthusiastic-the-foundation-1-00-02.mp3" id="9_0ixg6"]
-[ext_resource type="PackedScene" uid="uid://kea1bjrto1u0" path="res://playagain_button.tscn" id="9_osavm"]
+[ext_resource type="Script" path="res://main_scenes/end_scene.gd" id="1_reett"]
+[ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="2_qnh06"]
+[ext_resource type="Texture2D" uid="uid://deg377hwwlxgl" path="res://Graphics/background_main_color.png" id="3_2utxo"]
+[ext_resource type="PackedScene" uid="uid://c0ayqo0w41tl0" path="res://Player/Player.tscn" id="4_sh50c"]
+[ext_resource type="FontFile" uid="uid://lobebsc6nhjr" path="res://Graphics/Font/PixelOperator8.ttf" id="5_w7kbd"]
+[ext_resource type="FontFile" uid="uid://bxh1bgjfv2wfb" path="res://Graphics/Font/PixelOperator8-Bold.ttf" id="6_ynmwp"]
+[ext_resource type="Script" path="res://main_scenes/total_score_end_number.gd" id="7_j0iey"]
+[ext_resource type="AudioStream" uid="uid://bndnxo5gss8v2" path="res://audio/medieval-fanfare-6826.wav" id="8_fofuj"]
+[ext_resource type="AudioStream" uid="uid://bp121anx5mcf8" path="res://audio/party-horn-unenthusiastic-the-foundation-1-00-02.mp3" id="9_0ayk4"]
+[ext_resource type="PackedScene" uid="uid://kea1bjrto1u0" path="res://playagain_button.tscn" id="10_dotji"]
+[ext_resource type="Texture2D" uid="uid://bj2iqd34gefdw" path="res://burned_cupcake_animation.png" id="11_626mb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
-texture = ExtResource("1_sy1b6")
+texture = ExtResource("2_qnh06")
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
@@ -62,7 +63,7 @@ texture = ExtResource("1_sy1b6")
 10:2/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjydk"]
-texture = ExtResource("2_0rkm7")
+texture = ExtResource("3_2utxo")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -5835,8 +5836,64 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_80res")
 sources/2 = SubResource("TileSetAtlasSource_yjydk")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak5l8"]
+atlas = ExtResource("11_626mb")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua2yr"]
+atlas = ExtResource("11_626mb")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esjnc"]
+atlas = ExtResource("11_626mb")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7fjs"]
+atlas = ExtResource("11_626mb")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5cr8"]
+atlas = ExtResource("11_626mb")
+region = Rect2(64, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t323"]
+atlas = ExtResource("11_626mb")
+region = Rect2(80, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2bh38"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak5l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua2yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esjnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7fjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5cr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t323")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t323")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t323")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 4.0
+}]
+
 [node name="Main2" type="Node2D"]
-script = ExtResource("1_sa6gk")
+script = ExtResource("1_reett")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xilym")
@@ -5847,9 +5904,9 @@ layer_1/name = "Background"
 layer_1/tile_data = PackedInt32Array(-589835, 196608, 3, -524299, 196608, 3, -458763, 196608, 3, -393227, 196608, 3, -327691, 196608, 3, -262155, 196608, 3, -196619, 196608, 3, -131083, 196608, 3, -65547, 196608, 3, -11, 196608, 3, 65525, 196608, 3, 131061, 196608, 3, -589834, 196608, 3, -524298, 196608, 3, -458762, 196608, 3, -393226, 196608, 3, -327690, 196608, 3, -262154, 196608, 3, -196618, 196608, 3, -131082, 196608, 3, -65546, 196608, 3, -10, 196608, 3, 65526, 196608, 3, 131062, 196608, 3, -589833, 196608, 1, -524297, 196608, 1, -458761, 196608, 1, -393225, 196608, 1, -327689, 196608, 1, -262153, 196608, 1, -196617, 196608, 1, -131081, 196608, 1, -65545, 196608, 1, -9, 196608, 1, 65527, 393216, 1, 131063, 327680, 1, -589832, 196608, 1, -524296, 196608, 1, -458760, 196608, 1, -393224, 196608, 1, -327688, 196608, 1, -262152, 196608, 1, -196616, 196608, 1, -131080, 196608, 1, -65544, 196608, 1, -8, 196608, 1, 65528, 458752, 1, 131064, 327680, 1, -589831, 196608, 1, -524295, 196608, 1, -458759, 196608, 1, -393223, 196608, 1, -327687, 196608, 1, -262151, 196608, 1, -196615, 196608, 1, -131079, 196608, 1, -65543, 196608, 1, -7, 196608, 1, 65529, 458752, 1, 131065, 327680, 1, -589830, 196608, 1, -524294, 196608, 1, -458758, 196608, 1, -393222, 196608, 1, -327686, 196608, 1, -262150, 196608, 1, -196614, 196608, 1, -131078, 196608, 1, -65542, 196608, 1, -6, 196608, 1, 65530, 458752, 1, 131066, 327680, 1, -589829, 196608, 1, -524293, 196608, 1, -458757, 196608, 1, -393221, 196608, 1, -327685, 196608, 1, -262149, 196608, 1, -196613, 196608, 1, -131077, 196608, 1, -65541, 196608, 1, -5, 196608, 1, 65531, 458752, 1, 131067, 327680, 1, -589828, 196608, 1, -524292, 196608, 1, -458756, 196608, 1, -393220, 196608, 1, -327684, 196608, 1, -262148, 196608, 1, -196612, 196608, 1, -131076, 196608, 1, -65540, 196608, 1, -4, 196608, 1, 65532, 458752, 1, 131068, 327680, 1, -589827, 196608, 1, -524291, 196608, 1, -458755, 196608, 1, -393219, 196608, 1, -327683, 196608, 1, -262147, 196608, 1, -196611, 196608, 1, -131075, 196608, 1, -65539, 196608, 1, -3, 196608, 1, 65533, 458752, 1, 131069, 327680, 1, -589826, 196608, 1, -524290, 196608, 1, -458754, 196608, 1, -393218, 196608, 1, -327682, 196608, 1, -262146, 196608, 1, -196610, 196608, 1, -131074, 196608, 1, -65538, 196608, 1, -2, 196608, 1, 65534, 458752, 1, 131070, 327680, 1, -589825, 196608, 1, -524289, 196608, 1, -458753, 196608, 1, -393217, 196608, 1, -327681, 196608, 1, -262145, 196608, 1, -196609, 196608, 1, -131073, 196608, 1, -65537, 196608, 1, -1, 196608, 1, 65535, 458752, 1, 131071, 327680, 1, -655360, 196608, 1, -589824, 196608, 1, -524288, 196608, 1, -458752, 196608, 1, -393216, 196608, 1, -327680, 196608, 1, -262144, 196608, 1, -196608, 196608, 1, -131072, 196608, 1, -65536, 196608, 1, 0, 458752, 1, 65536, 327680, 1, -655359, 196608, 1, -589823, 196608, 1, -524287, 196608, 1, -458751, 196608, 1, -393215, 196608, 1, -327679, 196608, 1, -262143, 196608, 1, -196607, 196608, 1, -131071, 196608, 1, -65535, 196608, 1, 1, 458752, 1, 65537, 327680, 1, -655358, 196608, 1, -589822, 196608, 1, -524286, 196608, 1, -458750, 196608, 1, -393214, 196608, 1, -327678, 196608, 1, -262142, 196608, 1, -196606, 196608, 1, -131070, 196608, 1, -65534, 196608, 1, 2, 458752, 1, 65538, 327680, 1, -655357, 196608, 1, -589821, 196608, 1, -524285, 196608, 1, -458749, 196608, 1, -393213, 196608, 1, -327677, 196608, 1, -262141, 196608, 1, -196605, 196608, 1, -131069, 196608, 1, -65533, 196608, 1, 3, 458752, 1, 65539, 327680, 1, -655356, 196608, 1, -589820, 196608, 1, -524284, 196608, 1, -458748, 196608, 1, -393212, 196608, 1, -327676, 196608, 1, -262140, 196608, 1, -196604, 196608, 1, -131068, 196608, 1, -65532, 196608, 1, 4, 458752, 1, 65540, 327680, 1, -655355, 196608, 1, -589819, 196608, 1, -524283, 196608, 1, -458747, 196608, 1, -393211, 196608, 1, -327675, 196608, 1, -262139, 196608, 1, -196603, 196608, 1, -131067, 196608, 1, -65531, 196608, 1, 5, 458752, 1, 65541, 327680, 1, -655354, 196608, 1, -589818, 196608, 1, -524282, 196608, 1, -458746, 196608, 1, -393210, 196608, 1, -327674, 196608, 1, -262138, 196608, 1, -196602, 196608, 1, -131066, 196608, 1, -65530, 196608, 1, 6, 458752, 1, 65542, 327680, 1, -655353, 196608, 1, -589817, 196608, 1, -524281, 196608, 1, -458745, 196608, 1, -393209, 196608, 1, -327673, 196608, 1, -262137, 196608, 1, -196601, 196608, 1, -131065, 196608, 1, -65529, 196608, 1, 7, 458752, 1, 65543, 327680, 1, -655352, 196608, 1, -589816, 196608, 1, -524280, 196608, 1, -458744, 196608, 1, -393208, 196608, 1, -327672, 196608, 1, -262136, 196608, 1, -196600, 196608, 1, -131064, 196608, 1, -65528, 196608, 1, 8, 524288, 1, 65544, 327680, 1, -655351, 196608, 3, -589815, 196608, 3, -524279, 196608, 3, -458743, 196608, 3, -393207, 196608, 3, -327671, 196608, 3, -262135, 196608, 3, -196599, 196608, 3, -131063, 196608, 3, -65527, 196608, 3, 9, 196608, 3, 65545, 196608, 3, -655350, 196608, 3, -589814, 196608, 3, -524278, 196608, 3, -458742, 196608, 3, -393206, 196608, 3, -327670, 196608, 3, -262134, 196608, 3, -196598, 196608, 3, -131062, 196608, 3, -65526, 196608, 3, 10, 196608, 3, 65546, 196608, 3)
 layer_2/name = "Foreground"
 layer_2/z_index = 2
-layer_2/tile_data = PackedInt32Array(-65536, 327680, 2, -131071, 655360, 2, -65535, 393216, 2, -65534, 458752, 2)
+layer_2/tile_data = PackedInt32Array(-65535, 393216, 2, -65534, 458752, 2, -65536, 327680, 2)
 
-[node name="Player" parent="." instance=ExtResource("3_rk1av")]
+[node name="Player" parent="." instance=ExtResource("4_sh50c")]
 position = Vector2(-96, -14)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -5869,7 +5926,7 @@ offset_right = 51.0
 offset_bottom = -118.0
 scale = Vector2(1.29524, 1.29524)
 theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
-theme_override_fonts/font = ExtResource("4_eetkl")
+theme_override_fonts/font = ExtResource("5_w7kbd")
 theme_override_font_sizes/font_size = 24
 text = "YOU WON
 "
@@ -5881,7 +5938,7 @@ offset_right = 191.0
 offset_bottom = -88.0
 scale = Vector2(0.50507, 0.545551)
 theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
-theme_override_fonts/font = ExtResource("5_fgwwq")
+theme_override_fonts/font = ExtResource("6_ynmwp")
 theme_override_font_sizes/font_size = 0
 text = "Here is your cake!"
 horizontal_alignment = 1
@@ -5899,29 +5956,37 @@ scale = Vector2(1.05439, 0.928097)
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
 theme_override_constants/shadow_offset_x = 6
-theme_override_fonts/font = ExtResource("4_eetkl")
+theme_override_fonts/font = ExtResource("5_w7kbd")
 theme_override_font_sizes/font_size = 8
 text = "TOTAL SCORE:"
 horizontal_alignment = 1
 
-[node name="total_score_end_medium" type="Label" parent="."]
+[node name="total_score_end_small" type="Label" parent="."]
 unique_name_in_owner = true
 offset_left = -10.0
 offset_top = -58.0
 offset_right = 30.0
 offset_bottom = -35.0
 theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
-theme_override_fonts/font = ExtResource("4_eetkl")
+theme_override_fonts/font = ExtResource("5_w7kbd")
 theme_override_font_sizes/font_size = 8
 text = "000"
-script = ExtResource("6_odqoc")
+script = ExtResource("7_j0iey")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_73cy4")
+stream = ExtResource("8_fofuj")
 
 [node name="sad" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_0ixg6")
+stream = ExtResource("9_0ayk4")
 volume_db = -2.301
 
-[node name="Node2D" parent="." instance=ExtResource("9_osavm")]
+[node name="Node2D" parent="." instance=ExtResource("10_dotji")]
 position = Vector2(1, -84)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(25, -20)
+sprite_frames = SubResource("SpriteFrames_2bh38")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.782205

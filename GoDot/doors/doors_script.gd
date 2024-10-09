@@ -118,6 +118,7 @@ func _process(delta):
 		#blue
 		if entered_blue_level3 == true and not teleport_audio_blue.playing:
 			level_time.stop_count() #til at stoppe timeren
+			print("total time spent",GameManager.total_time)
 			print("going to main end")
 			teleport_audio_blue.play()
 			await get_tree().create_timer(2.6).timeout

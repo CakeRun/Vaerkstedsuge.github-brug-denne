@@ -13,12 +13,12 @@ func _process(delta):
 	
 # if GameManager.levels_completed == 0:   #til hvis den skal være forskellig for de tre levels
 func start_count():
-	print("starter timer 1")
+	print("starter timer 3")
 	start(setCount)
 	startCount = true
 	
 func stop_count():
-	print("stopper timer 1")
+	print("stopper timer 3")
 	stop()
 	print(remaining, "time left")
 	GameManager.total_time += 3600 - remaining

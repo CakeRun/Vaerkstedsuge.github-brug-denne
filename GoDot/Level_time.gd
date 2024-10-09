@@ -10,7 +10,7 @@ var startCount = false
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
 	remaining = get_time_left()
-	print(remaining)
+	#print(remaining)
 	#if timeout and startCount == true:
 	#	hoursSpent += 1
 	#	start(setCount)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3nf1r47enc30"]
+[gd_scene load_steps=15 format=3 uid="uid://c3nf1r47enc30"]
 
 [ext_resource type="Script" path="res://main_scenes/end_scene.gd" id="1_sa6gk"]
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="1_sy1b6"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bndnxo5gss8v2" path="res://audio/medieval-fanfare-6826.wav" id="7_73cy4"]
 [ext_resource type="AudioStream" uid="uid://bp121anx5mcf8" path="res://audio/party-horn-unenthusiastic-the-foundation-1-00-02.mp3" id="9_0ixg6"]
 [ext_resource type="PackedScene" uid="uid://kea1bjrto1u0" path="res://playagain_button.tscn" id="9_osavm"]
+[ext_resource type="Script" path="res://main_scenes/Time_taken.gd" id="11_ntdvi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80res"]
 texture = ExtResource("1_sy1b6")
@@ -5925,3 +5926,15 @@ volume_db = -2.301
 
 [node name="Node2D" parent="." instance=ExtResource("9_osavm")]
 position = Vector2(1, -84)
+
+[node name="Label_timer" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -40.0
+offset_top = -48.0
+offset_right = 30.0
+offset_bottom = -30.0
+theme_override_colors/font_color = Color(0.860269, 0.782387, 0.800069, 1)
+theme_override_fonts/font = ExtResource("4_eetkl")
+theme_override_font_sizes/font_size = 8
+text = "TIMER:"
+script = ExtResource("11_ntdvi")

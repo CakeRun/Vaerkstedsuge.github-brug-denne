@@ -34,6 +34,8 @@ static var entered_orange_level2 = false
 static var entered_blue_main = false
 static var entered_blue_level3 = false
 
+func _ready():
+	levels_completed = GameManager.levels_completed
 
 func _process(delta):
 	

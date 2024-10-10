@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const speed_norm = 30
-const speed_chase = 60
+const speed_chase = 45
 var direction = 1
 var chase = false
 var player = null
@@ -28,21 +28,26 @@ func _physics_process(delta):
 
 
 func _process(delta):
-	if ray_cast_right.is_colliding() or edge_right.is_colliding() == false:
-		direction = -1
-		animated_sprite.flip_h = false
-		
-	if ray_cast_left.is_colliding() or edge_left.is_colliding() == false:
-		direction = 1
-		animated_sprite.flip_h = true
-		
-	if chase and edge_left.is_colliding() and edge_right.is_colliding():
-		position.x += ((player.position.x - position.x)/speed_chase)
-
-		if player.position.x < position.x:
+	if not chase:
+		if ray_cast_right.is_colliding() or edge_right.is_colliding() == false:
+			direction = -1
 			animated_sprite.flip_h = false
-		elif player.position.x > position.x:
+		
+		elif ray_cast_left.is_colliding() or edge_left.is_colliding() == false:
+			direction = 1
 			animated_sprite.flip_h = true
+		
+	if chase:
+		if edge_left.is_colliding() and edge_right.is_colliding():
+			if player.position.x < position.x:
+				position.x -= speed_chase * delta
+				animated_sprite.flip_h = false
+			elif player.position.x > position.x:
+				position.x += speed_chase * delta
+				animated_sprite.flip_h = true
+		else:
+				chase = false
+
 	else:
 		position.x += direction * speed_norm * delta
 		animated_sprite.play("Walk") 
@@ -77,9 +82,9 @@ func enemy_attack():
 	if player_inattack_zone and enemy_attack_cooldown == true:
 		var t = randf_range(0,1)
 		if t<=0.10 : #5% change for at der angribesawait get_tree().create_timer(0.9).timeout
+			animated_sprite.play("chomp")
 			GameManager.enemy_type = "Crocodile" 
 			GameManager.enemy_attack = true 
-			animated_sprite.play("chomp")
 			enemy_attack_cooldown = false 
 			await get_tree().create_timer(0.02).timeout #til at sikre, at vi dør ikke konstant
 			GameManager.enemy_attack = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://fd07p42grca8"]
+[gd_scene load_steps=23 format=3 uid="uid://bnvu1u5n3ogav"]
 
 [ext_resource type="Script" path="res://main_scenes/end_scene.gd" id="1_reett"]
 [ext_resource type="Texture2D" uid="uid://470jsw042md2" path="res://Graphics/Tuneser.png" id="2_qnh06"]
@@ -5995,12 +5995,13 @@ frame_progress = 0.490781
 
 [node name="Label_timer" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = -40.0
+offset_left = -35.0
 offset_top = -48.0
-offset_right = 30.0
+offset_right = 35.0
 offset_bottom = -30.0
-theme_override_colors/font_color = Color(0.860269, 0.782387, 0.800069, 1)
+theme_override_colors/font_color = Color(0.945098, 0.839216, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_w7kbd")
 theme_override_font_sizes/font_size = 8
-text = "TIMER:"
+text = "00:00"
+horizontal_alignment = 1
 script = ExtResource("12_ud0ek")

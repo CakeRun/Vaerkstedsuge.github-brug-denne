@@ -31,17 +31,21 @@ func _process(delta):
 	if ray_cast_right.is_colliding() or edge_right.is_colliding() == false:
 		direction = -1
 		animated_sprite.flip_h = false
+		
 	if ray_cast_left.is_colliding() or edge_left.is_colliding() == false:
 		direction = 1
 		animated_sprite.flip_h = true
+		
 	if chase and edge_left.is_colliding() and edge_right.is_colliding():
 		position.x += ((player.position.x - position.x)/speed_chase)
+
 		if player.position.x < position.x:
 			animated_sprite.flip_h = false
 		elif player.position.x > position.x:
 			animated_sprite.flip_h = true
 	else:
-		position.x += direction * speed_norm * delta 
+		position.x += direction * speed_norm * delta
+		animated_sprite.play("Walk") 
 
 
 func _on_area_2d_body_entered(body):
@@ -72,7 +76,7 @@ func _on_croc_gets_die_body_exited(body):
 func enemy_attack():		
 	if player_inattack_zone and enemy_attack_cooldown == true:
 		var t = randf_range(0,1)
-		if t<=0.10 : #5% change for at der angribes
+		if t<=0.10 : #5% change for at der angribesawait get_tree().create_timer(0.9).timeout
 			GameManager.enemy_type = "Crocodile" 
 			GameManager.enemy_attack = true 
 			animated_sprite.play("chomp")
@@ -81,7 +85,7 @@ func enemy_attack():
 			GameManager.enemy_attack = false
 			await get_tree().create_timer(1).timeout
 			enemy_attack_cooldown = true
-		elif player_inattack_zone == false:
+		else:
 			animated_sprite.play("Walk")
 
 func deal_with_damage():

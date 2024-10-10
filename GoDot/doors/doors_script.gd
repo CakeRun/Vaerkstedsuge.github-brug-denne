@@ -88,7 +88,7 @@ func _process(delta):
 				#level_time.start_count() #til at starte timeren i level 3 når denne scene startes
 
 	#### Leaving a level ####
-	if GameManager.ingredient_score == 10 and Input.is_action_just_pressed("enter"):
+	if GameManager.ingredient_score == 0 and Input.is_action_just_pressed("enter"):
 		#green	
 		if entered_green_level1 == true and not teleport_audio_green.playing:
 			#level_time.stop_count() #til at stoppe timeren

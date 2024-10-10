@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const speed_norm = 30
-const speed_chase = 50
+const speed_chase = 60
 var direction = 1
 var chase = false
 var player = null
@@ -88,7 +88,7 @@ func _on_croc_gets_die_body_exited(body):
 func enemy_attack():		
 	if player_inattack_zone and enemy_attack_cooldown == true:
 		var t = randf_range(0,1)
-		if t<=0.1 : #10% change for at der angribesawait get_tree().create_timer(0.9).timeout
+		if t<=0.3 : #10% change for at der angribesawait get_tree().create_timer(0.9).timeout
 			animated_sprite.play("chomp")
 			GameManager.enemy_type = "Crocodile" 
 			GameManager.enemy_attack = true 

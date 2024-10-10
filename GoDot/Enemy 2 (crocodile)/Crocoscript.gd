@@ -6,10 +6,12 @@ var direction = 1
 var chase = false
 var player = null
 
-var health = 3
+var health = 2
 var player_inattack_zone = false
 var enemy_attack_cooldown = true
 var croc_die_zone = false
+
+@onready var health_bar = $HealthBar
 
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_left = $RayCastLeft
@@ -96,6 +98,7 @@ func enemy_attack():
 func deal_with_damage():
 	if croc_die_zone and GameManager.player_current_attack == true:
 		health = health - 1
+		health_bar.value = health
 		await get_tree().create_timer(0.02).timeout #her dør den ikke med det samme
 		print("enemy health - 1")
 		if health <= 0: 

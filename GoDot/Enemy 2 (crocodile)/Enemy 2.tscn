@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b868hhucom5e8"]
+[gd_scene load_steps=36 format=3 uid="uid://b868hhucom5e8"]
 
 [ext_resource type="Texture2D" uid="uid://bobg5bx2u0j7k" path="res://Graphics/Crocodile/Crawl_&_Blink_(32 x 32).png" id="1_aemro"]
 [ext_resource type="Script" path="res://Enemy 2 (crocodile)/Crocoscript.gd" id="1_cfj7q"]
@@ -203,6 +203,23 @@ size = Vector2(34, 17.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvpma"]
 size = Vector2(75, 31)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wj7mt"]
+bg_color = Color(0.857869, 0.310185, 0.180744, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.105882, 0.0784314, 0.117647, 1)
+expand_margin_top = 1.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fug0u"]
+content_margin_top = 2.0
+content_margin_right = 0.0
+color = Color(0.219608, 0.666667, 0.388235, 1)
+grow_begin = -1.0
+grow_end = -1.0
+thickness = 3
+
 [node name="Crocodile" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 9
@@ -255,6 +272,18 @@ collision_mask = 12
 position = Vector2(0.5, -5.5)
 shape = SubResource("RectangleShape2D_tvpma")
 debug_color = Color(0.588293, 0.541821, 0.245769, 0.42)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -10.0
+offset_top = -14.0
+offset_right = 10.0
+offset_bottom = -10.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wj7mt")
+theme_override_styles/fill = SubResource("StyleBoxLine_fug0u")
+max_value = 2.0
+value = 2.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="detection" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_area_2d_body_exited"]

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const speed_norm = 30
-const speed_chase = 45
+const speed_chase = 50
 var direction = 1
 var chase = false
 var player = null
@@ -31,6 +31,8 @@ func _physics_process(delta):
 
 func _process(delta):
 	if not chase:
+		position.x += direction * speed_norm * delta
+		animated_sprite.play("Walk")
 		if ray_cast_right.is_colliding() or edge_right.is_colliding() == false:
 			direction = -1
 			animated_sprite.flip_h = false
@@ -39,7 +41,12 @@ func _process(delta):
 			direction = 1
 			animated_sprite.flip_h = true
 		
-	if chase:
+		if direction == -1:
+			animated_sprite.flip_h = false
+		else:
+			animated_sprite.flip_h = true
+	
+	elif chase:
 		if edge_left.is_colliding() and edge_right.is_colliding():
 			if player.position.x < position.x:
 				position.x -= speed_chase * delta
@@ -47,12 +54,10 @@ func _process(delta):
 			elif player.position.x > position.x:
 				position.x += speed_chase * delta
 				animated_sprite.flip_h = true
+			elif player.position.x == position.x:
+				animated_sprite.flip_h = false
 		else:
 				chase = false
-
-	else:
-		position.x += direction * speed_norm * delta
-		animated_sprite.play("Walk") 
 
 
 func _on_area_2d_body_entered(body):
@@ -83,7 +88,7 @@ func _on_croc_gets_die_body_exited(body):
 func enemy_attack():		
 	if player_inattack_zone and enemy_attack_cooldown == true:
 		var t = randf_range(0,1)
-		if t<=0.10 : #5% change for at der angribesawait get_tree().create_timer(0.9).timeout
+		if t<=0.1 : #10% change for at der angribesawait get_tree().create_timer(0.9).timeout
 			animated_sprite.play("chomp")
 			GameManager.enemy_type = "Crocodile" 
 			GameManager.enemy_attack = true 
@@ -92,6 +97,7 @@ func enemy_attack():
 			GameManager.enemy_attack = false
 			await get_tree().create_timer(1).timeout
 			enemy_attack_cooldown = true
+			animated_sprite.play("Walk")
 		else:
 			animated_sprite.play("Walk")
 
